@@ -49,7 +49,7 @@
                 </section>
             </article>
 
-            <article class="question <?php echo $jumbo; ?>">
+            <article class="question position-relative <?php echo $jumbo; ?>">
                 <!-- #template-question will interpolate and hydrate here -->
             </article>
             
@@ -63,6 +63,9 @@
     </div> <!-- Ends container-fluid -->
 
     <script id="template-question" type="text/x-handlebars">
+        <aside class="question-step text-secondary p-2 position-absolute top-0 end-0">
+            <span>Progress: {{increment questionIndex}}/{{questionsLength}}</span>
+        </aside>
         <h2 class="question-title display-5">{{title}}</h2>
         <p class="question-description">{{{problem}}}</p>
         <nav class="question-choices-wrapper">
@@ -74,6 +77,13 @@
                 <li class="question-choice">{{choice4}}</li>
             </ul>
         </nav>
+        <section class="result p-2 clearfix">
+            <div class="span float-start"></div>
+            <div class="span float-end">
+                <button class="btn btn-primary btn-sm">Next</button>
+            </div>
+        </section>
+
     </script>
     
     <!-- Scripts -->

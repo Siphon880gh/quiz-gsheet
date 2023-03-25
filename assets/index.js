@@ -12,11 +12,16 @@ const questions = {
 }
 
 const ui = {
+    init: () =>{
+        Handlebars.registerHelper("increment", (val=>{
+            return parseInt(val) + 1;
+        }))
+    },
     startQuestions: ()=>{
         const that = ui;
-        that.renderQuestion(0)
+        that.nextQuestion(0)
     },
-    renderQuestion: (i)=>{
+    nextQuestion: (i)=>{
         const that = ui;
 
         // Question
@@ -35,7 +40,8 @@ const ui = {
             choice2: question[5],
             choice3: question[6],
             choice4: question[7],
-            questionIndex: i
+            questionIndex: i,
+            questionsLength: questions.questions.length
         }
         that.__correctIndex = question[8]
 
@@ -54,5 +60,6 @@ const ui = {
     __isCorrect: (questionIndex, choice)=> {
         // TODO
     }
+} // ui
 
-}
+ui.init();
