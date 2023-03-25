@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,6 +17,10 @@
     <link rel="stylesheet" href="assets/index.css">
 </head>
 <body>
+    <?php
+        // Bootstrap annoyingly removed Jumbotron, so to improve readability:
+        $jumbo = "container bg-light px-5 py-4 rounded-3 my-4";
+    ?>
     
     <div class="container-fluid">
         <header class="site-header clearfix">
@@ -36,15 +41,15 @@
             </nav>
         </header>
         <main class="site-body">
-            <article class="intro container bg-light px-5 py-4 rounded-3 my-4">
+            <article class="intro <?php echo $jumbo; ?>">
                 <h2 class="intro-title display-5">Questions</h2>
                 <p class="intro-description lead">Play a quick quiz game to test your sight reading skills in music.</p>
                 <section class="btn-wrapper text-center my-4">
                     <button class="btn btn-lg btn-primary" onclick="initQuestionsUI()">Start</button>
                 </section>
             </article>
-            <article class="question">
-                <h2 class="question-titl display-5">Q Title</h2>
+            <article class="question <?php echo $jumbo; ?>">
+                <h2 class="question-title display-5">Q Title</h2>
                 <p class="question-description">Q Desc</p>
                 <nav class="question-choices">
                     <ul>
@@ -55,7 +60,7 @@
                     </ul>
                 </nav>
             </article>
-            <article class="intro">
+            <article class="intro <?php echo $jumbo; ?>">
                 <h2 class="finish-title display-5">Finished!</h2>
                 <p class="finish-description">Thanks for playing.</p>
                 <section class="finish-score">F score</section>
