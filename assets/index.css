@@ -13,7 +13,7 @@
 /* Question Box
 ----------------------- */
 
-.question-chioces {
+.question-choices {
     display: inline-block;
 }
 
@@ -25,11 +25,27 @@
     border-radius: 5px;
     margin: 5px 0;
     cursor: pointer;
-    transition: all 200ms linear;
+    transition: all 700ms linear;
 }
 
-.question-choice:hover {
-    background-color: rgba(11, 94, 215, 0.85);
-    border: 1px solid rgba(11, 94, 215, 1);
+.question-choice:not(.disabled):hover {
+    background-color: rgba(220, 220, 220, 0.85);
+    border: 1px solid rgba(220, 220, 220, 1);
+    transition: all 200ms linear;
     cursor: pointer;
+}
+
+.question-choice.is-correct {
+    background-color: rgba(25, 135, 84, 0.85);
+    border: 1px solid rgba(25, 135, 84, 1);
+}
+
+.question-choice.shouldve-chosen {
+    background-color: rgba(25, 170, 84, 0.85);
+    border: 1px solid rgba(25, 170, 84, 1);
+}
+
+.question-choice.is-wrong {
+    background-color: rgba(220, 53, 69, 0.85);
+    border: 1px solid rgba(220, 53, 69, 1);
 }

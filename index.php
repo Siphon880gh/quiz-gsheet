@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Quiz</title>
     <script>
+        // Would be faster than fetching
         window.payload = `<?php require_once "./gsheet-connect.php"; ?>`;
         window.payload = JSON.parse(window.payload)
     </script>
 
-
     <!-- Styling  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="assets/index.css">
 </head>
+
 <body>
     <?php
         // Bootstrap annoyingly removed Jumbotron, so to improve readability:
@@ -71,25 +71,24 @@
         <p class="question-description">{{{problem}}}</p>
         <nav class="question-choices-wrapper">
             <p>Select correct answer:</p>
-            <ul class="question-chioces" data-question-index="{{questionIndex}}">
-                <li class="question-choice">{{choice1}}</li>
-                <li class="question-choice">{{choice2}}</li>
-                <li class="question-choice">{{choice3}}</li>
-                <li class="question-choice">{{choice4}}</li>
+            <ul class="question-choices" data-question-index="{{questionIndex}}" disabled>
+                <li class="question-choice" data-choice="1">{{choice1}}</li>
+                <li class="question-choice" data-choice="2">{{choice2}}</li>
+                <li class="question-choice" data-choice="3">{{choice3}}</li>
+                <li class="question-choice" data-choice="4">{{choice4}}</li>
             </ul>
         </nav>
-        <section class="result p-2 clearfix">
+        <!-- Experimenting A/B split design -->
+        <!-- <section class="result p-2 clearfix">
             <div class="span float-start"></div>
             <div class="span float-end">
                 <button class="btn btn-primary btn-sm">Next</button>
             </div>
-        </section>
-
+        </section> -->
     </script>
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="assets/index.js"></script>
 </body>
 </html>

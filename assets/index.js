@@ -20,9 +20,10 @@ const ui = {
     },
 
     // Here __ are internal properties and methods
-    __correctIndex: -1,
-    __isCorrect: (questionIndex, choice)=> {
-        // TODO
+    __correctChoice: -1,
+    __isCorrectChoice: (chosenChoice)=> {
+        const that = ui;
+        return chosenChoice===that.__correctChoice;
     },
     __pageNumber: 0,
 
@@ -71,7 +72,7 @@ const ui = {
             questionIndex: i,
             questionsLength: questions.questions.length
         }
-        that.__correctIndex = question[8]
+        that.__correctChoice = question[8]
 
 
         // Handlebars
@@ -82,6 +83,29 @@ const ui = {
         var fillQuestionBox = Handlebars.compile(templateQuestionBox);
         var htmlQuestionBox = fillQuestionBox(interpolateObject);
         target.innerHTML = htmlQuestionBox;
+
+        // Hydrate
+        document.querySelector(".question .question-choices").addEventListener("click", (event)=>{
+            // Clicked a choice and not area around the choices
+            if(event.target.matches(".question-choice:not(.disabled)")) {
+                const that = ui;
+                let chosenChoice = event.target.dataset.choice;
+                document.querySelectorAll(".question-choice").forEach(choiceEl=>choiceEl.classList.add("disabled"));
+
+                if(that.__isCorrectChoice(chosenChoice)) {
+                    event.target.classList.add("is-correct");
+                } else {
+                    event.target.classList.add("is-wrong");
+
+                    // I see I chose wrong, then I see what are correct
+                    setTimeout(()=>{
+                        const shouldveChosen = document.querySelector(`.question-choice[data-choice="${that.__correctChoice}"]`);
+                        shouldveChosen.classList.add("shouldve-chosen")
+                    }, 1000);
+                } // Ends inner if
+
+            }  // Ends outer if
+        })
     },
 } // ui
 
