@@ -63,14 +63,14 @@
     </div> <!-- Ends container-fluid -->
 
     <script id="template-question" type="text/x-handlebars">
-        <h2 class="question-title display-5">{{q.[0]}}</h2>
-        <p class="question-description">{{q.[1]}}</p>
-        <nav class="question-choices">
-            <ul>
-                <li class="question-choice">{{q.[2]}}</li>
-                <li class="question-choice">{{q.[3]}}</li>
-                <li class="question-choice">{{q.[4]}}</li>
-                <li class="question-choice">{{q.[5]}}</li>
+        <h2 class="question-title display-5">{{title}}</h2>
+        <p class="question-description">{{{problem}}}</p>
+        <nav class="question-choices-wrapper">
+            <ul class="question-chioces" data-question-index="{{questionIndex}}">
+                <li class="question-choice">{{choice1}}</li>
+                <li class="question-choice">{{choice1}}</li>
+                <li class="question-choice">{{choice1}}</li>
+                <li class="question-choice">{{choice1}}</li>
             </ul>
         </nav>
     </script>
