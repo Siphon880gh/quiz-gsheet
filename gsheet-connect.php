@@ -22,7 +22,7 @@ $client->setAuthConfig($path);
 $service = new \Google_Service_Sheets($client);
 $spreadsheetId = '1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs';
 // From spreadsheet: https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/
-$range = 'Active'; // here we use the name of the Sheet to get all the rows
+$range = 'Sample'; // here we use the name of the Sheet to get all the rows
 $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 
 // OFF|on: Get values tested
@@ -32,6 +32,6 @@ $values = $response->getValues();
 // Setup render
 $json = json_encode($values);
 $jsonEscapedBackticks = str_replace("`","\\`", $json);
-echo $jsonEscapedBackticks
+echo $jsonEscapedBackticks;
 
 ?>

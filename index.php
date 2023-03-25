@@ -15,6 +15,52 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 </head>
 <body>
-
+    
+    <div class="container-fluid">
+        <header>
+            <h1>Music Quiz</h1>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="#shuffled" onclick="questions.shuffle()">
+                            Shuffle
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/" target="_blank">
+                            Admin Edit
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="questions">
+            <article class="intro">
+                <h2 class="intro-title">Questions</h2>
+                <p class="intro-description">Play a quick quiz game to test your sight reading skills in music.</p>
+                <button onclick="initQuestionsUI()">Start</button>
+            </article>
+            <article class="question">
+                <h2 class="question-title">Q Title</h2>
+                <p class="question-description">Q Desc</p>
+                <nav class="question-choices">
+                    <ul>
+                        <li class="question-choice">a</li>
+                        <li class="question-choice">b</li>
+                        <li class="question-choice">c</li>
+                        <li class="question-choice">c</li>
+                    </ul>
+                </nav>
+            </article>
+            <article class="intro">
+                <h2 class="finish-title">Finished!</h2>
+                <p class="finish-description">Thanks for playing.</p>
+                <section class="finish-score">F score</section>
+            </article>
+        </main>
+    </div> <!-- Ends container-fluid -->
+    
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="assets/index.js"></script>
 </body>
 </html>
