@@ -19,7 +19,7 @@
     
     <div class="container-fluid">
         <header class="site-header clearfix">
-            <h1 class="site-title float-start">Music Quiz</h1>
+            <h1 class="site-title display-3 float-start">Music Quiz</h1>
             <nav class="site-nav float-end">
                 <ul class="nav">
                     <li class="nav-item">
@@ -36,13 +36,15 @@
             </nav>
         </header>
         <main class="site-body">
-            <article class="intro">
-                <h2 class="intro-title">Questions</h2>
-                <p class="intro-description">Play a quick quiz game to test your sight reading skills in music.</p>
-                <button onclick="initQuestionsUI()">Start</button>
+            <article class="intro container bg-light px-5 py-4 rounded-3 my-4">
+                <h2 class="intro-title display-5">Questions</h2>
+                <p class="intro-description lead">Play a quick quiz game to test your sight reading skills in music.</p>
+                <section class="btn-wrapper text-center my-4">
+                    <button class="btn btn-lg btn-primary" onclick="initQuestionsUI()">Start</button>
+                </section>
             </article>
             <article class="question">
-                <h2 class="question-title">Q Title</h2>
+                <h2 class="question-titl display-5">Q Title</h2>
                 <p class="question-description">Q Desc</p>
                 <nav class="question-choices">
                     <ul>
@@ -54,7 +56,7 @@
                 </nav>
             </article>
             <article class="intro">
-                <h2 class="finish-title">Finished!</h2>
+                <h2 class="finish-title display-5">Finished!</h2>
                 <p class="finish-description">Thanks for playing.</p>
                 <section class="finish-score">F score</section>
             </article>
