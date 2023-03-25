@@ -13,28 +13,29 @@
     <!-- jQuery and Bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/index.css">
 </head>
 <body>
     
     <div class="container-fluid">
-        <header>
-            <h1>Music Quiz</h1>
-            <nav class="nav">
-                <ul>
-                    <li>
-                        <a href="#shuffled" onclick="questions.shuffle()">
+        <header class="site-header clearfix">
+            <h1 class="site-title float-start">Music Quiz</h1>
+            <nav class="site-nav float-end">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shuffled" onclick="questions.shuffle()">
                             Shuffle
                         </a>
                     </li>
-                    <li>
-                        <a href="https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/" target="_blank">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/" target="_blank">
                             Admin Edit
                         </a>
                     </li>
                 </ul>
             </nav>
         </header>
-        <main class="questions">
+        <main class="site-body">
             <article class="intro">
                 <h2 class="intro-title">Questions</h2>
                 <p class="intro-description">Play a quick quiz game to test your sight reading skills in music.</p>
