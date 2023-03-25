@@ -11,7 +11,7 @@
     </script>
 
 
-    <!-- jQuery and Bootstrap  -->
+    <!-- Styling  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="assets/index.css">
@@ -45,21 +45,15 @@
                 <h2 class="intro-title display-5">Questions</h2>
                 <p class="intro-description lead">Play a quick quiz game to test your sight reading skills in music.</p>
                 <section class="btn-wrapper text-center my-4">
-                    <button class="btn btn-lg btn-primary" onclick="initQuestionsUI()">Start</button>
+                    <button class="btn btn-lg btn-primary" onclick="ui.startQuestions()">Start</button>
                 </section>
             </article>
+
             <article class="question <?php echo $jumbo; ?>">
-                <h2 class="question-title display-5">Q Title</h2>
-                <p class="question-description">Q Desc</p>
-                <nav class="question-choices">
-                    <ul>
-                        <li class="question-choice">a</li>
-                        <li class="question-choice">b</li>
-                        <li class="question-choice">c</li>
-                        <li class="question-choice">c</li>
-                    </ul>
-                </nav>
+                <!-- #template-question will interpolate and hydrate here -->
             </article>
+            
+
             <article class="intro <?php echo $jumbo; ?>">
                 <h2 class="finish-title display-5">Finished!</h2>
                 <p class="finish-description">Thanks for playing.</p>
@@ -67,7 +61,22 @@
             </article>
         </main>
     </div> <!-- Ends container-fluid -->
+
+    <script id="template-question" type="text/x-handlebars">
+        <h2 class="question-title display-5">{{q.[0]}}</h2>
+        <p class="question-description">{{q.[1]}}</p>
+        <nav class="question-choices">
+            <ul>
+                <li class="question-choice">{{q.[2]}}</li>
+                <li class="question-choice">{{q.[3]}}</li>
+                <li class="question-choice">{{q.[4]}}</li>
+                <li class="question-choice">{{q.[5]}}</li>
+            </ul>
+        </nav>
+    </script>
     
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="assets/index.js"></script>
 </body>

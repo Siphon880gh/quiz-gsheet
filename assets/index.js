@@ -11,7 +11,22 @@ const questions = {
     }
 }
 
+const ui = {
+    startQuestions: ()=>{
+        const that = ui;
+        that.renderQuestion(0)
+    },
+    renderQuestion: (i)=>{
+        // Question
+        const question = questions.questions[i];
 
-function initQuestionsUI() {
-
+        // Handlebars
+        var template = document.getElementById("template-question");
+        var target = document.querySelector(".question");
+        // -- //
+        var templateQuestionBox = template.innerHTML;
+        var fillerQuestionBox = Handlebars.compile(templateQuestionBox);
+        var htmlQuestionBox = fillerQuestionBox({q:question});
+        target.innerHTML = htmlQuestionBox;
+    }
 }
