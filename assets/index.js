@@ -25,32 +25,34 @@ const ui = {
         const that = ui;
         return chosenChoice===that.__correctChoice;
     },
+    __tallyCorrectChoices: 0,
     __pageNumber: 0,
+    __questionNumber: 0,
 
 
     nextPage: () =>{
         const that = ui;
         const incrementPage = ()=>{
             // Hide all sections, advance page number, then show only section that matches page number
-            document.querySelector("[data-page]").classList.add("d-none");
+            document.querySelectorAll("[data-page]").forEach(pageEl=>pageEl.classList.add("d-none"));
             that.__pageNumber++;
             document.querySelector(`[data-page="${that.__pageNumber}"]`).classList.remove("d-none");
         }
         
         switch(that.__pageNumber) {
             case 0:
-                that.nextQuestion(0); // Start at Question 0th
+                that.showQuestion(0); // Start at Question 0th
                 incrementPage();
                 break;
             case 1:
-                incrementPage();
-                break;
-            case 2:
+                const correct = that.__tallyCorrectChoices;
+                const outOf = questions.questions.length;
+                document.querySelector(".finish-score").innerHTML = `<b>Score</b>:&nbsp;${correct}/${outOf}`;
                 incrementPage();
                 break;
         }
     },
-    nextQuestion: (i)=>{
+    showQuestion: (i)=>{
         const that = ui;
 
         // Question
@@ -84,7 +86,7 @@ const ui = {
         var htmlQuestionBox = fillQuestionBox(interpolateObject);
         target.innerHTML = htmlQuestionBox;
 
-        // Hydrate
+        // Hydrate with multiple choice handling
         document.querySelector(".question .question-choices").addEventListener("click", (event)=>{
             // Clicked a choice and not area around the choices
             if(event.target.matches(".question-choice:not(.disabled)")) {
@@ -94,6 +96,7 @@ const ui = {
 
                 if(that.__isCorrectChoice(chosenChoice)) {
                     event.target.classList.add("is-correct");
+                    that.__tallyCorrectChoices++;
                 } else {
                     event.target.classList.add("is-wrong");
 
@@ -101,8 +104,17 @@ const ui = {
                     setTimeout(()=>{
                         const shouldveChosen = document.querySelector(`.question-choice[data-choice="${that.__correctChoice}"]`);
                         shouldveChosen.classList.add("shouldve-chosen")
-                    }, 1000);
+                    }, 700);
                 } // Ends inner if
+
+                // Advance to next question or Finished screen
+                setTimeout(()=>{
+                    that.__questionNumber++;
+                    if(that.__questionNumber<questions.questions.length)
+                        that.showQuestion(that.__questionNumber);
+                    else
+                        that.nextPage();
+                }, 2000)
 
             }  // Ends outer if
         })

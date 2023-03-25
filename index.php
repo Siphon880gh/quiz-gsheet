@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Quiz</title>
     <script>
-        // Would be faster than fetching
+        // PHP brings in Google Sheet Data directly is faster
         window.payload = `<?php require_once "./gsheet-connect.php"; ?>`;
         window.payload = JSON.parse(window.payload)
     </script>
@@ -55,10 +55,15 @@
             </article>
             
 
-            <article class="intro <?php echo $jumbo; ?> d-none" data-page=2>
+            <article class="finish <?php echo $jumbo; ?> d-none" data-page=2>
                 <h2 class="finish-title display-5">Finished!</h2>
                 <p class="finish-description">Thanks for playing.</p>
-                <section class="finish-score">F score</section>
+                <section class="finish-score fs-4">F score</section>
+                <footer class="pt-3 clearfix">
+                    <span class="float-end">
+                        <a href="#reload" onclick="window.location.reload()">Play again</a>
+                    </span>
+                </footer>
             </article>
         </main>
     </div> <!-- Ends container-fluid -->
