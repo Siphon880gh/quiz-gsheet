@@ -12,14 +12,42 @@ const questions = {
 }
 
 const ui = {
+    // Init UI readiness for dynamic rendering
     init: () =>{
         Handlebars.registerHelper("increment", (val=>{
             return parseInt(val) + 1;
         }))
     },
-    startQuestions: ()=>{
+
+    // Here __ are internal properties and methods
+    __correctIndex: -1,
+    __isCorrect: (questionIndex, choice)=> {
+        // TODO
+    },
+    __pageNumber: 0,
+
+
+    nextPage: () =>{
         const that = ui;
-        that.nextQuestion(0)
+        const incrementPage = ()=>{
+            // Hide all sections, advance page number, then show only section that matches page number
+            document.querySelector("[data-page]").classList.add("d-none");
+            that.__pageNumber++;
+            document.querySelector(`[data-page="${that.__pageNumber}"]`).classList.remove("d-none");
+        }
+        
+        switch(that.__pageNumber) {
+            case 0:
+                that.nextQuestion(0); // Start at Question 0th
+                incrementPage();
+                break;
+            case 1:
+                incrementPage();
+                break;
+            case 2:
+                incrementPage();
+                break;
+        }
     },
     nextQuestion: (i)=>{
         const that = ui;
@@ -55,11 +83,6 @@ const ui = {
         var htmlQuestionBox = fillQuestionBox(interpolateObject);
         target.innerHTML = htmlQuestionBox;
     },
-    // __ are internal properties and methods
-    __correctIndex: -1,
-    __isCorrect: (questionIndex, choice)=> {
-        // TODO
-    }
 } // ui
 
 ui.init();

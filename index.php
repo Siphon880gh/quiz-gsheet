@@ -41,20 +41,21 @@
             </nav>
         </header>
         <main class="site-body">
-            <article class="intro <?php echo $jumbo; ?>">
+            <article class="intro <?php echo $jumbo; ?>" data-page=0>
                 <h2 class="intro-title display-5">Questions</h2>
                 <p class="intro-description lead">Play a quick quiz game to test your sight reading skills in music.</p>
                 <section class="btn-wrapper text-center my-4">
-                    <button class="btn btn-lg btn-primary" onclick="ui.startQuestions()">Start</button>
+                    <button class="btn btn-lg btn-primary" onclick="ui.nextPage()">Start</button>
                 </section>
             </article>
 
-            <article class="question position-relative <?php echo $jumbo; ?>">
+
+            <article class="question position-relative <?php echo $jumbo; ?> d-none" data-page=1>
                 <!-- #template-question will interpolate and hydrate here -->
             </article>
             
 
-            <article class="intro <?php echo $jumbo; ?>">
+            <article class="intro <?php echo $jumbo; ?> d-none" data-page=2>
                 <h2 class="finish-title display-5">Finished!</h2>
                 <p class="finish-description">Thanks for playing.</p>
                 <section class="finish-score">F score</section>
