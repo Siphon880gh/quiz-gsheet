@@ -8,3 +8,28 @@
 .clearfix {
     clear: both;
 }
+
+
+/* Question Box
+----------------------- */
+
+.question-chioces {
+    display: inline-block;
+}
+
+.question-choice {
+    display: block;
+    background-color: lightgray;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: all 200ms linear;
+}
+
+.question-choice:hover {
+    background-color: rgba(11, 94, 215, 0.85);
+    border: 1px solid rgba(11, 94, 215, 1);
+    cursor: pointer;
+}

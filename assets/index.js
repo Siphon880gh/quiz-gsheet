@@ -17,6 +17,8 @@ const ui = {
         that.renderQuestion(0)
     },
     renderQuestion: (i)=>{
+        const that = ui;
+
         // Question
         const question = questions.questions[i];
         const interpolateObject = {
@@ -35,6 +37,8 @@ const ui = {
             choice4: question[7],
             questionIndex: i
         }
+        that.__correctIndex = question[8]
+
 
         // Handlebars
         var template = document.getElementById("template-question");
@@ -45,7 +49,8 @@ const ui = {
         var htmlQuestionBox = fillQuestionBox(interpolateObject);
         target.innerHTML = htmlQuestionBox;
     },
-    // __ are internal methods
+    // __ are internal properties and methods
+    __correctIndex: -1,
     __isCorrect: (questionIndex, choice)=> {
         // TODO
     }

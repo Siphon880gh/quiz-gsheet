@@ -66,11 +66,12 @@
         <h2 class="question-title display-5">{{title}}</h2>
         <p class="question-description">{{{problem}}}</p>
         <nav class="question-choices-wrapper">
+            <p>Select correct answer:</p>
             <ul class="question-chioces" data-question-index="{{questionIndex}}">
                 <li class="question-choice">{{choice1}}</li>
-                <li class="question-choice">{{choice1}}</li>
-                <li class="question-choice">{{choice1}}</li>
-                <li class="question-choice">{{choice1}}</li>
+                <li class="question-choice">{{choice2}}</li>
+                <li class="question-choice">{{choice3}}</li>
+                <li class="question-choice">{{choice4}}</li>
             </ul>
         </nav>
     </script>
