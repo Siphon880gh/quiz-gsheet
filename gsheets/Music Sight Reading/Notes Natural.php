@@ -3,6 +3,10 @@ session_start();
 
 if(!isset($_SESSION["root_url"]) || !isset($_SESSION["root_dir"])) {
     die('Please visit the <a href="https://www.wengindustry.com/tools/quiz-gsheet/">main quiz page</a>.');
+    // TODO: This is a problem of initializing the session variables. If the user never visited the main page,
+    //       then we don't have the session variables we need. We can iframe into the main page then meta
+    //       refresh to initialize the session variables. Or can redirect to the main page with a URL query 
+    //       for what to click to come back here. For now we just force the user to visit the main page.
 }
 
 require_once $_SESSION["root_dir"] . '/vendor/autoload.php';
@@ -11,8 +15,9 @@ require_once $_SESSION["root_dir"] . '/vendor/autoload.php';
 /* INPUTS
     Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
-$spreadSheetUrlId = "1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs";
-$tabName = "Sample";
+$connectToSpreadSheetUrlId = "1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs";
+$connectToTab = "Sample";
+
 $pageTitle = "Quiz: Music Natural Notes";
 $pageDesc = "Play a quick quiz game to test your sight reading skills in music.";
 
@@ -38,9 +43,9 @@ $client->setAuthConfig($path);
 
 // Setup spreadsheet
 $service = new \Google_Service_Sheets($client);
-$spreadsheetId = $spreadSheetUrlId;
+$spreadsheetId = $connectToSpreadSheetUrlId;
 // From spreadsheet: https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/
-$range = $tabName; // here we use the name of the Sheet to get all the rows
+$range = $connectToTab; // here we use the name of the Sheet to get all the rows
 $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 
 // OFF|on: Get values tested

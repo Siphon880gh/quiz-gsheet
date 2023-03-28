@@ -56,26 +56,41 @@ const ui = {
         const that = ui;
 
         // Question
-        const question = questions.questions[i];
+        const row = questions.questions[i];
+        let atColumn = {
+            A:0,
+            B:1,
+            C:2,
+            D:3,
+            E:4,
+            F:5,
+            G:6,
+            H:7,
+            I:8
+        }
         const interpolateObject = {
-            title: question[2],
-            problem: ()=>{
-                const type = question[1]
-                const problem = question[3];
-                if(type==="Picture")
-                    return `<img src="${problem}" style="width:50%;">`;
+            questionTitle: row[atColumn.B],
+            questionText: ()=>{
+                /** Question the user sees to prompt their choice,
+                 *  that could be formatted differently based on the type
+                 *  of question it is
+                 */
+                const type = row[atColumn.D]
+                const questionText = row[atColumn.C];
+                if(type.toLowerCase()==="picture")
+                    return `<img src="${questionText}" style="width:50%;">`;
                 else
-                    return problem; // as plain text
+                    return questionText; // as plain text
             },
-            choice1: question[4],
-            choice2: question[5],
-            choice3: question[6],
-            choice4: question[7],
+            choice1: row[atColumn.F],
+            choice2: row[atColumn.G],
+            choice3: row[atColumn.H],
+            choice4: row[atColumn.I],
+
             questionIndex: i,
             questionsLength: questions.questions.length
         }
-        that.__correctChoice = question[8]
-
+        that.__correctChoice = row[atColumn.E];
 
         // Handlebars
         var template = document.getElementById("template-question");
