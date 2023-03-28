@@ -40,12 +40,36 @@
     border: 1px solid rgba(25, 135, 84, 1);
 }
 
+.question-choice.is-correct::after {
+    content: "\00a0✔️";
+    transform: translate(8px, -3px);
+    display: inline-block;
+    font-size: 60%;
+    font-weight: 600;
+}
+
 .question-choice.shouldve-chosen {
     background-color: rgba(25, 170, 84, 0.85);
     border: 1px solid rgba(25, 170, 84, 1);
 }
 
+.question-choice.shouldve-chosen::after {
+    content: "\00a0✔️";
+    transform: translate(8px, -3px);
+    display: inline-block;
+    font-size: 60%;
+    font-weight: 600;
+}
+
 .question-choice.is-wrong {
     background-color: rgba(220, 53, 69, 0.85);
     border: 1px solid rgba(220, 53, 69, 1);
+}
+
+.question-choice.is-wrong::after {
+    content: "\00a0✗";
+    transform: translate(6.5px, 0);
+    display: inline-block;
+    font-size: 80%;
+    font-weight: 600;
 }

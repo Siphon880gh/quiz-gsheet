@@ -129,7 +129,7 @@ const ui = {
                         that.showQuestion(that.__questionNumber);
                     else
                         that.nextPage();
-                }, 2000)
+                }, 4000)
 
             }  // Ends outer if
         })

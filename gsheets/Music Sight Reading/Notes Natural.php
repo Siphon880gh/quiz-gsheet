@@ -16,7 +16,7 @@ require_once $_SESSION["root_dir"] . '/vendor/autoload.php';
     Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
 $connectToSpreadSheetUrlId = "1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs";
-$connectToTab = "Sample";
+$connectToTab = "Sample-Natural Notes";
 
 $pageTitle = "Quiz: Music Natural Notes";
 $pageDesc = "Play a quick quiz game to test your sight reading skills in music.";
