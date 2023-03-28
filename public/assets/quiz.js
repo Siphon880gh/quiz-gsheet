@@ -78,7 +78,13 @@ const ui = {
                 const type = row[atColumn.D]
                 const questionText = row[atColumn.C];
                 if(type.toLowerCase()==="picture")
-                    return `<img src="${questionText}" style="width:50%;">`;
+                    return `
+                    <div>
+                        <img src="${questionText}" style="width:50%;">
+                        <p/>
+                        <p>Select correct answer:</p>
+                    </div>
+                    `;
                 else
                     return questionText; // as plain text
             },

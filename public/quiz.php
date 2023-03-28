@@ -87,9 +87,8 @@ $overrideCSS
             <span>Progress: {{increment questionIndex}}/{{questionsLength}}</span>
         </aside>
         <h2 class="question-title display-5">{{questionTitle}}</h2>
-        <p class="question-description">{{{questionText}}}</p>
+        <div class="question-description">{{{questionText}}}</div>
         <nav class="question-choices-wrapper">
-            <p>Select correct answer:</p>
             <ul class="question-choices" data-question-index="{{questionIndex}}" disabled>
                 <li class="question-choice" data-choice="1">{{choice1}}</li>
                 <li class="question-choice" data-choice="2">{{choice2}}</li>

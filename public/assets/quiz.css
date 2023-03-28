@@ -73,3 +73,8 @@
     font-size: 80%;
     font-weight: 600;
 }
+
+ol,
+ul {
+    padding-left: 0;
+}

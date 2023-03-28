@@ -18,7 +18,7 @@ ______________________________________________________________________ */
 $connectToSpreadSheetUrlId = "1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs";
 $connectToTab = "Sample-SharpsFlats";
 
-$pageTitle = "Quiz: Music Natural Notes";
+$pageTitle = "Quiz: Music Sharp and Flat Notes";
 $pageDesc = "Play a quick quiz game to test your sight reading skills in music.";
 
 // Default
