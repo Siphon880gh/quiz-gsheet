@@ -12,6 +12,7 @@ function getHttpHttps() {
 $_SESSION["root_dir"] = __DIR__;
 $_SESSION["root_url"] = getHttpHttps() . ($_SERVER["HTTP_HOST"]) . $_SERVER['REQUEST_URI'];
 
+/* Setup Google Sheet listing */
 function glob_recursive($pattern, $flags = 0)
 {
     $files = glob($pattern, $flags);
@@ -30,7 +31,6 @@ for($i=0; $i<count($gsheetPaths); $i++) {
     if($matches[1]) $gsheetName = $matches[1];
     array_push($gsheetNames, $gsheetName); // $gsheetName is "<folder>/<filename>"
 } // for
-// var_dump($gsheetNames);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +39,10 @@ for($i=0; $i<count($gsheetPaths); $i++) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="By Weng Fei Fung. Take various quizzes for learning purposes. Currently music sight reading lessons. Coming soon - ICU topics.">
+    <meta property="og:description" content="By Weng Fei Fung. Take various quizzes for learning purposes. Currently music sight reading lessons. Coming soon - ICU topics." />
+    <meta property="og:title" content="Quizzes" />
+    <!-- <meta property="og:image" content="TODO//" /> -->
+
     <title>Quiz</title>
 
     <!-- Styling  -->
