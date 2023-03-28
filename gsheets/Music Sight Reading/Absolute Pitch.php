@@ -16,11 +16,11 @@ require_once $_SESSION["root_dir"] . '/vendor/autoload.php';
     Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
 $connectToSpreadSheetUrlId = "1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs";
-$connectToTab = "Sample-SharpsFlats";
+$connectToTab = "Sample-AbsolutePitch";
 $_SESSION["spreadsheet-link"] = "https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/";
 
-$pageTitle = "Quiz: Music Sharp and Flat Notes";
-$pageDesc = "Play a quick quiz game to test your sight reading skills in music.";
+$pageTitle = "Quiz: Identify Absolute Pitches";
+$pageDesc = "Play a quick quiz game to test your ears' absolute pitch skills.";
 
 // Default
 // $overrideCSS = "";

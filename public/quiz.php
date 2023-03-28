@@ -42,7 +42,7 @@ $overrideCSS
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/" target="_blank">
+                        <a class="nav-link" href="<?php echo $_SESSION["spreadsheet-link"]; ?>" target="_blank">
                             Admin Edit
                         </a>
                     </li>

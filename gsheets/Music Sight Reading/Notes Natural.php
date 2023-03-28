@@ -17,6 +17,7 @@ require_once $_SESSION["root_dir"] . '/vendor/autoload.php';
 ______________________________________________________________________ */
 $connectToSpreadSheetUrlId = "1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs";
 $connectToTab = "Sample-Natural Notes";
+$_SESSION["spreadsheet-link"] = "https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/";
 
 $pageTitle = "Quiz: Music Natural Notes";
 $pageDesc = "Play a quick quiz game to test your sight reading skills in music.";
