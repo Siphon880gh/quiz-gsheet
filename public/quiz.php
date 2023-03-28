@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Quiz</title>
+    <title><?php echo $pageTitle; ?></title>
     <script>
         // PHP brings in Google Sheet Data directly is faster
         window.payload = `<?php echo $json; ?>`;
@@ -13,15 +13,16 @@
 
     <!-- Styling  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo $_SESSION["root_url"] . "public/" ?>assets/index.css">
+    <link rel="stylesheet" href="<?php echo $_SESSION["root_url"] . "public/" ?>assets/quiz.css">
 
-    <?php
-        if(isset($overrideCSS) && strlen($overrideCSS)>0) {
+<?php
+if(isset($overrideCSS) && strlen($overrideCSS)>0) {
 echo "<style>
 $overrideCSS
 </style>";
-        }
-    ?>
+}
+?>
+
 </head>
 
 <body>
@@ -32,7 +33,7 @@ $overrideCSS
     
     <div class="container-fluid">
         <header class="site-header clearfix">
-            <h1 class="site-title display-3 float-start">Music Quiz</h1>
+            <h1 class="site-title display-3 float-start"><?php echo $pageTitle; ?></h1>
             <nav class="site-nav float-end">
                 <ul class="nav">
                     <li class="nav-item">
@@ -45,13 +46,18 @@ $overrideCSS
                             Admin Edit
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $_SESSION["root_url"]; ?>">
+                            Home
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
         <main class="site-body">
             <article class="intro <?php echo $jumbo; ?>" data-page=0>
                 <h2 class="intro-title display-5">Questions</h2>
-                <p class="intro-description lead">Play a quick quiz game to test your sight reading skills in music.</p>
+                <p class="intro-description lead"><?php echo $pageDesc; ?></p>
                 <section class="btn-wrapper text-center my-4">
                     <button class="btn btn-lg btn-primary" onclick="ui.nextPage()">Start</button>
                 </section>
@@ -102,6 +108,6 @@ $overrideCSS
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/index.js"></script>
+    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/quiz.js"></script>
 </body>
 </html>

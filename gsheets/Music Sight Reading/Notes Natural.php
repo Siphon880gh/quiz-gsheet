@@ -1,7 +1,9 @@
 <?php
 session_start();
-// ini_set('display_errors',1); 
-// error_reporting(E_ALL); 
+
+if(!isset($_SESSION["root_url"]) || !isset($_SESSION["root_dir"])) {
+    die('Please visit the <a href="https://www.wengindustry.com/tools/quiz-gsheet/">main quiz page</a>.');
+}
 
 require_once $_SESSION["root_dir"] . '/vendor/autoload.php';
 
@@ -11,6 +13,8 @@ require_once $_SESSION["root_dir"] . '/vendor/autoload.php';
 ______________________________________________________________________ */
 $spreadSheetUrlId = "1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs";
 $tabName = "Sample";
+$pageTitle = "Quiz: Music Natural Notes";
+$pageDesc = "Play a quick quiz game to test your sight reading skills in music.";
 
 // Default
 // $overrideCSS = "";
@@ -23,22 +27,13 @@ $overrideCSS = "
 }
 ";
 
-
-// Current Developer flow:
-// window.payload = `<_php require_once "./gsheet-connect.php"; _>`;
-// Keep in mind all backticks from Google Sheet are escaped into \`
-
-// TODO: Make more modular with different quizes / Google sheets 
-// Which means different pairs of Sheet ID and Sheet Name
-// The Sheet ID that's conventionally in their document is actually associated with the Google Sheet Workbook. 
-// So you still need the sheet name (aka tab name). 
-
 // Setup creds
 $client = new \Google_Client();
 $client->setApplicationName('Google Sheets API');
 $client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
 $client->setAccessType('offline');
-$path = 'notes-natural.creds.json';
+$filename = basename(__FILE__, '.php');
+$path = "$filename.creds.json";
 $client->setAuthConfig($path);
 
 // Setup spreadsheet
@@ -56,5 +51,6 @@ $values = $response->getValues();
 $json = json_encode($values);
 $json = str_replace("`","\\`", $json); // escape backticks
 
-require_once $_SESSION["root_dir"] . "/public/page.php"
+// Render quiz page
+require_once $_SESSION["root_dir"] . "/public/quiz.php"
 ?>
