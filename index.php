@@ -12,6 +12,16 @@ function getHttpHttps() {
 $_SESSION["root_dir"] = __DIR__;
 $_SESSION["root_url"] = getHttpHttps() . ($_SERVER["HTTP_HOST"]) . $_SERVER['REQUEST_URI'];
 
+/* Wrangle away URL queries so root url is accurate */
+$string = $_SESSION["root_url"] ;
+$pattern = '/(.*)\?+.*/i';
+$replacement = '${1}';
+$_SESSION["root_url"] = preg_replace($pattern, $replacement, $string);
+
+// echo $_SESSION["root_dir"];
+// echo "<br/>";
+// die($_SESSION["root_url"]);
+
 /* Setup Google Sheet listing */
 function glob_recursive($pattern, $flags = 0)
 {
