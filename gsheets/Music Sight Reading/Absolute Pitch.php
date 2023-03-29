@@ -1,17 +1,6 @@
 <?php
-session_start();
-
-// Check is initialized and not visited directly. If visited directly with no session, then initialize
-require_once "../../controllers/check-initialized.php";
-
-// Check credential file correct. HINT: Named the same as PHP script and ends with ".creds.json"
-file_exists("fake.json") or die("Error: Failed to load credentials. Contact administrator");
-
-// Load in Composer libraries
-require_once $_SESSION["root_dir"] . '/vendor/autoload.php';
-
 /* INPUTS
-    Will be processed into $json and $overrideStyleBlock for templates
+Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
 $connectToSpreadSheetUrlId = "1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs";
 $connectToTab = "Sample-AbsolutePitch";
@@ -31,30 +20,26 @@ $overrideCSS = "
 }
 ";
 
-// Setup creds
-$client = new \Google_Client();
-$client->setApplicationName('Google Sheets API');
-$client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
-$client->setAccessType('offline');
-$filename = basename(__FILE__, '.php');
-$path = "$filename.creds.json";
-$client->setAuthConfig($path);
+/* ENGINE
+   Do not touch
+______________________________________________________________________ */
 
-// Setup spreadsheet
-$service = new \Google_Service_Sheets($client);
-$spreadsheetId = $connectToSpreadSheetUrlId;
-// From spreadsheet: https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/
-$range = $connectToTab; // here we use the name of the Sheet to get all the rows
-$response = $service->spreadsheets_values->get($spreadsheetId, $range);
+session_start();
 
-// OFF|on: Get values tested
-$values = $response->getValues();
-// var_dump($values);
+// Check is initialized and not visited directly. If visited directly with no session, then initialize
+// Error? gsheets accept only flat directory listing. It would have all folders then inside folder would have the quiz php files and credential creds.json files.
+require_once "../../controllers/check-initialized.php";
 
-// Setup render
-$json = json_encode($values);
-$json = str_replace("`","\\`", $json); // escape backticks
+// Check credential file correct. HINT: Named the same as PHP script and ends with ".creds.json"
+$credsGsheetJSONFile = rawurldecode(basename(__FILE__, '.php') . ".creds.json");
+file_exists($credsGsheetJSONFile) or die("Error: Failed to load credentials $credsGsheetJSONFile. Contact administrator");
+
+// Load in Composer libraries
+require_once $_SESSION["root_dir"] . '/vendor/autoload.php';
+
+// Connect API with credentials
+require_once "../../controllers/connect-gsheet.php";
 
 // Render quiz page
-require_once $_SESSION["root_dir"] . "/public/quiz.php"
+require_once "../../controllers/render-quiz.php";
 ?>
