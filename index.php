@@ -1,5 +1,5 @@
 <?php
-/* Setup Session for pathing */
+/* SETUP: Initialize pathing with PHP Session */
 session_start();
 function getHttpHttps() {
     $isHttps =
@@ -12,17 +12,22 @@ function getHttpHttps() {
 $_SESSION["root_dir"] = __DIR__;
 $_SESSION["root_url"] = getHttpHttps() . ($_SERVER["HTTP_HOST"]) . $_SERVER['REQUEST_URI'];
 
-/* Wrangle away URL queries so root url is accurate */
+// Wrangle away URL queries
 $string = $_SESSION["root_url"] ;
 $pattern = '/(.*)\?+.*/i';
 $replacement = '${1}';
 $_SESSION["root_url"] = preg_replace($pattern, $replacement, $string);
 
-// echo $_SESSION["root_dir"];
-// echo "<br/>";
-// die($_SESSION["root_url"]);
+/* Scenario: User had visited subpage without initializing. Had forced redirect here. Now redirect to callback URL */
+$usingCallback = isset($_GET["callback"]);
+if($usingCallback) {
+    $callbackUrl = $_GET["callback"];
+    header("Location: $callbackUrl");
+    exit();
 
-/* Setup Google Sheet listing */
+}
+
+/* SETUP: Setup Google Sheet listing */
 function glob_recursive($pattern, $flags = 0)
 {
     $files = glob($pattern, $flags);
