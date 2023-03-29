@@ -88,7 +88,7 @@ const ui = {
                 else if(type.toLowerCase()==="absolute pitch")
                     return `
                     <div>
-                        <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/tools/quiz-gsheet/hosting/music-sight-reading/mp3/poster/piano.jpg" controls autoplay loop type="audio/mp3"></video>
+                        <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/tools/quiz-gsheet/hosting/music-sight-reading/mp3/poster/piano.jpg" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
                         <p/>
                         <p>Identify correct pitch:</p>
                     </div>
