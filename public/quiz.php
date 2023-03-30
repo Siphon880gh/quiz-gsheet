@@ -59,7 +59,7 @@ $overrideCSS
                 <h2 class="intro-title display-5">Questions</h2>
                 <p class="intro-description lead"><?php echo $pageDesc; ?></p>
                 <section class="btn-wrapper text-center my-4">
-                    <button class="btn btn-lg btn-secondary me-2" onclick="ui.nextPage(); questions.shuffle();">Shuffle</button>
+                    <button class="btn btn-lg btn-secondary me-2" onclick="questions.shuffle(); ui.nextPage();">Shuffle</button>
                     <button class="btn btn-lg btn-primary px-4" onclick="ui.nextPage()">Start</button>
                 </section>
             </article>
