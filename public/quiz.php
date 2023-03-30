@@ -91,10 +91,9 @@ $overrideCSS
         <div class="question-description">{{{questionText}}}</div>
         <nav class="question-choices-wrapper">
             <ul class="question-choices" data-question-index="{{questionIndex}}" disabled>
-                <li class="question-choice" data-choice="1">{{choice1}}</li>
-                <li class="question-choice" data-choice="2">{{choice2}}</li>
-                <li class="question-choice" data-choice="3">{{choice3}}</li>
-                <li class="question-choice" data-choice="4">{{choice4}}</li>
+                {{#each choices}}
+                <li class="question-choice" data-choice="{{increment @index}}">{{this}}</li>
+                {{/each}}
             </ul>
         </nav>
         <!-- Experimenting A/B split design -->

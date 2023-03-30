@@ -78,7 +78,16 @@ const ui = {
             F:5,
             G:6,
             H:7,
-            I:8
+            I:8,
+            J:9,
+            K:10,
+            L:11,
+            M:12,
+            N:13,
+            O:14,
+            P:15,
+            Q:16,
+            R:17
         }
         const interpolateObject = {
             questionTitle: row[atColumn.B],
@@ -108,10 +117,7 @@ const ui = {
                 else
                     return questionText; // as plain text
             },
-            choice1: row[atColumn.F],
-            choice2: row[atColumn.G],
-            choice3: row[atColumn.H],
-            choice4: row[atColumn.I],
+            choices: row.slice([atColumn.F]), // F column and onwards
 
             questionIndex: i,
             questionsLength: questions.questions.length
