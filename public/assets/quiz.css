@@ -41,7 +41,8 @@
 }
 
 .question-choice.is-correct::after {
-    content: "\00a0✔️";
+    /* ✔️ */
+    content: "\00a0\2714";
     transform: translate(8px, -3px);
     display: inline-block;
     font-size: 60%;
@@ -54,7 +55,8 @@
 }
 
 .question-choice.shouldve-chosen::after {
-    content: "\00a0✔️";
+    /* ✔️ */
+    content: "\00a0\2714";
     transform: translate(8px, -3px);
     display: inline-block;
     font-size: 60%;
@@ -67,7 +69,8 @@
 }
 
 .question-choice.is-wrong::after {
-    content: "\00a0✗";
+    /* ✗ */
+    content: "\00a0\2717";
     transform: translate(6.5px, 0);
     display: inline-block;
     font-size: 80%;
