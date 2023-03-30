@@ -13,10 +13,22 @@ const questions = {
 
 const ui = {
     // Init UI readiness for dynamic rendering
+    // Init keyboard pressing choices
     init: () =>{
         Handlebars.registerHelper("increment", (val=>{
             return parseInt(val) + 1;
-        }))
+        }));
+
+        document.body.addEventListener('keyup', function(e) {
+            const isKeyNum = !isNaN(parseInt(e.key));
+            if(isKeyNum) {
+                const keyNum = parseInt(e.key);
+                pressableChoice = document.querySelector(`[data-choice="${keyNum}"]:not(.disabled)`);
+                if(pressableChoice) {
+                    pressableChoice.click();
+                }
+            } // if isKeyNum
+        }); // keyup
     },
 
     // Here __ are internal properties and methods
