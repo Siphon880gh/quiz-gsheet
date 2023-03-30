@@ -115,6 +115,18 @@ const ui = {
         var htmlQuestionBox = fillQuestionBox(interpolateObject);
         target.innerHTML = htmlQuestionBox;
 
+        function advanceNextQuestion(waitAnimation) {
+
+            // Advance to next question or Finished screen
+            setTimeout(()=>{
+                that.__questionNumber++;
+                if(that.__questionNumber<questions.questions.length)
+                    that.showQuestion(that.__questionNumber);
+                else
+                    that.nextPage();
+            }, waitAnimation)
+        } // advancedNextQuestion
+
         // Hydrate with multiple choice handling
         document.querySelector(".question .question-choices").addEventListener("click", (event)=>{
             // Clicked a choice and not area around the choices
@@ -126,24 +138,17 @@ const ui = {
                 if(that.__isCorrectChoice(chosenChoice)) {
                     event.target.classList.add("is-correct");
                     that.__tallyCorrectChoices++;
+                    advanceNextQuestion(2000);
                 } else {
                     event.target.classList.add("is-wrong");
-
+                    
                     // I see I chose wrong, then I see what are correct
                     setTimeout(()=>{
                         const shouldveChosen = document.querySelector(`.question-choice[data-choice="${that.__correctChoice}"]`);
                         shouldveChosen.classList.add("shouldve-chosen")
+                        advanceNextQuestion(4000);
                     }, 700);
                 } // Ends inner if
-
-                // Advance to next question or Finished screen
-                setTimeout(()=>{
-                    that.__questionNumber++;
-                    if(that.__questionNumber<questions.questions.length)
-                        that.showQuestion(that.__questionNumber);
-                    else
-                        that.nextPage();
-                }, 4000)
 
             }  // Ends outer if
         })
