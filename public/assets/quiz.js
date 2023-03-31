@@ -31,11 +31,72 @@ const ui = {
         }); // keyup
     },
 
+
+    pressedSATADone: ()=>{
+        const that = ui;
+        let chosens = document.querySelectorAll(`.chosen[data-choice]:not(.disabled)`);
+        chosens = [...chosens];
+        chosens = chosens.map(chosen=>chosen.dataset.choice);
+        that.__handleChoices(chosens);
+    },
+
     // Here __ are internal properties and methods
     __correctChoice: -1,
-    __isCorrectChoice: (chosenChoice)=> {
+
+    /**
+     * 
+     * chosens: eg.  "A,B,C" OR "A"
+     * corrects: eg.  "A,B,C" OR "A"
+     * 
+     */
+    __handleChoices: (chosens)=> {
         const that = ui;
-        return chosenChoice===that.__correctChoice;
+        // const chosens = document.querySelectorAll(`.chosen[data-choice]:not(.disabled)`);
+        const corrects = that.__correctChoice.split(",").map(token=>token.trim());
+
+
+        // Lock it in. No more choosing while it animates your choices/corrects/wrongs
+        [...document.querySelectorAll(".question-choice")].forEach(choice=>{
+            choice.classList.add("disabled");
+        })
+
+        // const numberCorrects = corrects.length; // Eg. Correct choice field: "A,B,C" OR "A"
+        // const numberChosens = chosens.length; // Eg. User chosen: "A,B,C" OR "A"
+        // if(numberCorrects && numberChosens) {
+            // if(JSON.stringify(corrects)==JSON.stringify(chosens)) {
+                let wasOneWrong = false;
+                const chosenLis = [...document.querySelectorAll(".chosen")];
+                chosenLis.forEach(aChosen=>{
+                    const aChosenIndex = aChosen.dataset.choice;
+                    let isACorrect = corrects.includes(aChosenIndex);
+                    if(isACorrect)
+                        aChosen.classList.add("is-correct");
+                    else {
+                        aChosen.classList.add("is-wrong");
+                        wasOneWrong = true;
+                    }
+                });
+                if(!wasOneWrong) {
+                    that.__tallyCorrectChoices++;
+                    that.advanceNextQuestion(2000);
+                } else {
+                    setTimeout(()=>{
+                        corrects.forEach(aCorrect=>{
+                            let shouldveChosen = document.querySelector(`.question-choice[data-choice="${aCorrect}"]:not(.chosen)`);
+                            if(shouldveChosen)
+                                shouldveChosen.classList.add("shouldve-chosen")
+                        })
+                        that.advanceNextQuestion(4000);
+                    }, 700);
+                }
+            // } else {
+            //     alert("Incorrect!");
+            // }
+        // }
+        
+        chosens.map(chosen=>chosen.dataset.choice).sort();
+        corrects.sort();
+        // return chosenChoice===that.__correctChoice;
     },
     __tallyCorrectChoices: 0,
     __pageNumber: 0,
@@ -96,7 +157,7 @@ const ui = {
                  *  that could be formatted differently based on the type
                  *  of question it is
                  */
-                const type = row[atColumn.D]
+                const type = row[atColumn.E]
                 const questionText = row[atColumn.C];
                 if(type.toLowerCase()==="picture")
                     return `
@@ -117,12 +178,14 @@ const ui = {
                 else
                     return questionText; // as plain text
             },
-            choices: row.slice([atColumn.F]), // F column and onwards
+            choices: row.slice([atColumn.G]), // F column and onwards
+            __isSata: row[atColumn.F].split(",").length>1,
 
             questionIndex: i,
             questionsLength: questions.questions.length
-        }
-        that.__correctChoice = row[atColumn.E];
+        } // Ends interpolate object (for template)
+        that.__correctChoice = row[atColumn.F];
+        that.__isSata = row[atColumn.F].split(",").length>1;
 
         // Handlebars
         var template = document.getElementById("template-question");
@@ -133,7 +196,7 @@ const ui = {
         var htmlQuestionBox = fillQuestionBox(interpolateObject);
         target.innerHTML = htmlQuestionBox;
 
-        function advanceNextQuestion(waitAnimation) {
+        that.advanceNextQuestion = (waitAnimation) => {
 
             // Advance to next question or Finished screen
             setTimeout(()=>{
@@ -147,30 +210,18 @@ const ui = {
 
         // Hydrate with multiple choice handling
         document.querySelector(".question .question-choices").addEventListener("click", (event)=>{
-            // Clicked a choice and not area around the choices
+
             if(event.target.matches(".question-choice:not(.disabled)")) {
                 const that = ui;
-                let chosenChoice = event.target.dataset.choice;
-                document.querySelectorAll(".question-choice").forEach(choiceEl=>choiceEl.classList.add("disabled"));
+                event.target.classList.toggle("chosen");
 
-                if(that.__isCorrectChoice(chosenChoice)) {
-                    event.target.classList.add("is-correct");
-                    that.__tallyCorrectChoices++;
-                    advanceNextQuestion(2000);
-                } else {
-                    event.target.classList.add("is-wrong");
-                    
-                    // I see I chose wrong, then I see what are correct
-                    setTimeout(()=>{
-                        const shouldveChosen = document.querySelector(`.question-choice[data-choice="${that.__correctChoice}"]`);
-                        shouldveChosen.classList.add("shouldve-chosen")
-                        advanceNextQuestion(4000);
-                    }, 700);
-                } // Ends inner if
-
-            }  // Ends outer if
-        })
-    },
+                // One choice acceptable
+                if(!that.__isSata && document.querySelector(".chosen")) {
+                    that.__handleChoices([event.target.dataset.choice])
+                } // otherwise wait for user to click SATA done button
+            }
+        }) // Ends hydration
+    }, // Ends showQuestion
 } // ui
 
 ui.init();

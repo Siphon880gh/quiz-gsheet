@@ -42,6 +42,11 @@ $overrideCSS
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="ui.addQuizzesFromPassword()">
+                            🔑 Password
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo $_SESSION["spreadsheet-link"]; ?>" target="_blank">
                             Admin Edit
                         </a>
@@ -96,13 +101,13 @@ $overrideCSS
                 {{/each}}
             </ul>
         </nav>
-        <!-- Experimenting A/B split design -->
-        <!-- <section class="result p-2 clearfix">
-            <div class="span float-start"></div>
+        {{#if __isSata}}
+        <section class="result p-2 clearfix">
             <div class="span float-end">
-                <button class="btn btn-primary btn-sm">Next</button>
+                <button class="btn btn-primary btn-sm" onclick="if(document.querySelector('.chosen')) ui.pressedSATADone()">Selected all that apply</button>
             </div>
-        </section> -->
+        </section>
+        {{/if}}
     </script>
     
     <!-- Scripts -->

@@ -17,6 +17,10 @@
     display: inline-block;
 }
 
+.question-choice.chosen {
+    font-weight: 700;
+}
+
 .question-choice {
     display: block;
     background-color: lightgray;
@@ -52,6 +56,8 @@
 .question-choice.shouldve-chosen {
     background-color: rgba(25, 170, 84, 0.85);
     border: 1px solid rgba(25, 170, 84, 1);
+    font-weight: 700;
+    border: 1px solid black;
 }
 
 .question-choice.shouldve-chosen::after {
