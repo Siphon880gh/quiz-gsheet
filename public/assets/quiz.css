@@ -13,6 +13,11 @@
 /* Question Box
 ----------------------- */
 
+.question-instruction {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .question-choices {
     display: inline-block;
 }

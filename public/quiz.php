@@ -42,11 +42,6 @@ $overrideCSS
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="addQuizzesFromPassword()">
-                            🔑 Password
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo $_SESSION["spreadsheet-link"]; ?>" target="_blank">
                             Admin Edit
                         </a>
@@ -94,6 +89,7 @@ $overrideCSS
         </aside>
         <h2 class="question-title display-5">{{questionTitle}}</h2>
         <div class="question-description">{{{questionText}}}</div>
+        <div class="question-instruction">{{{questionInstruction}}}</div>
         <nav class="question-choices-wrapper">
             <ul class="question-choices" data-question-index="{{questionIndex}}" disabled>
                 {{#each choices}}

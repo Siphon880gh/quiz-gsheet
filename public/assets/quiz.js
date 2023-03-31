@@ -162,21 +162,18 @@ const ui = {
                     return `
                     <div>
                         <img src="${questionText}" style="width:50%;">
-                        <p/>
-                        <p>Select correct answer:</p>
                     </div>
                     `;
                 else if(type.toLowerCase()==="absolute pitch")
                     return `
                     <div>
-                        <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/tools/quiz-gsheet/hosting/music-sight-reading/mp3/poster/piano.jpg" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
-                        <p/>
-                        <p>Identify correct pitch:</p>
+                        <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/tools/quiz-gsheet-hosting/music-sight-reading/mp3/poster/piano.jpg" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
                     </div>
                     `;
                 else
                     return questionText; // as plain text
             },
+            questionInstruction: row[atColumn.D],
             choices: row.slice([atColumn.G]), // F column and onwards
             __isSata: row[atColumn.F].split(",").length>1,
 
