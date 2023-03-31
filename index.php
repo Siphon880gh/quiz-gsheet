@@ -118,16 +118,17 @@ if($usingCallback) {
     <div class="container-fluid">
         <header class="site-header clearfix">
             <h1 class="site-title display-3 float-start">Quiz</h1>
-            <!-- <nav class="site-nav float-end">
+            <nav class="site-nav float-end">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank">
-                            Github
+                        <a class="nav-link" href="javascript:void(0)" onclick="addQuizzesFromPassword()">
+                            🔑 Password
                         </a>
                     </li>
                 </ul>
-            </nav> -->
+            </nav>
         </header>
+
         <main class="site-body">
             <article class="intro <?php echo $jumbo; ?>" data-page=0>
                 <!-- <h2 class="intro-title display-5">Choose a quiz:</h2> -->

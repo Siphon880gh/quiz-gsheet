@@ -31,7 +31,6 @@ const ui = {
         }); // keyup
     },
 
-
     pressedSATADone: ()=>{
         const that = ui;
         let chosens = document.querySelectorAll(`.chosen[data-choice]:not(.disabled)`);

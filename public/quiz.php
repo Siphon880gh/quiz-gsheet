@@ -42,7 +42,7 @@ $overrideCSS
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="ui.addQuizzesFromPassword()">
+                        <a class="nav-link" href="javascript:void(0)" onclick="addQuizzesFromPassword()">
                             🔑 Password
                         </a>
                     </li>
