@@ -8,13 +8,17 @@ $_SESSION["spreadsheet-link"] = "https://docs.google.com/spreadsheets/d/1ADoGCwc
 $connectToSpreadSheetUrlId = "1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I";
 $connectToTab = "Skills";
 
-$pageTitle = "Quiz: Test gaps of knowledge in skills";
+$pageTitle = "Quiz: Test ICU Skills";
 $pageDesc = "See if you know your Foley, NGT, IV Insertion, Aline, etc skills.";
 
-// Default
-// $overrideCSS = "";
+// Optionally add timer in seconds to specific quiz:
+// $timeLeft = "";
+$timeLeft = 120;
+
+// Add CSS to specific quiz:
 // If overriding, type in the inner content of the new style block.
 // May want to use !important; flags because Bootstrap has them.
+// $overrideCSS = "";
 $overrideCSS = "
 .question {
     border: 1px solid black;

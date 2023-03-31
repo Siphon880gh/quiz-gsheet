@@ -83,9 +83,16 @@ $overrideCSS
         </main>
     </div> <!-- Ends container-fluid -->
 
+    <!-- PHP writes to first, then Handlebars takes over -->
     <script id="template-question" type="text/x-handlebars">
         <aside class="question-step text-secondary p-2 position-absolute top-0 end-0">
-            <span>Progress: {{increment questionIndex}}/{{questionsLength}}</span>
+            <span id="progress">{{increment questionIndex}}/{{questionsLength}}</span>
+            <?php
+            
+                if(isset($timeLeft) && gettype($timeLeft)=="integer" && $timeLeft>0) {
+                    echo "<span id='time-left'>$timeLeft</span>";
+                }
+            ?>
         </aside>
         <h2 class="question-title display-5">{{questionTitle}}</h2>
         <div class="question-description">{{{questionText}}}</div>

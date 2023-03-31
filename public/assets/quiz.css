@@ -13,6 +13,18 @@
 /* Question Box
 ----------------------- */
 
+#progress::before {
+    content: "\1FA9C\00a0Progress:\00a0";
+}
+
+#time-left {
+    display: block;
+}
+
+#time-left::before {
+    content: "\23F3\00a0Time left: ";
+}
+
 .question-instruction {
     margin-top: 20px;
     margin-bottom: 20px;

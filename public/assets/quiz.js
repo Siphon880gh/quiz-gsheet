@@ -203,6 +203,27 @@ const ui = {
                     that.nextPage();
             }, waitAnimation)
         } // advancedNextQuestion
+        
+        // Initialize countdown if appropriate
+        if(i==0) {
+            let timeLeft = document.getElementById("time-left");
+            if(timeLeft) {
+                window.countdown = setInterval(()=>{
+                    let timeLeft = document.getElementById("time-left");
+                    if(timeLeft) {
+                        let seconds = parseInt(timeLeft.textContent);
+                        if(seconds>0) {
+                            seconds--;
+                            timeLeft.textContent = seconds;
+                        } else {
+                            clearInterval(window.countdown);
+                            alert("Reached end of timer!");
+                            that.nextPage();
+                        }
+                    }
+                }, 1000)
+            }
+        } // if i is 0
 
         // Hydrate with multiple choice handling
         document.querySelector(".question .question-choices").addEventListener("click", (event)=>{
