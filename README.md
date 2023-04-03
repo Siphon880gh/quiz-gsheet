@@ -104,8 +104,8 @@ ____gsheets
 | | |____Minimally Invasive Skills SATA.php
 | | |____Respiratory Pathophysiology.php
 | | |____Respiratory Pathophysiology.creds.json
-| | |____Stroke NIHHS Signs Video Quiz.php
-| | |____Stroke NIHHS Signs Video QUiz.creds.json
+| | |____Stroke NIHSS Signs Video Quiz.php
+| | |____Stroke NIHSS Signs Video QUiz.creds.json
 | |____Web Development
 | | |____Javascript Flash Cards.php
 | | |____Javascript Flash Cards.creds.json
