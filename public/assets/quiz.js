@@ -108,6 +108,12 @@ const ui = {
             // Hide all sections, advance page number, then show only section that matches page number
             document.querySelectorAll("[data-page]").forEach(pageEl=>pageEl.classList.add("d-none"));
             that.__pageNumber++;
+
+            // If a sound or video clip is looping, we should also remove it to clear memory and stop it from playing in the background when the quiz finishes.
+            if(that.__pageNumber===2) {
+                document.querySelectorAll("video").forEach(videoEl => videoEl.remove());
+            }
+
             document.querySelector(`[data-page="${that.__pageNumber}"]`).classList.remove("d-none");
         }
         
@@ -151,13 +157,14 @@ const ui = {
         }
         const interpolateObject = {
             questionTitle: row[atColumn.B],
-            questionText: ()=>{
+            questionText: (()=>{
                 /** Question the user sees to prompt their choice,
                  *  that could be formatted differently based on the type
                  *  of question it is
                  */
                 const type = row[atColumn.E]
                 const questionText = row[atColumn.C];
+                console.log({questionText})
                 if(type.toLowerCase()==="picture")
                     return `
                     <div>
@@ -172,7 +179,7 @@ const ui = {
                     `;
                 else
                     return questionText; // as plain text
-            },
+            })(),
             questionInstruction: row[atColumn.D],
             choices: row.slice([atColumn.G]), // F column and onwards
             __isSata: row[atColumn.F].split(",").length>1,
@@ -224,6 +231,8 @@ const ui = {
                 }, 1000)
             }
         } // if i is 0
+
+        console.log({interpolateObject});
 
         // Hydrate with multiple choice handling
         document.querySelector(".question .question-choices").addEventListener("click", (event)=>{
