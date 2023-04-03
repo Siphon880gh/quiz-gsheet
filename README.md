@@ -44,27 +44,36 @@ session_start();
 /* INPUTS
 Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
-$_SESSION["spreadsheet-link"] = "https://docs.google.com/spreadsheets/d/__GOOGLE_SHEET_ID__/";
-$connectToSpreadSheetUrlId = "__GOOGLE_SHEET_ID__";
-$connectToTab = "__TAB_NAME__";
+$inputs = [
+    /* Connections */
+    "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1SHqEB2MVho0jP81cT9bDEo5VUZOzkfwNC1BZ3qB8VQE/",
+    "spreadsheetId"=>"1SHqEB2MVho0jP81cT9bDEo5VUZOzkfwNC1BZ3qB8VQE",
+    "tabName"=>"AbsolutePitch",
 
-$pageTitle = "__SOME_TITLE_TO_SHOW_TO_QUIZ_TAKER__";
-$pageDesc = "__SOME_DESCRIPTION_TO_SHOW_TO_QUIZ_TAKER__";
+    /* Display */
+    "pageTitle"=>"Quiz: Identify Absolute Pitches",
+    "pageDescription"=>"Play a quick quiz game to test your ears' absolute pitch skills.",
 
-// Optionally add timer in seconds to specific quiz:
-// $timeLeft = "";
-$timeLeft = 120;
+    /* Optionals OR set as defaults 0 and "" respectively */
+    "timeLeft"=>0,
+    "cssOverride"=>".question {
+        border: 1px solid black;
+        background-color: white !important;
+    }"
+];
 
-// Add CSS to specific quiz:
-// If overriding, type in the inner content of the new style block.
-// May want to use !important; flags because Bootstrap has them.
-// $overrideCSS = "";
-$overrideCSS = "
-.question {
-    border: 1px solid black;
-    background-color: white !important;
-}
-";
+/* DEVELOPER READABILITY
+This is for readability
+______________________________________________________________________ */
+$_SESSION["spreadsheet-link"] = $inputs["spreadsheetUrl"];
+$connectToSpreadSheetUrlId = $inputs["spreadsheetId"];
+$connectToTab = $inputs["tabName"];
+
+$pageTitle = $inputs["pageTitle"];
+$pageDesc = $inputs["pageDescription"];
+
+$timeLeft = $inputs["timeLeft"];
+$overrideCSS = $inputs["cssOverride"];
 
 /* ENGINE
    Do not touch
@@ -89,7 +98,9 @@ require_once "../../controllers/render-quiz.php";
 ?>
 ```
 
-Notice you are only changing the code under INPUTS. You can enable a countdown timer if it's a timed quiz. When the time runs out, the quiz ends even if not all the questions are answered. You can add styling specific to your quiz.
+Notice you are only changing the code under INPUTS. You must have the spreadsheet URL, spreadsheet ID, and the tab name you are loading the quiz from. The spreadsheet ID is from the spreadsheet link, eg. "https://docs.google.com/spreadsheets/d/__GOOGLE_SHEET_ID__/". I chose to make the ID manual rather than parse from the spreadsheet URL in case Google changes their URL scheme.
+
+Optionally, you can enable a countdown timer if it's a timed quiz. When the time runs out, the quiz ends even if not all the questions are answered. You can also optionally add styling specific to your quiz (feel free to inspect the HTML of the quiz to figure out what classes and ID's you can use).
 
 You cannot have folders inside folders. Here is a file tree example of folders aka categories and their respective quizzes:
 
@@ -163,7 +174,7 @@ When taking a quiz, just follow the instructions on screen. If it's a timed quiz
 You can select choices by clicking them or pressing your keyboard 1,2,3,4..9 depending on the number of multiple choices. A question with greater than 9 multiple choices will only support the keys 1,2,3,4...9 and you would have to click manually for the other choices. Usually questions that are Select all that apply (SATA) have that many choices.
 
 ## :triangular_ruler: Architecture:
-I used composer to install the PHP Google API client. There was no documentation on Google's site on how to authenticate using the PHP Google API client, but I figured it out like this: The API client selected for Google Sheet API (versus other Google API's) that then connected gsheet/folder/quiz_name.php using credential file at quiz_name.creds.json at the same folder. The quiz name has the spreadsheet id and tab name necessarily to connect, and the Google Sheet has been shared to the email associated to the service account. The credential file was from my service account when I created a private json key and it downloaded upon finish creating it. 
+I used composer to install the PHP Google API client. There was no documentation on Google's site on how to authenticate using the PHP Google API client, but I figured it out like this: The API client selected for Google Sheet API (versus other Google API's) that then connected gsheet/folder/quiz_name.php using credential file at quiz_name.creds.json at the same folder. The quiz name has the spreadsheet id and tab name necessarily to connect, and the Google Sheet has been shared to the email associated to the service account. The credential file was from my service account when I created a private json key and it downloaded upon finish creating it. The spreadsheet URL is just for the front facing when you click "Admin Edit", for your convenience.
 
 Elsewhere, index.php lists all the quiz name.php files under their quiz group folder. The ones hidden are folder names preceded with a minus and password then space (eg...). PHP glob was recursively done on the gsheet folder to list the quiz groups and their respective quizzes but leaving out the folder names preceded with minus -. A "passwords" button was created for the user to enter password(s), then the code will glob recursively and append onto the index.php categories/quiz list based on the matched pattern of the user input against the directory.
 

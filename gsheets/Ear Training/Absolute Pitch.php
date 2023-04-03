@@ -4,27 +4,36 @@ session_start();
 /* INPUTS
 Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
-$_SESSION["spreadsheet-link"] = "https://docs.google.com/spreadsheets/d/1SHqEB2MVho0jP81cT9bDEo5VUZOzkfwNC1BZ3qB8VQE/";
-$connectToSpreadSheetUrlId = "1SHqEB2MVho0jP81cT9bDEo5VUZOzkfwNC1BZ3qB8VQE";
-$connectToTab = "AbsolutePitch";
+$inputs = [
+    /* Connections */
+    "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1SHqEB2MVho0jP81cT9bDEo5VUZOzkfwNC1BZ3qB8VQE/",
+    "spreadsheetId"=>"1SHqEB2MVho0jP81cT9bDEo5VUZOzkfwNC1BZ3qB8VQE",
+    "tabName"=>"AbsolutePitch",
 
-$pageTitle = "Quiz: Identify Absolute Pitches";
-$pageDesc = "Play a quick quiz game to test your ears' absolute pitch skills.";
+    /* Display */
+    "pageTitle"=>"Quiz: Identify Absolute Pitches",
+    "pageDescription"=>"Play a quick quiz game to test your ears' absolute pitch skills.",
 
-// Optionally add timer in seconds to specific quiz:
-$timeLeft = "";
-// $timeLeft = 40;
+    /* Optionals OR set as defaults 0 and "" respectively */
+    "timeLeft"=>0,
+    "cssOverride"=>".question {
+        border: 1px solid black;
+        background-color: white !important;
+    }"
+];
 
-// Add CSS to specific quiz:
-// If overriding, type in the inner content of the new style block.
-// May want to use !important; flags because Bootstrap has them.
-// $overrideCSS = "";
-$overrideCSS = "
-.question {
-    border: 1px solid black;
-    background-color: white !important;
-}
-";
+/* DEVELOPER READABILITY
+This is for readability
+______________________________________________________________________ */
+$_SESSION["spreadsheet-link"] = $inputs["spreadsheetUrl"];
+$connectToSpreadSheetUrlId = $inputs["spreadsheetId"];
+$connectToTab = $inputs["tabName"];
+
+$pageTitle = $inputs["pageTitle"];
+$pageDesc = $inputs["pageDescription"];
+
+$timeLeft = $inputs["timeLeft"];
+$overrideCSS = $inputs["cssOverride"];
 
 /* ENGINE
    Do not touch
