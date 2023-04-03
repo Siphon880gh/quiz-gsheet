@@ -122,7 +122,7 @@ if($usingCallback) {
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:void(0)" onclick="addQuizzesFromPassword()">
-                            🔑 Password
+                            🔑 Passwords
                         </a>
                     </li>
                 </ul>
