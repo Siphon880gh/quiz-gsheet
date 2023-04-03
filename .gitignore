@@ -5,5 +5,4 @@ vendor
 
 # User private quizzes
 hosting/
-gsheets/*Music*
 gsheets/-*
