@@ -217,7 +217,7 @@ const ui = {
                             timeLeft.textContent = seconds;
                         } else {
                             clearInterval(window.countdown);
-                            alert("Reached end of timer!");
+                            alert("Ran out of time!");
                             that.nextPage();
                         }
                     }
