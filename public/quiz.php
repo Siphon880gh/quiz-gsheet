@@ -28,7 +28,7 @@ $overrideCSS
 <body>
     <?php
         // Bootstrap annoyingly removed Jumbotron, so to improve readability:
-        $jumbo = "container bg-light px-5 py-4 rounded-3 my-4";
+        $jumbo = "container bg-light rounded-3 px-1 py-2 px-md-5 py-md-4 my-2 my-2 my-md-4 my-md-4";
     ?>
     
     <div class="container-fluid">
@@ -65,7 +65,7 @@ $overrideCSS
             </article>
 
 
-            <article class="question position-relative <?php echo $jumbo; ?> d-none" data-page=1>
+            <article class="question <?php echo $jumbo; ?> d-none" data-page=1>
                 <!-- #template-question will interpolate and hydrate here -->
             </article>
             
@@ -85,16 +85,18 @@ $overrideCSS
 
     <!-- PHP writes to first, then Handlebars takes over -->
     <script id="template-question" type="text/x-handlebars">
-        <aside class="question-step text-secondary p-2 position-absolute top-0 end-0">
-            <span id="progress">{{increment questionIndex}}/{{questionsLength}}</span>
-            <?php
-            
-                if(isset($timeLeft) && gettype($timeLeft)=="integer" && $timeLeft>0) {
-                    echo "<span id='time-left'>$timeLeft</span>";
-                }
-            ?>
-        </aside>
-        <h2 class="question-title display-5">{{questionTitle}}</h2>
+        <header class="question-header text-secondary p-2">
+            <h2 class="question-title display-5">{{questionTitle}}</h2>
+            <section class="question-quiz text-end">
+                <span id="progress">{{increment questionIndex}}/{{questionsLength}}</span>
+                <?php
+                
+                    if(isset($timeLeft) && gettype($timeLeft)=="integer" && $timeLeft>0) {
+                        echo "<span id='time-left'>$timeLeft</span>";
+                    }
+                ?>
+            </section>
+        </header>
         <div class="question-description">{{{questionText}}}</div>
         <div class="question-instruction">{{{questionInstruction}}}</div>
         <nav class="question-choices-wrapper">

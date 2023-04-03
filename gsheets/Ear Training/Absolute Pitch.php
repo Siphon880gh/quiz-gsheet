@@ -12,8 +12,8 @@ $pageTitle = "Quiz: Identify Absolute Pitches";
 $pageDesc = "Play a quick quiz game to test your ears' absolute pitch skills.";
 
 // Optionally add timer in seconds to specific quiz:
-// $timeLeft = "";
-$timeLeft = 40;
+$timeLeft = "";
+// $timeLeft = 40;
 
 // Add CSS to specific quiz:
 // If overriding, type in the inner content of the new style block.

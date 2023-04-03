@@ -13,6 +13,20 @@
 /* Question Box
 ----------------------- */
 
+.question-header {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.question-title {
+    overflow-wrap: break-word;
+    flex-grow: 1;
+}
+
+.question-quiz {
+    width: 165px;
+}
+
 #progress::before {
     content: "\1FA9C\00a0Progress:\00a0";
 }
