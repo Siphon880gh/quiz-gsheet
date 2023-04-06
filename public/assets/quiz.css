@@ -1,6 +1,11 @@
 /* General
 ----------------------- */
 
+ol,
+ul {
+    padding-left: 0;
+}
+
 
 /* Utility Classes
 ----------------------- */
@@ -16,6 +21,7 @@
 .question-header {
     display: flex;
     flex-flow: row nowrap;
+    margin-bottom: 10px;
 }
 
 .question-title {
@@ -42,6 +48,11 @@
 .question-instruction {
     margin-top: 20px;
     margin-bottom: 20px;
+    font-style: italic;
+}
+
+.question-choices-wrapper {
+    padding-left: 20px;
 }
 
 .question-choices {
@@ -114,10 +125,9 @@
     font-weight: 600;
 }
 
-ol,
-ul {
-    padding-left: 0;
-}
+
+/* Question Types
+----------------------- */
 
 @media screen and (max-width: 768px) {
     .relative-pitch {

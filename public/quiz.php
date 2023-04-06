@@ -33,7 +33,7 @@ $overrideCSS
     
     <div class="container-fluid">
         <header class="site-header clearfix">
-            <h1 class="site-title display-3 float-start"><?php echo $pageTitle; ?></h1>
+            <h1 class="site-title display-3-off float-start"><?php echo $pageTitle; ?></h1>
             <nav class="site-nav float-end">
                 <ul class="nav">
                     <li class="nav-item">
@@ -56,7 +56,7 @@ $overrideCSS
         </header>
         <main class="site-body">
             <article class="intro <?php echo $jumbo; ?>" data-page=0>
-                <h2 class="intro-title display-5">Questions</h2>
+                <h2 class="intro-title display-5-off">Questions</h2>
                 <p class="intro-description lead"><?php echo $pageDesc; ?></p>
                 <section class="btn-wrapper text-center my-4">
                     <button class="btn btn-lg btn-secondary me-2" onclick="questions.shuffle(); ui.nextPage();">Shuffle</button>
@@ -71,7 +71,7 @@ $overrideCSS
             
 
             <article class="finish <?php echo $jumbo; ?> d-none" data-page=2>
-                <h2 class="finish-title display-5">Finished!</h2>
+                <h2 class="finish-title display-5-off">Finished!</h2>
                 <p class="finish-description">Thanks for playing.</p>
                 <section class="finish-score fs-4">F score</section>
                 <footer class="pt-3 clearfix">
@@ -86,7 +86,7 @@ $overrideCSS
     <!-- PHP writes to first, then Handlebars takes over -->
     <script id="template-question" type="text/x-handlebars">
         <header class="question-header text-secondary">
-            <h2 class="question-title display-5">{{questionTitle}}</h2>
+            <h2 class="question-title display-5-off">{{questionTitle}}</h2>
             <section class="question-quiz text-end">
                 <span id="progress">{{increment questionIndex}}/{{questionsLength}}</span>
                 <?php

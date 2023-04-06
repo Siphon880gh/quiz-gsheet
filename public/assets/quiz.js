@@ -125,7 +125,7 @@ const ui = {
             case 1:
                 const correct = that.__tallyCorrectChoices;
                 const outOf = questions.questions.length;
-                document.querySelector(".finish-score").innerHTML = `<b>Score</b>:&nbsp;${correct}/${outOf}`;
+                document.querySelector(".finish-score").innerHTML = `<h3>Score</h3><p>You've got ${((correct/outOf)*100).toFixed(0)}%!</p><p>Questions correct: ${correct}/${outOf}</p>`;
                 incrementPage();
                 break;
         }

@@ -12,7 +12,7 @@ $inputs = [
 
     /* Display */
     "pageTitle"=>"Quiz: Test ICU Knowledge",
-    "pageDescription"=>"See if you know your ICU knowledge.",
+    "pageDescription"=>"<p>See if you know your ICU knowledge.</p><p>Recommend to SHUFFLE.</p>",
 
     /* Optionals OR set as defaults 0 and "" respectively */
     "timeLeft"=>120,
