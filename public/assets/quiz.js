@@ -165,20 +165,40 @@ const ui = {
                 const type = row[atColumn.E]
                 const questionText = row[atColumn.C];
                 console.log({questionText})
-                if(type.toLowerCase()==="picture")
-                    return `
-                    <div>
-                        <img src="${questionText}" style="width:50%;">
-                    </div>
-                    `;
-                else if(type.toLowerCase()==="absolute pitch")
-                    return `
-                    <div>
-                        <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/tools/quiz-gsheet-hosting/music-sight-reading/mp3/poster/piano.jpg" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
-                    </div>
-                    `;
-                else
-                    return questionText; // as plain text
+                switch(type.toLowerCase()) {
+                    case "picture":
+                        return `
+                        <div>
+                            <img src="${questionText}" style="width:50%;">
+                        </div>
+                        `;
+                    case "absolute pitch":
+                        return `
+                        <div>
+                            <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/tools/quiz-gsheet-hosting/music-sight-reading/mp3/poster/piano.jpg" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
+                        </div>
+                        `;
+                    case "relative pitch":
+                        let wrangled = questionText.split(",");
+                        if(wrangled.length!==3) {
+                            return "<div class='error'>Error: Relative pitch question is not formatted correctly at the Google Sheet. Please contact quiz publisher.</div>"
+                        }
+                        let [identifiedPitchA, soundPitchA, soundPitchB] = wrangled.map(wranglee=>wranglee.trim());
+                        return `
+                        <div class="relative-pitch" style="display:flex; justify-content: space-around;">
+                            <div class="relative-pitch-a" style="text-align:center;">
+                                <b>1. Play me first. Note <span style="font-size:120%;">${identifiedPitchA}</span></b><br>
+                                <video src="${soundPitchA}" width="250" height="200" poster="https://wengindustry.com/tools/quiz-gsheet-hosting/music-sight-reading/mp3/poster/piano.jpg" controls webkit-playsinline playsinline type="audio/mp3"></video>
+                            </div>
+                            <div class="relative-pitch-b" style="text-align:center;">
+                                <b>2. Then play me. What's the note?</b><br>
+                                <video src="${soundPitchB}" width="250" height="200" poster="https://wengindustry.com/tools/quiz-gsheet-hosting/music-sight-reading/mp3/poster/piano.jpg" controls webkit-playsinline playsinline type="audio/mp3"></video>
+                            </div>
+                        </div>
+                        `;
+                    default:
+                        return questionText;
+                } // switch
             })(),
             questionInstruction: row[atColumn.D],
             choices: row.slice([atColumn.G]), // F column and onwards

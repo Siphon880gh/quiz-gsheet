@@ -43,7 +43,7 @@ $overrideCSS
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $_SESSION["spreadsheet-link"]; ?>" target="_blank">
-                            Admin Edit
+                            Google Sheet
                         </a>
                     </li>
                     <li class="nav-item">
@@ -85,7 +85,7 @@ $overrideCSS
 
     <!-- PHP writes to first, then Handlebars takes over -->
     <script id="template-question" type="text/x-handlebars">
-        <header class="question-header text-secondary p-2">
+        <header class="question-header text-secondary">
             <h2 class="question-title display-5">{{questionTitle}}</h2>
             <section class="question-quiz text-end">
                 <span id="progress">{{increment questionIndex}}/{{questionsLength}}</span>

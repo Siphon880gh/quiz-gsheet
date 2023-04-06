@@ -118,3 +118,12 @@ ol,
 ul {
     padding-left: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .relative-pitch {
+        flex-flow: column wrap;
+    }
+    .relative-pitch-b {
+        margin-top: 20px;
+    }
+}
