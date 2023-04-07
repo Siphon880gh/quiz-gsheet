@@ -102,7 +102,7 @@ $overrideCSS
         <nav class="question-choices-wrapper">
             <ul class="question-choices" data-question-index="{{questionIndex}}" disabled>
                 {{#each choices}}
-                <li class="question-choice" data-choice="{{increment @index}}">{{this}}</li>
+                <li class="question-choice" data-choice-index="{{increment this.index}}">{{this.text}}</li>
                 {{/each}}
             </ul>
         </nav>

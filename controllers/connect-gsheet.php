@@ -20,6 +20,10 @@ $values = $response->getValues();
 // var_dump($values);
 
 // Setup render
+for($i = 0; $i<count($values); $i++) {
+    $values[$i] = preg_replace("/\n/", " ", $values[$i]);
+}
+//$json = preg_replace("\n", " ", $values);
 $json = json_encode($values);
 $json = str_replace("`","\\`", $json); // escape backticks
 ?>

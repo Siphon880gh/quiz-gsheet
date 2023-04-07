@@ -23,7 +23,7 @@ const ui = {
             const isKeyNum = !isNaN(parseInt(e.key));
             if(isKeyNum) {
                 const keyNum = parseInt(e.key);
-                pressableChoice = document.querySelector(`[data-choice="${keyNum}"]:not(.disabled)`);
+                pressableChoice = document.querySelector(`[data-choice-index="${keyNum}"]:not(.disabled)`);
                 if(pressableChoice) {
                     pressableChoice.click();
                 }
@@ -33,10 +33,10 @@ const ui = {
 
     pressedSATADone: ()=>{
         const that = ui;
-        let chosens = document.querySelectorAll(`.chosen[data-choice]:not(.disabled)`);
+        let chosens = document.querySelectorAll(`.chosen[data-choice-index]:not(.disabled)`);
         chosens = [...chosens];
-        chosens = chosens.map(chosen=>chosen.dataset.choice);
-        that.__handleChoices(chosens);
+        chosens = chosens.map(chosen=>chosen.dataset["choice-index"]);
+        that.__handleChoiceOrChoices(chosens);
     },
 
     // Here __ are internal properties and methods
@@ -48,53 +48,45 @@ const ui = {
      * corrects: eg.  "A,B,C" OR "A"
      * 
      */
-    __handleChoices: (chosens)=> {
+    __handleChoiceOrChoices: (chosens)=> {
         const that = ui;
-        // const chosens = document.querySelectorAll(`.chosen[data-choice]:not(.disabled)`);
+        // const chosens = document.querySelectorAll(`.chosen[data-choice-index]:not(.disabled)`);
         const corrects = that.__correctChoice.split(",").map(token=>token.trim());
-
 
         // Lock it in. No more choosing while it animates your choices/corrects/wrongs
         [...document.querySelectorAll(".question-choice")].forEach(choice=>{
             choice.classList.add("disabled");
         })
 
-        // const numberCorrects = corrects.length; // Eg. Correct choice field: "A,B,C" OR "A"
-        // const numberChosens = chosens.length; // Eg. User chosen: "A,B,C" OR "A"
-        // if(numberCorrects && numberChosens) {
-            // if(JSON.stringify(corrects)==JSON.stringify(chosens)) {
-                let wasOneWrong = false;
-                const chosenLis = [...document.querySelectorAll(".chosen")];
-                chosenLis.forEach(aChosen=>{
-                    const aChosenIndex = aChosen.dataset.choice;
-                    let isACorrect = corrects.includes(aChosenIndex);
-                    if(isACorrect)
-                        aChosen.classList.add("is-correct");
-                    else {
-                        aChosen.classList.add("is-wrong");
-                        wasOneWrong = true;
+        let wasOneWrong = false;
+        const chosenLis = [...document.querySelectorAll(".chosen")];
+        chosenLis.forEach(aChosen=>{
+            const aChosenIndex = aChosen.dataset.choiceIndex;
+            let isACorrect = corrects.includes(aChosenIndex);
+            if(isACorrect)
+                aChosen.classList.add("is-correct");
+            else {
+                aChosen.classList.add("is-wrong");
+                wasOneWrong = true;
+            }
+        });
+        if(!wasOneWrong) {
+            that.__tallyCorrectChoices++;
+            that.advanceNextQuestion(2000);
+        } else {
+            setTimeout(()=>{
+                corrects.forEach(aCorrect=>{
+                    let shouldveChosen = document.querySelector(`.question-choice[data-choice-index="${aCorrect}"]:not(.chosen)`);
+                    if(shouldveChosen) {
+                        shouldveChosen.classList.add("shouldve-chosen")
                     }
-                });
-                if(!wasOneWrong) {
-                    that.__tallyCorrectChoices++;
-                    that.advanceNextQuestion(2000);
-                } else {
-                    setTimeout(()=>{
-                        corrects.forEach(aCorrect=>{
-                            let shouldveChosen = document.querySelector(`.question-choice[data-choice="${aCorrect}"]:not(.chosen)`);
-                            if(shouldveChosen)
-                                shouldveChosen.classList.add("shouldve-chosen")
-                        })
-                        that.advanceNextQuestion(4000);
-                    }, 700);
-                }
-            // } else {
-            //     alert("Incorrect!");
-            // }
-        // }
+                })
+                that.advanceNextQuestion(4000);
+            }, 700);
+        }
         
-        chosens.map(chosen=>chosen.dataset.choice).sort();
-        corrects.sort();
+        // chosens.map(chosen=>chosen.dataset["choice-index"]).sort();
+        // corrects.sort();
         // return chosenChoice===that.__correctChoice;
     },
     __tallyCorrectChoices: 0,
@@ -201,7 +193,14 @@ const ui = {
                 } // switch
             })(),
             questionInstruction: row[atColumn.D],
-            choices: row.slice([atColumn.G]), // F column and onwards
+            choices: row.slice([atColumn.G]).map((choiceRaw,i)=>{
+                return {
+                    index: i,
+                    text: choiceRaw
+                }
+            }).sort(() => .5 - Math.random()), 
+            
+            // F column and onwards 
             __isSata: row[atColumn.F].split(",").length>1,
 
             questionIndex: i,
@@ -218,6 +217,20 @@ const ui = {
         var fillQuestionBox = Handlebars.compile(templateQuestionBox);
         var htmlQuestionBox = fillQuestionBox(interpolateObject);
         target.innerHTML = htmlQuestionBox;
+        
+        // Rearrange choice DOM's
+        // var questionChoicesContainer = target.querySelector("ul.question-choices");
+        // var questionChoices = questionChoicesContainer.querySelectorAll("li").forEach(li=>li.cloneNode(true));
+        // questionChoicesContainer.innerHTML = "";
+ 
+        // console.log({questionChoices});
+        // debugger;
+
+        // questionChoices = questionChoices.sort(() => .5 - Math.random());
+        // for(let i=0; i<questionChoices.length; i++) {
+        //     let questionChoice = questionChoices[i];
+        //     questionChoicesContainer.append(questionChoice);
+        // }
 
         that.advanceNextQuestion = (waitAnimation) => {
 
@@ -263,7 +276,7 @@ const ui = {
 
                 // One choice acceptable
                 if(!that.__isSata && document.querySelector(".chosen")) {
-                    that.__handleChoices([event.target.dataset.choice])
+                    that.__handleChoiceOrChoices([event.target.dataset.choiceIndex])
                 } // otherwise wait for user to click SATA done button
             }
         }) // Ends hydration
