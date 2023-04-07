@@ -234,10 +234,10 @@ I used composer to install the PHP Google API client. There was no documentation
 
 Elsewhere, index.php lists all the quiz name.php files under their quiz group folder. The ones hidden are folder names preceded with a minus and password then space (eg...). PHP glob was recursively done on the gsheet folder to list the quiz groups and their respective quizzes but leaving out the folder names preceded with minus -. A "passwords" button was created for the user to enter password(s), then the code will glob recursively and append onto the index.php categories/quiz list based on the matched pattern of the user input against the directory.
 
-When the user clicks a quiz at index.php, then all the spreadsheet tabs cell values will be dumped into a json form for javascript to consume. Over at javascript, it expects columns to have certain meanings associated with them based on the position of the column. In particularly, a column could for problem type could be named Picture then the question text will be rendered differently, in particular with an img tag.  The column Correct choice will let the app listen for click even and compare if the index of the clicked answer matches the correct choice index from the spreadsheet (count starts at 1). In addition, that correct choice column can have comma separated indexes instead of a single index, then the question becomes select all that apply and a button renders that let you finish selecting multiple SATA choices. It can also with some tweaking you can make it into a True/False question or Flash Card question.
+When the user clicks a quiz at index.php, then all the spreadsheet tabs cell values will be dumped into a json form for javascript to consume. Over at javascript, it expects columns to have certain meanings associated with them based on the position of the column. In particularly, a column could for question type could be named Picture then the question text will be rendered differently, in particular with an img tag.  The column Correct choice will let the app listen for click even and compare if the index of the clicked answer matches the correct choice index from the spreadsheet (count starts at 1). In addition, that correct choice column can have comma separated indexes instead of a single index, then the question becomes select all that apply and a button renders that let you finish selecting multiple SATA choices. It can also with some tweaking you can make it into a True/False question or Flash Card question.
+
+The question type can influence how the question is rendered and/or how the choices are rendered.
 
 ## :crystal_ball: Future version
-- True/False example
-- Flash cards problem type
 - Review wrong answers when finished
 - Top scores

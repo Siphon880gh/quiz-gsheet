@@ -162,18 +162,16 @@ const ui = {
              * @param {string} type
              * @param {string} questionText
              */
-            questionText: formatters.questionText({
+            questionText: formatters.formatQuestionText({
                 type: row[atColumn.E], 
                 questionText: row[atColumn.C]
             }),
 
             questionInstruction: row[atColumn.D],
-            choices: row.slice([atColumn.G]).map((choiceRaw,i)=>{
-                return {
-                    index: i,
-                    text: choiceRaw
-                }
-            }).sort(() => .5 - Math.random()), 
+            choices: formatters.formatChoices({
+                type: row[atColumn.E],
+                choices: row.slice([atColumn.G])
+            }),
             
             // F column and onwards 
             __isSata: row[atColumn.F].split(",").length>1,
