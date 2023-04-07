@@ -117,6 +117,8 @@ $overrideCSS
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-question-text.js"></script>
+    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-choices.js"></script>
     <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/quiz.js"></script>
 </body>
 </html>
