@@ -156,7 +156,8 @@ const ui = {
                  */
                 const type = row[atColumn.E]
                 const questionText = row[atColumn.C];
-                console.log({questionText})
+                // console.log({questionText})
+                
                 switch(type.toLowerCase()) {
                     case "picture":
                         return `
@@ -173,7 +174,7 @@ const ui = {
                     case "relative pitch":
                         let wrangled = questionText.split(",");
                         if(wrangled.length!==3) {
-                            return "<div class='error'>Error: Relative pitch question is not formatted correctly at the Google Sheet. Please contact quiz publisher.</div>"
+                            return "<div class='error alert alert-danger'><b>Error:<b/> Relative pitch question is not formatted correctly at the Google Sheet. Please contact quiz publisher.</div>"
                         }
                         let [identifiedPitchA, soundPitchA, soundPitchB] = wrangled.map(wranglee=>wranglee.trim());
                         return `
@@ -188,6 +189,18 @@ const ui = {
                             </div>
                         </div>
                         `;
+                    case "flash card":
+                        let cardSeparator = "====";
+                        if(!questionText.includes(cardSeparator)) {
+                            return `<div class='error alert alert-danger'><b>Error:<b/> Flash card question is not formatted correctly at the Google Sheet. Please contact quiz publisher.</div>`
+                        }
+                        let [sideA,sideB]=questionText.split("====");
+
+                        return `
+                            <div class='side-a' onclick="event.target.classList.add('d-none'); document.querySelector('.side-b').classList.remove('d-none');">${sideA}</div>
+                            <div class='side-b d-none' onclick="event.target.classList.add('d-none'); document.querySelector('.side-a').classList.remove('d-none');">${sideB}</div>
+                        `
+
                     default:
                         return questionText;
                 } // switch

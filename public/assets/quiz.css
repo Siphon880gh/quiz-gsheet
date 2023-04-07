@@ -137,3 +137,10 @@ ul {
         margin-top: 20px;
     }
 }
+
+.side-a::before,
+.side-b::before {
+    content: "\21AE\a";
+    cursor: pointer;
+    white-space: pre;
+}
