@@ -159,11 +159,67 @@ The sheet must have the first row reserved for column headings. Then the columns
 - Title of the question that will appear on the quiz
 - Text of the question, or image url, or sound clip url, depending on the type of question. In other words, the question value
 - Instruction text that appears under your question on the quiz. Eg. "Select correct choice".
-- Type column. This is the type of the question. It can be either Picture, Flash Card Absolute Pitch, Normal, etc. The quiz will look at this column cell and render the question in a specific format (for instance, whether it's a picture type question). If you have it as normal or any type the quiz doesn't recognize, it will render the question as is.
-- Correct Choice. This is the index number 1,2,3,4,etc that corresponds to the columns to the right and that is the actually correct answer. The columns to the right will be choice columns. You can have multiple correct choices but having a comma separated value of correct choice numbers.
+- Question Type column. This is the type of the question. It can be either Picture, Flash Card Absolute Pitch, Normal, etc. The quiz will look at this column cell and render the question in a specific format (for instance, whether it's a picture type question). If you have it as normal or any type the quiz doesn't recognize, it will render the question as is.
+- Correct Choice. This is the index number 1,2,3,4,etc that corresponds to the columns to the right and that is the actually correct answer. The columns to the right will be choice columns. You can have multiple correct choices with comma separated values in the choice of Select all that apply (SATA):
 Eg. 2
 Eg. 2,3,4
+Note for SATA, you do not write "SATA" for the Question Type column because you can have picture types or video types that are SATA. For example, you see a picture of a patients signs/symptoms and you select all the possible diagnoses.
 - All other columns to the right are choices. You can have four columns if you want a standard multiple choice question with a,b,c,d choices. If you have two columns, you can name them True and False to make it a True/False question. Or with a two column you can name them "Got it correct" and "Got it wrong" to keep track of your flash cards but you should also have the Type column as "Flash Card" (End of quiz will review your wrong questions)
+
+
+### Administering Multiple Choice Questions
+
+Just have the choices entered. You can have more than 4 multiple choices or less. The app will figure out how many choices to render based on how many columns you fill in.
+
+Question Type column can be blank or something generic like "Text". However, you may have multiple choice questions that are sound based or picture based which can be multiple choice but must have a specific question type like "Absolute Pitch".
+
+### Administering Fill in the Blank Questions
+
+Treat as a multiple choice question and your question text can be: "The ___ is the powerhouse of the cell". One of your choices will have the correct text.
+
+### Administering True/False Question
+Simply have two columns of answers only.
+
+
+Correct Choice column is either 1 or 2
+Choice 1: TRUE
+Choice 2: FALSE
+
+Leave other choice cells blank
+
+Note that you're not forced to have the rest of the other questions (Google Sheet rows) to have only two choice columns filled, so you are not stuck with having to do True/False questions in a quiz. In fact, you can have as many choice columns as you want filled in any question/row.
+
+### Administering Ranking Question
+
+You ask the user to rank the choices in order.
+
+Put the answers in their correct order from columns F to etc.
+
+Question Type: `Ranked`
+
+### Administering Mix and Match Question
+Question Text:
+```
+Side A
+===
+Side B
+```
+Question Type: `Mix and match`
+
+Note that you're not forced to have the rest of the other questions (Google Sheet rows) to be Flash cards
+
+### Administering Flash Card Question
+Question Text:
+```
+Side A
+====
+Side B
+```
+Question Type: `Flash cards`
+
+Make sure it's __4 equal signs__.
+
+Note that you're not forced to have the rest of the other questions (Google Sheet rows) to be Flash cards
 
 ## :runner: Usage:
 
