@@ -47,7 +47,7 @@ function initIndexUI() {
 } // initIndexUI
 
 function addQuizzesFromPassword() {
-    const password = prompt("Enter password to unlock your quizzes"); 
+    const password = prompt("Enter password(s) to unlock more quizzes"); 
     if(password) {
         fetch(`./controllers/show-protected.php?password=${password}`).then(response=>response.json()).then(newDirs=>{
             if(newDirs?.length) {
