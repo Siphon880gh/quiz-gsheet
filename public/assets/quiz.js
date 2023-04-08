@@ -38,6 +38,21 @@ const ui = {
         }); // keyup
     },
 
+    pressedFlashCard: ()=> {
+        let isFromSideA = Boolean(document.querySelector(".side-a:not(.d-none)"))
+        if(isFromSideA) {
+            document.querySelector(".side-a").classList.add("d-none")
+            document.querySelector(".side-b").classList.remove("d-none")
+            document.querySelector(".question-flash-card .control-left").classList.add("text-secondary")
+            document.querySelector(".question-flash-card .control-right").classList.remove("text-secondary")
+        } else {
+            document.querySelector(".side-a").classList.remove("d-none")
+            document.querySelector(".side-b").classList.add("d-none")
+            document.querySelector(".question-flash-card .control-left").classList.remove("text-secondary")
+            document.querySelector(".question-flash-card .control-right").classList.add("text-secondary")
+        }
+    },
+
     pressedSATADone: ()=>{
         const that = ui;
         let chosens = document.querySelectorAll(`.chosen[data-choice-index]:not(.disabled)`);

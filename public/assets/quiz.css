@@ -138,9 +138,22 @@ ul {
     }
 }
 
-.side-a::before,
-.side-b::before {
-    content: "\21AE\a";
+.question-flash-card {
     cursor: pointer;
-    white-space: pre;
+    position: relative;
+    margin-bottom: 4ch;
+}
+
+.question-flash-card .control-left {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    cursor: pointer;
+}
+
+.question-flash-card .control-right {
+    position: absolute;
+    bottom: -20px;
+    left: 1ch;
+    cursor: pointer;
 }

@@ -52,8 +52,16 @@ window.formatters.formatQuestionText = ({type, questionText})=>{
             let [sideA,sideB]=questionText.split("====");
 
             return `
-                <div class='side-a' onclick="event.target.classList.add('d-none'); document.querySelector('.side-b').classList.remove('d-none');">${sideA}</div>
-                <div class='side-b d-none' onclick="event.target.classList.add('d-none'); document.querySelector('.side-a').classList.remove('d-none');">${sideB}</div>
+                <div class="question-flash-card" onclick="ui.pressedFlashCard();">
+                    <div class="side-a">
+                        ${sideA}
+                    </div>
+                    <div class="side-b d-none">
+                        ${sideB}
+                    </div>
+                    <i class="fas fa-angle-left control-left text-secondary"></i>
+                    <i class="fas fa-angle-right control-right"></i>
+                </div>
             `
 
         default:

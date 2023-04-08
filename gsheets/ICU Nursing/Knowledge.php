@@ -15,7 +15,8 @@ $inputs = [
     "pageDescription"=>"<p>See if you know your ICU knowledge.</p><p>Recommend to SHUFFLE.</p>",
 
     /* Optionals OR set as defaults 0 and "" respectively */
-    "timeLeft"=>120,
+    /* 120 */
+    "timeLeft"=>0,
     "cssOverride"=>".question {
         border: 1px solid black;
         background-color: white !important;
