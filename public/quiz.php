@@ -49,7 +49,7 @@ $overrideCSS
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $_SESSION["root_url"]; ?>">
-                            Home
+                            More Questions
                         </a>
                     </li>
                 </ul>
