@@ -18,6 +18,12 @@ window.formatters.formatQuestionText = ({type, questionText})=>{
                 <img src="${questionText}" style="width:50%;">
             </div>
             `;
+        case "video":
+            return `
+            <div>
+                <video src="${questionText}" width="250" height="250" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
+            </div>
+            `;
         case "absolute pitch":
             return `
             <div>

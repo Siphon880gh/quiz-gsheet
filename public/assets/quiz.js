@@ -1,7 +1,13 @@
 // Validate other modules loaded
 setTimeout(()=>{
-    if(typeof window.formatters === "undefined") {
+    if(typeof window?.formatters === "undefined") {
         alert("ERROR: Formatter modules not loaded. Please contact app developer.");
+    }
+    if(typeof window?.formatters?.formatQuestionText === "undefined") {
+        alert("ERROR: Question Text Formatter module not loaded. Please contact app developer.");
+    }
+    if(typeof window?.formatters?.formatChoices === "undefined") {
+        alert("ERROR: Choice Formatter module not loaded. Please contact app developer.");
     }
 }, 2000);
 

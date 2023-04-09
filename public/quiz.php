@@ -39,7 +39,7 @@ $overrideCSS
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#" onclick="questions.shuffle()">
-                            Shuffle
+                            Reshuffle
                         </a>
                     </li>
                     <li class="nav-item">
@@ -60,8 +60,11 @@ $overrideCSS
                 <h2 class="intro-title display-5-off">Questions</h2>
                 <p class="intro-description lead"><?php echo $pageDesc; ?></p>
                 <section class="btn-wrapper text-center my-4">
-                    <button class="btn btn-lg btn-secondary me-2" onclick="questions.shuffle(); ui.nextPage();">Shuffle</button>
-                    <button class="btn btn-lg btn-primary px-4" onclick="ui.nextPage()">Start</button>
+                    <!--
+                    <button class="btn btn-lg btn-primary px-4" onclick="ui.nextPage()">Start Unshuffled</button>
+                    <button class="btn btn-lg btn-secondary me-2" onclick="questions.shuffle(); ui.nextPage();">Start Shuuffled</button>
+                    -->
+                    <button class="btn btn-lg btn-primary me-2" onclick="questions.shuffle(); ui.nextPage();">Start</button>
                 </section>
             </article>
 
@@ -71,10 +74,10 @@ $overrideCSS
             </article>
             
 
-            <article class="finish <?php echo $jumbo; ?> d-none" data-page=2>
+            <article class="finish text-center <?php echo $jumbo; ?> d-none" data-page=2>
                 <h2 class="finish-title display-5-off">Finished!</h2>
                 <p class="finish-description">Thanks for playing.</p>
-                <section class="finish-score fs-4">F score</section>
+                <section class="finish-score fs-4 pt-3">__Finished__Score</section>
                 <footer class="pt-3 clearfix">
                     <span class="float-end">
                         <a href="#reload" onclick="window.location.reload()">Play again</a>
