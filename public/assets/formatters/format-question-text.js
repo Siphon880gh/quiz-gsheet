@@ -15,19 +15,19 @@ window.formatters.formatQuestionText = ({type, questionText})=>{
         case "picture":
             return `
             <div>
-                <img src="${questionText}" style="width:50%;">
+                <img class="picture-type" src="${questionText}">
             </div>
             `;
         case "video":
             return `
             <div>
-                <video src="${questionText}" style="width:50%;" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
+                <video class="video-type" src="${questionText}" type="audio/mp3" controls autoplay loop webkit-playsinline playsinline></video>
             </div>
             `;
         case "absolute pitch":
             return `
             <div>
-                <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/tools/quiz-gsheet-hosting/music-sight-reading/mp3/poster/piano.jpg" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
+                <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/tools/quiz-gsheet-hosting/music-sight-reading/mp3/poster/piano.jpg" type="audio/mp3" controls autoplay loop webkit-playsinline playsinline></video>
             </div>
             `;
         case "relative pitch":
@@ -42,11 +42,11 @@ window.formatters.formatQuestionText = ({type, questionText})=>{
             <div class="relative-pitch" style="display:flex; justify-content: space-around;">
                 <div class="relative-pitch-a" style="text-align:center;">
                     <b>1. Play me first. Note <span style="font-size:120%;">${identifiedPitchA}</span></b><br>
-                    <video src="${soundPitchA}" width="250" height="200" poster="${poster}" controls webkit-playsinline playsinline type="audio/mp3"></video>
+                    <video src="${soundPitchA}" width="250" height="200" poster="${poster}" type="audio/mp3" controls webkit-playsinline playsinline></video>
                 </div>
                 <div class="relative-pitch-b" style="text-align:center;">
                     <b>2. Then play me. What's the note?</b><br>
-                    <video src="${soundPitchB}" width="250" height="200" poster="${poster}" controls webkit-playsinline playsinline type="audio/mp3"></video>
+                    <video src="${soundPitchB}" width="250" height="200" poster="${poster}" type="audio/mp3" controls webkit-playsinline playsinline></video>
                 </div>
             </div>
             `;

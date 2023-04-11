@@ -13,7 +13,7 @@
 
     <!-- Styling  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo $_SESSION["root_url"] . "public/" ?>assets/quiz.css">
+    <link rel="stylesheet" href="<?php echo $_SESSION["root_url"] . "public/" ?>assets/quiz.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 
 <?php
@@ -34,11 +34,12 @@ $overrideCSS
     
     <div class="container-fluid">
         <header class="site-header clearfix">
-            <h1 class="site-title display-3-off float-start"><?php echo $pageTitle; ?></h1>
-            <nav class="site-nav float-end">
+            <h1 class="site-title display-3-off"><?php echo $pageTitle; ?></h1>
+            <nav class="site-nav">
+                <i class="nav-mobile-icon fas fa-bars" onclick="event.target.classList.toggle('active')"></i>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="questions.shuffle()">
+                        <a class="nav-link" href="#" onclick="questions.shuffle(); alert('Reshuffled questions');">
                             Reshuffle
                         </a>
                     </li>
@@ -91,7 +92,7 @@ $overrideCSS
     <script id="template-question" type="text/x-handlebars">
         <header class="question-header text-secondary">
             <h2 class="question-title display-5-off">{{questionTitle}}</h2>
-            <section class="question-quiz text-end">
+            <section class="quiz-stats text-end">
                 <span id="progress">{{increment questionIndex}}/{{questionsLength}}</span>
                 <?php
                 
@@ -121,8 +122,8 @@ $overrideCSS
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-question-text.js?v=3"></script>
-    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-choices.js?v=3"></script>
-    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/quiz.js?v=3"></script>
+    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-question-text.js?v=<?php echo time(); ?>"></script>
+    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-choices.js?v=<?php echo time(); ?>"></script>
+    <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/quiz.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

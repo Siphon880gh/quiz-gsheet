@@ -15,6 +15,96 @@ ul {
 }
 
 
+/* Question Around
+----------------------- */
+
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    overflow-x: scroll;
+    max-height: 30px;
+}
+
+.site-title {
+    display: inline;
+}
+
+.nav-mobile-icon {
+    display: none !important;
+}
+
+.site-nav {
+    margin-top: 1.25ch;
+    float: right;
+}
+
+@media screen and (max-width:768px) {
+    .nav-mobile-icon {
+        display: block !important;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .nav-mobile-icon:not(.active)+ul.nav {
+        display: none;
+    }
+    .site-nav {
+        float: none;
+    }
+    .nav {
+        flex-flow: column nowrap;
+        max-height: none;
+        align-content: center;
+        text-align: center;
+    }
+}
+
+.nav li {
+    display: inline-block;
+    text-overflow: clip;
+    white-space: nowrap;
+    max-height: 24px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+a.nav-link {
+    padding: 0;
+}
+
+.nav::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 1px solid rgba(125, 125, 125, 0.75);
+    max-width: 10px;
+}
+
+.nav::-webkit-scrollbar {
+    height: 5px;
+}
+
+.nav::-webkit-scrollbar * {
+    background: transparent;
+}
+
+.nav::-webkit-scrollbar-track-piece {
+    max-width: 30px;
+    width: 30px;
+    max-height: 30px;
+    height: 30px;
+}
+
+.nav::-webkit-scrollbar-thumb {
+    background: rgba(125, 125, 125, 0.5);
+    max-width: 30px;
+    width: 30px;
+    max-height: 30px;
+    height: 30px;
+}
+
+
 /* Question Box
 ----------------------- */
 
@@ -29,7 +119,7 @@ ul {
     flex-grow: 1;
 }
 
-.question-quiz {
+.quiz-stats {
     width: 165px;
 }
 
@@ -43,6 +133,10 @@ ul {
 
 #time-left::before {
     content: "\23F3\00a0Time left: ";
+}
+
+.question-description {
+    padding: 0 20px;
 }
 
 .question-instruction {
@@ -156,4 +250,23 @@ ul {
     bottom: -20px;
     left: 1ch;
     cursor: pointer;
+}
+
+.picture-type {
+    width: 50%;
+}
+
+.video-type {
+    width: 50%;
+    height: 150px;
+}
+
+@media screen and (max-width:768px) {
+    .picture-type {
+        width: 100%;
+    }
+    .video-type {
+        width: 100%;
+        height: 150px;
+    }
 }
