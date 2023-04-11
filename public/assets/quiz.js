@@ -101,6 +101,7 @@ const ui = {
         if(!wasOneWrong) {
             that.__tallyCorrectChoices++;
             that.advanceNextQuestion(2000);
+            
         } else {
             setTimeout(()=>{
                 corrects.forEach(aCorrect=>{
@@ -109,7 +110,18 @@ const ui = {
                         shouldveChosen.classList.add("shouldve-chosen")
                     }
                 })
-                that.advanceNextQuestion(4000);
+                
+                // Show button and wait for user to confirm OK to go to next question
+                let btn = document.createElement("button");
+                btn.classList.add("btn")
+                btn.classList.add("btn-primary")
+                btn.classList.add("float-end")
+                btn.addEventListener("click", ()=>{
+                    that.advanceNextQuestion();
+                });
+                btn.textContent = "I'm ready";
+
+                document.querySelector(".question-nav").append(btn);
             }, 700);
         }
         
@@ -196,10 +208,21 @@ const ui = {
             
             // F column and onwards 
             __isSata: row[atColumn.F].split(",").length>1,
-
+            
             questionIndex: i,
-            questionsLength: questions.questions.length
+            questionsLength: questions.questions.length,
+            customBtn: (()=>{
+                let isSata = row[atColumn.F].split(",").length>1;
+                let type = row[atColumn.E].toLowerCase();
+
+                if(isSata) {
+                    return `<button class="btn btn-primary btn-sm float-end" onclick="if(document.querySelector('.chosen')) ui.pressedSATADone(); else { alert('ERROR: You have to make your choices first!'); }">Selected all that apply</button>`
+                } else {
+                    return "";
+                }
+            })()
         } // Ends interpolate object (for template)
+
         that.__correctChoice = row[atColumn.F];
         that.__isSata = row[atColumn.F].split(",").length>1;
 

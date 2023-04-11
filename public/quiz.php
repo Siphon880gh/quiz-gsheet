@@ -111,12 +111,10 @@ $overrideCSS
                 {{/each}}
             </ul>
         </nav>
-        <section class="result p-2 clearfix">
-            <div class="span float-end">
-                {{#if __isSata}}
-                <button class="btn btn-primary btn-sm" onclick="if(document.querySelector('.chosen')) ui.pressedSATADone()">Selected all that apply</button>
-                {{/if}}
-            </div>
+        <section class="question-nav p-2 clearfix">
+            {{#if customBtn}}
+                {{{customBtn}}}
+            {{/if}}
         </section>
     </script>
     
