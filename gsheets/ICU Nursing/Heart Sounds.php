@@ -8,11 +8,11 @@ $inputs = [
     /* Connections */
     "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I/",
     "spreadsheetId"=>"1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I",
-    "tabName"=>"Knowledge",
+    "tabName"=>"Heart Sounds",
 
     /* Display */
-    "pageTitle"=>"Quiz: Test ICU Knowledge",
-    "pageDescription"=>"<p>See if you know your ICU knowledge.</p>",
+    "pageTitle"=>"Quiz: Heart Sounds",
+    "pageDescription"=>"<p>Can you identify heart sounds?</p>",
 
     /* Optionals OR set as defaults 0 and "" respectively */
     /* 120 */

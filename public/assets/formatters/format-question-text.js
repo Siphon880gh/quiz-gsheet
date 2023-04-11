@@ -21,7 +21,7 @@ window.formatters.formatQuestionText = ({type, questionText})=>{
         case "video":
             return `
             <div>
-                <video src="${questionText}" width="250" height="250" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
+                <video src="${questionText}" style="width:50%;" controls autoplay loop webkit-playsinline playsinline type="audio/mp3"></video>
             </div>
             `;
         case "absolute pitch":
