@@ -109,8 +109,27 @@ const ui = {
             $listCorrect.append($sorted);
             $wrapper.append($listCorrect);
 
+            // User not allowed to re-rank for better score
+            document.querySelector(".btn-rank").remove();
+
+            // Show button and wait for user to confirm OK to go to next question
+            let btn = document.createElement("button");
+            btn.classList.add("btn")
+            btn.classList.add("btn-primary")
+            btn.classList.add("float-end")
+            btn.addEventListener("click", ()=>{
+                that.advanceNextQuestion();
+            });
+            btn.textContent = "I'm ready";
+
+            document.querySelector(".question-nav").append(btn);
+
+        } else {
+            $(".question-choices").sortable("disable");  // User correct
+            that.__tallyCorrectChoices++;
+            that.advanceNextQuestion(2000);
         }
-        console.log({failed})
+        // console.log({failed})
     },
 
     // Here __ are internal properties and methods
@@ -144,7 +163,7 @@ const ui = {
                 wasOneWrong = true;
             }
         });
-        if(!wasOneWrong) {
+        if( ! wasOneWrong ) {
             that.__tallyCorrectChoices++;
             that.advanceNextQuestion(2000);
             
@@ -264,7 +283,7 @@ const ui = {
                 if(isSata) {
                     return `<button class="btn btn-primary btn-sm float-end" onclick="if(document.querySelector('.chosen')) ui.pressedSATADone(); else { alert('ERROR: You have to make your choices first!'); }">Selected all that apply</button>`
                 } else if(type==="ranked") {
-                    return `<button class="btn btn-primary btn-sm float-end" onclick="ui.pressedRankedDone();">Finished ranking my choices</button>`
+                    return `<button class="btn btn-primary btn-sm float-end btn-rank" onclick="ui.pressedRankedDone();">Finished ranking my choices</button>`
                 } else {
                     return "";
                 }
