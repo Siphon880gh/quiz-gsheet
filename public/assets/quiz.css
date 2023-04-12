@@ -108,9 +108,27 @@ a.nav-link {
     height: 30px;
 }
 
+.wrapper--icon--sortable .fa-sort {
+    transform: scale(1.6);
+}
+
 
 /* Question Box
 ----------------------- */
+
+@media screen and (max-width:768px) {
+    .question {
+        border: 0 !important;
+    }
+    .question-choices-wrapper {
+        padding: 0 !important;
+    }
+    .wrapper--icon--sortable .fa-sort {
+        top: 8px !important;
+        right: 5px !important;
+        transform: scale(1.6);
+    }
+}
 
 .question-header {
     display: flex;
@@ -293,8 +311,8 @@ a.nav-link {
 
 .wrapper--icon--sortable .fa-sort {
     position: absolute;
-    top: 0;
-    right: -12.5px;
+    top: 5px;
+    right: -15px;
     cursor: not-allowed;
     color: lightgray;
 }
