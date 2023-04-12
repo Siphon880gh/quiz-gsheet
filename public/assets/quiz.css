@@ -285,13 +285,13 @@ a.nav-link {
     border-radius: 5px;
 }
 
-.sortable-wrapper {
+.wrapper--icon--sortable {
     display: inline-block;
     /* Shrink to contents */
     position: relative;
 }
 
-.sortable-wrapper .fa-sort {
+.wrapper--icon--sortable .fa-sort {
     position: absolute;
     top: 0;
     right: -12.5px;
@@ -312,4 +312,20 @@ a.nav-link {
 
 .sortable-list .question-choice.ui-sortable-helper {
     cursor: grabbing !important;
+}
+
+.wrapper--icon--sortable.reviewing .question-choices:nth-of-type(1) {
+    background-color: rgba(225, 0, 0, .15);
+}
+
+.wrapper--icon--sortable.reviewing .question-choices:nth-of-type(2) {
+    background-color: rgba(0, 255, 0, .15);
+}
+
+.wrapper--icon--sortable .fa-sort.active+.question-choices {
+    display: none;
+}
+
+.wrapper--icon--sortable .fa-sort:not(.active)+.question-choices+.question-choices {
+    display: none;
 }

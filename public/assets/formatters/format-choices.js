@@ -26,7 +26,7 @@ window.formatters.modelizeChoices = ({type, choices})=>{
 window.formatters.preinjectChoicesTemplate = ({type, template})=>{
     if(type==="ranked") {
         template = template.replaceAll("__preinjectTemplateChoices__", `
-            <div class="sortable-wrapper">
+            <div class="wrapper--icon--sortable">
                 <i class="fas fa-sort" title="Can drag and drop to change order"></i>
                 <ol class="question-choices sortable-list">
                     

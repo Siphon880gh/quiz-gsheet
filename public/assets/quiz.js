@@ -79,10 +79,36 @@ const ui = {
             }
         });
         if(failed){
-            document.querySelector(".question-choices").style.backgroundColor = "rgba(225,0,0,.15)";
-            $(".question-choices").sortable("disable")
-            document.querySelector(".sortable-wrapper .fa-sort").style.color="black";
-            document.querySelector(".sortable-wrapper .fa-sort").style.cursor="pointer";
+            let $listWrong = $(".question-choices");
+            let $wrapper = $(".wrapper--icon--sortable");
+            let $icon = $wrapper.find(".fa-sort");
+
+            // No more dragging because now reviewing?
+            // $listWrong.sortable("disable");  // Allow user to interactively learn when reviewing so don't disable dragging during reviewing
+
+            $wrapper.addClass("reviewing"); // No more dragging because now reviewing
+            $icon.css("color", "black");
+            $icon.css("cursor", "pointer");
+            $icon.on("click", (event)=>{
+                $icon.toggleClass("active")
+            });
+
+            let $listCorrect = $listWrong.clone();
+            // TODO: Rearrange
+            let $sorted = [];
+            let $unsorted = $listCorrect.find(".question-choice");
+            $sorted.length = $unsorted.length; // allocate $sorted to memory size of choices length
+
+            $unsorted.each((i,choice)=>{
+                let $choice = $(choice);
+                let index = parseInt($choice.attr("data-choice-index"));
+                $sorted[index] = $choice;
+                // console.log({index});
+            })
+            $listCorrect.html("");
+            $listCorrect.append($sorted);
+            $wrapper.append($listCorrect);
+
         }
         console.log({failed})
     },

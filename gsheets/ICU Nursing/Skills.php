@@ -15,7 +15,7 @@ $inputs = [
     "pageDescription"=>"See if you know your Foley, NGT, IV Insertion, Aline, etc skills.",
 
     /* Optionals OR set as defaults 0 and "" respectively */
-    "timeLeft"=>120,
+    "timeLeft"=>0,
     "cssOverride"=>".question {
         border: 1px solid black;
         background-color: white !important;
