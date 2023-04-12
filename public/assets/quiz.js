@@ -116,7 +116,7 @@ const ui = {
             let btn = document.createElement("button");
             btn.classList.add("btn")
             btn.classList.add("btn-primary")
-            btn.classList.add("float-end")
+            btn.classList.add("float-start")
             btn.addEventListener("click", ()=>{
                 that.advanceNextQuestion();
             });
@@ -130,7 +130,73 @@ const ui = {
             that.advanceNextQuestion(2000);
         }
         // console.log({failed})
-    },
+    }, // pressedRankedDone
+    
+    pressedMatchDone: ()=>{
+        const that = ui;
+        let i = 0;
+        let failed = false;
+        let chosens = document.querySelectorAll(`.question-choice[data-choice-index]`);
+        chosens = chosens.forEach(chosen=>{
+            i++;
+            let domIndex = parseInt(chosen.getAttribute("data-choice-index"));
+            if(domIndex!==i) {
+                failed=true;
+            }
+        });
+        if(failed){
+            let $listWrong = $(".question-choices");
+            let $wrapper = $(".wrapper--icon--sortable");
+            let $icon = $wrapper.find(".fa-sort");
+
+            // No more dragging because now reviewing?
+            // $listWrong.sortable("disable");  // Allow user to interactively learn when reviewing so don't disable dragging during reviewing
+
+            $wrapper.addClass("reviewing"); // No more dragging because now reviewing
+            $icon.css("color", "black");
+            $icon.css("cursor", "pointer");
+            $icon.on("click", (event)=>{
+                $icon.toggleClass("active")
+            });
+
+            let $listCorrect = $listWrong.clone();
+            // TODO: Rearrange
+            let $sorted = [];
+            let $unsorted = $listCorrect.find(".question-choice");
+            $sorted.length = $unsorted.length; // allocate $sorted to memory size of choices length
+
+            $unsorted.each((i,choice)=>{
+                let $choice = $(choice);
+                let index = parseInt($choice.attr("data-choice-index"));
+                $sorted[index] = $choice;
+                // console.log({index});
+            })
+            $listCorrect.html("");
+            $listCorrect.append($sorted);
+            $wrapper.append($listCorrect);
+
+            // User not allowed to re-rank for better score
+            document.querySelector(".btn-rank").remove();
+
+            // Show button and wait for user to confirm OK to go to next question
+            let btn = document.createElement("button");
+            btn.classList.add("btn")
+            btn.classList.add("btn-primary")
+            btn.classList.add("float-start")
+            btn.addEventListener("click", ()=>{
+                that.advanceNextQuestion();
+            });
+            btn.textContent = "I'm ready";
+
+            document.querySelector(".question-nav").append(btn);
+
+        } else {
+            $(".question-choices").sortable("disable");  // User correct
+            that.__tallyCorrectChoices++;
+            that.advanceNextQuestion(2000);
+        }
+        // console.log({failed})
+    }, // pressedMatchDone
 
     // Here __ are internal properties and methods
     __correctChoice: -1,
@@ -283,7 +349,9 @@ const ui = {
                 if(isSata) {
                     return `<button class="btn btn-primary btn-sm float-end" onclick="if(document.querySelector('.chosen')) ui.pressedSATADone(); else { alert('ERROR: You have to make your choices first!'); }">Selected all that apply</button>`
                 } else if(type==="ranked") {
-                    return `<button class="btn btn-primary btn-sm float-end btn-rank" onclick="ui.pressedRankedDone();">Finished ranking my choices</button>`
+                    return `<button class="btn btn-primary btn-sm float-start btn-rank" onclick="ui.pressedRankedDone();">Finished ordering</button>`
+                } else if(type==="mix and match") {
+                    return `<button class="btn btn-primary btn-sm float-start btn-rank" onclick="ui.pressedMatchDone();">Finished matching</button>`
                 } else {
                     return "";
                 }
@@ -353,7 +421,7 @@ const ui = {
             }
         } // if i is 0
 
-        console.log({interpolateObject});
+        // console.log({interpolateObject});
 
         // Hydrate with multiple choice handling, ranking handling, etc
         window.formatters.hydrateChoices({type})
