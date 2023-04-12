@@ -115,7 +115,10 @@ $overrideCSS
     </script>
     
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-question-text.js?v=<?php echo time(); ?>"></script>
     <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-choices.js?v=<?php echo time(); ?>"></script>
     <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/quiz.js?v=<?php echo time(); ?>"></script>

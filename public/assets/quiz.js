@@ -6,7 +6,7 @@ setTimeout(()=>{
     if(typeof window?.formatters?.formatQuestionText === "undefined") {
         alert("ERROR: Question Text Formatter module not loaded. Please contact app developer.");
     }
-    if(typeof window?.formatters?.formatChoices === "undefined") {
+    if(typeof window?.formatters?.modelizeChoices === "undefined") {
         alert("ERROR: Choice Formatter module not loaded. Please contact app developer.");
     }
 }, 2000);
@@ -65,6 +65,26 @@ const ui = {
         chosens = [...chosens];
         chosens = chosens.map(chosen=>chosen.dataset["choice-index"]);
         that.__handleChoiceOrChoices(chosens);
+    },
+    pressedRankedDone: ()=>{
+        const that = ui;
+        let i = 0;
+        let failed = false;
+        let chosens = document.querySelectorAll(`.question-choice[data-choice-index]`);
+        chosens = chosens.forEach(chosen=>{
+            i++;
+            let domIndex = parseInt(chosen.getAttribute("data-choice-index"));
+            if(domIndex!==i) {
+                failed=true;
+            }
+        });
+        if(failed){
+            document.querySelector(".question-choices").style.backgroundColor = "rgba(225,0,0,.15)";
+            $(".question-choices").sortable("disable")
+            document.querySelector(".sortable-wrapper .fa-sort").style.color="black";
+            document.querySelector(".sortable-wrapper .fa-sort").style.cursor="pointer";
+        }
+        console.log({failed})
     },
 
     // Here __ are internal properties and methods
@@ -201,7 +221,7 @@ const ui = {
             }),
 
             questionInstruction: row[atColumn.D],
-            choices: formatters.formatChoices({
+            choices: formatters.modelizeChoices({
                 type: row[atColumn.E].toLowerCase(),
                 choices: row.slice([atColumn.G])
             }),
@@ -217,6 +237,8 @@ const ui = {
 
                 if(isSata) {
                     return `<button class="btn btn-primary btn-sm float-end" onclick="if(document.querySelector('.chosen')) ui.pressedSATADone(); else { alert('ERROR: You have to make your choices first!'); }">Selected all that apply</button>`
+                } else if(type==="ranked") {
+                    return `<button class="btn btn-primary btn-sm float-end" onclick="ui.pressedRankedDone();">Finished ranking my choices</button>`
                 } else {
                     return "";
                 }
