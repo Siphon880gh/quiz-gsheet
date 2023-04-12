@@ -91,7 +91,7 @@ $overrideCSS
     <!-- PHP writes to first, then Handlebars takes over -->
     <script id="template-question" type="text/x-handlebars">
         <header class="question-header text-secondary">
-            <h2 class="question-title display-5-off">{{questionTitle}}</h2>
+            <h2 class="question-title display-5-off">{{{questionTitle}}}</h2>
             <section class="quiz-stats text-end">
                 <span id="progress">{{increment questionIndex}}/{{questionsLength}}</span>
                 <?php
@@ -105,11 +105,7 @@ $overrideCSS
         <div class="question-description">{{{questionText}}}</div>
         <div class="question-instruction">{{{questionInstruction}}}</div>
         <nav class="question-choices-wrapper">
-            <ul class="question-choices" data-question-index="{{questionIndex}}" disabled>
-                {{#each choices}}
-                <li class="question-choice" data-choice-index="{{increment this.index}}">{{this.text}}</li>
-                {{/each}}
-            </ul>
+           __preinjectTemplateChoices__
         </nav>
         <section class="question-nav p-2 clearfix">
             {{#if customBtn}}

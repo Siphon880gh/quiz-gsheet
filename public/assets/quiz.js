@@ -196,13 +196,13 @@ const ui = {
              * @param {string} questionText
              */
             questionText: formatters.formatQuestionText({
-                type: row[atColumn.E], 
+                type: row[atColumn.E].toLowerCase(), 
                 questionText: row[atColumn.C]
             }),
 
             questionInstruction: row[atColumn.D],
             choices: formatters.formatChoices({
-                type: row[atColumn.E],
+                type: row[atColumn.E].toLowerCase(),
                 choices: row.slice([atColumn.G])
             }),
             
@@ -226,11 +226,15 @@ const ui = {
         that.__correctChoice = row[atColumn.F];
         that.__isSata = row[atColumn.F].split(",").length>1;
 
+        // Much of the UI logic depends on the Question type
+        let type = row[atColumn.E].toLowerCase();
+
         // Handlebars
         var template = document.getElementById("template-question");
         var target = document.querySelector(".question");
         // -- //
         var templateQuestionBox = template.innerHTML;
+        templateQuestionBox = window.formatters.preinjectChoicesTemplate({type,template:templateQuestionBox});
         var fillQuestionBox = Handlebars.compile(templateQuestionBox);
         var htmlQuestionBox = fillQuestionBox(interpolateObject);
         target.innerHTML = htmlQuestionBox;
@@ -284,19 +288,9 @@ const ui = {
 
         console.log({interpolateObject});
 
-        // Hydrate with multiple choice handling
-        document.querySelector(".question .question-choices").addEventListener("click", (event)=>{
+        // Hydrate with multiple choice handling, ranking handling, etc
+        window.formatters.hydrateChoices({type})
 
-            if(event.target.matches(".question-choice:not(.disabled)")) {
-                const that = ui;
-                event.target.classList.toggle("chosen");
-
-                // One choice acceptable
-                if(!that.__isSata && document.querySelector(".chosen")) {
-                    that.__handleChoiceOrChoices([event.target.dataset.choiceIndex])
-                } // otherwise wait for user to click SATA done button
-            }
-        }) // Ends hydration
     }, // Ends showQuestion
 } // ui
 

@@ -2,15 +2,17 @@ if(typeof window.formatters === "undefined") {
     window.formatters = {};
 }
 
-/** Question the user sees to prompt their choice,
- *  that could be formatted differently based on the type
- *  of question it is
+/** 
+ * 
+ * Question the user sees to prompt their choice,
+ * that could be formatted differently based on the type
+ * of question it is
+ * 
+ * @param {string} type Already is lower cased
+ * 
  */
 window.formatters.formatQuestionText = ({type, questionText})=>{
 
-    type = type.toLowerCase();
-    // console.log({questionText})
-    
     switch(type) {
         case "picture":
             return `
