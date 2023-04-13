@@ -103,7 +103,7 @@ window.formatters.getConfirmChoiceSubtemplate = ({type, isSata})=>{
 };
 
 window.formatters.repaintChoicesAfterRender = ({type}) => {
-    console.log({type})
+    // console.log({type})
 
     // In place in case needed in the future
     if(type==="mix and match") {
@@ -174,7 +174,7 @@ window.formatters.repaintChoicesAfterRender = ({type}) => {
                 $mixed.push($cloned);
             });
             $mixed = $mixed.sort(() => .5 - Math.random());
-            console.log($mixed);
+            // console.log($mixed);
 
             $(".mix-match-container").each((i, c)=>{
                 $(c).prepend($mixed[i])
@@ -190,24 +190,18 @@ window.formatters.repaintChoicesAfterRender = ({type}) => {
             });
             $('.mix-match-droppable').droppable({
                   drop: function(event, ui) {
+                        const droppable = event.target;
+                        const draggable = ui.draggable;
+
                       $(this).addClass('ui-state-highlight');
-                      ui.draggable.position({
+                      draggable.position({
                           of: $(this),
                           my: 'left top',
                           at: 'left+6 top+6'
                       });
-                         /* A/B Split Design */
-                        //   my: 'right top',
-                        //   at: 'right-6 top+6'
-                      $('.draggable').each(function(i) { 
-                       $(this).data('value', i+1); 
-                    }).filter(':first').trigger('listData');
-                  }
-            });           
-            $('.mix-match-draggable').on('listData', function() {
-                $('.mix-match-draggable').each(function() {
-                   console.log( $(this).text() + ' - ' + $(this).data('value') ); 
-                });
+
+                      $(draggable).data("user-matched-to", parseInt($(droppable).data("value").split("-")[1]))
+                  } // drop
             });
 
         } // exec
@@ -239,7 +233,6 @@ window.formatters.hydrateChoices = ({type}) => {
         
     } else if(type==="mix and match") {
         // Thanks to: https://jsfiddle.net/esedic/3ud6e7xz/
-
         // Moved to after repainting
     }  else {
         document.querySelector(".question .question-choices").addEventListener("click", (event)=>{

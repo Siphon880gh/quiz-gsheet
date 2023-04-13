@@ -142,7 +142,8 @@ const ui = {
             document.querySelector(".question-nav").append(btn);
 
         } else {
-            $(".question-choices").sortable("disable");  // User correct
+            // User correct
+            $(".question-choices").sortable("disable");
             that.__tallyCorrectChoices++;
             that.advanceNextQuestion(2000);
         }
@@ -151,66 +152,79 @@ const ui = {
     
     pressedMatchDone: ()=>{
         const that = ui;
-        let i = 0;
         let failed = false;
-        let chosens = document.querySelectorAll(`.question-choice[data-choice-index]`);
-        chosens = chosens.forEach(chosen=>{
-            i++;
-            let domIndex = parseInt(chosen.getAttribute("data-choice-index"));
-            if(domIndex!==i) {
-                failed=true;
-            }
-        });
-        if(failed){
-            let $listWrong = $(".question-choices");
-            let $wrapper = $(".wrapper--icon--sortable");
-            let $icon = $wrapper.find(".fa-sort");
 
-            // No more dragging because now reviewing?
-            // $listWrong.sortable("disable");  // Allow user to interactively learn when reviewing so don't disable dragging during reviewing
+        /**
+         * 
+         * @function checkMatchingAnswers 
+         * Checks each match on whether it's correctly paired by the user
+         * If paired incorrectly, add a red border. Then checkAnswers will eventually return false because there was an incorrect match.
+         * If paired correctly, add a green border.
+         * 
+         * @return {boolean} If all matched correctly, return true. If even one match incorrect, return false. Expect 100% match to be correct.
+         * 
+         */
+        let checkMatchingAnswers = () => {
+            let failedOnce = false;
 
-            $wrapper.addClass("reviewing"); // No more dragging because now reviewing
-            $icon.css("color", "black");
-            $icon.css("cursor", "pointer");
-            $icon.on("click", (event)=>{
-                $icon.toggleClass("active")
-            });
-
-            let $listCorrect = $listWrong.clone();
-            // TODO: Rearrange
-            let $sorted = [];
-            let $unsorted = $listCorrect.find(".question-choice");
-            $sorted.length = $unsorted.length; // allocate $sorted to memory size of choices length
-
-            $unsorted.each((i,choice)=>{
-                let $choice = $(choice);
-                let index = parseInt($choice.attr("data-choice-index"));
-                $sorted[index] = $choice;
-                // console.log({index});
+            // Validate border and capture failed or passed
+            $('.mix-match-draggable').each((v,dragged)=>{
+                let i = $(dragged).data("value").split("-")[1];
+                let j = $(dragged).data("user-matched-to");
+                i=parseInt(i)
+                j=parseInt(j)
+                // console.log({i,j})
+                if(i!==j) {
+                    $(`.mix-match-droppable[data-value="h-${j}"]`).addClass("wrong")
+                    failedOnce = true;
+                } else {
+                    $(`.mix-match-droppable[data-value="h-${j}"]`).addClass("correct")
+                }
             })
-            $listCorrect.html("");
-            $listCorrect.append($sorted);
-            $wrapper.append($listCorrect);
 
-            // User not allowed to re-rank for better score
-            document.querySelector(".btn-rank").remove();
+            return failedOnce;
+        } // checkMatchingAnswers
+        
+        failed = checkMatchingAnswers();
+
+        if(failed){
+
+            // User not allowed to re-match for better score
+            document.querySelector(".btn-match").remove();
 
             // Show button and wait for user to confirm OK to go to next question
             let btn = document.createElement("button");
             btn.classList.add("btn")
             btn.classList.add("btn-primary")
-            btn.classList.add("float-start")
+            btn.classList.add("float-end")
             btn.addEventListener("click", ()=>{
-                that.advanceNextQuestion();
+                that.advanceNextQuestion(1);
             });
             btn.textContent = "I'm ready";
-
             document.querySelector(".question-nav").append(btn);
 
+            // Show button to check other attempts at matching (won't count towards score anymore because had been wrong)
+            let btnPracticeAttempt = document.createElement("button");
+            btnPracticeAttempt.classList.add("btn")
+            btnPracticeAttempt.classList.add("btn-secondary")
+            btnPracticeAttempt.classList.add("float-end")
+            btnPracticeAttempt.classList.add("me-2")
+            btnPracticeAttempt.classList.add("btn-match-practice")
+            btnPracticeAttempt.addEventListener("click", ()=>{
+                checkMatchingAnswers();
+            });
+            btnPracticeAttempt.textContent = "Check practice attempt";
+            document.querySelector(".question-nav").append(btnPracticeAttempt);
+
         } else {
-            $(".question-choices").sortable("disable");  // User correct
+            // User never failed at matching
+            // User correct
+            $('.mix-match-droppable').droppable("disable");
+            $('.mix-match-draggable').draggable("disable");
+            document.querySelector(".btn-match").setAttribute("disabled", true);
+
             that.__tallyCorrectChoices++;
-            that.advanceNextQuestion(2000);
+            that.advanceNextQuestion(1000);
         }
         // console.log({failed})
     }, // pressedMatchDone
