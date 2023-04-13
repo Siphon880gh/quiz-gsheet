@@ -165,7 +165,7 @@ window.formatters.repaintChoicesAfterRender = ({type}) => {
                 }); // each k
             })();
 
-            // Shuffle key column
+            // Shuffle key column (aka draggables)
             let $unmixed = $(`[data-value^="k-"]`);
             let $mixed = [];
             $unmixed.each((i,el)=>{

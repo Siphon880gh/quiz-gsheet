@@ -370,7 +370,7 @@ const ui = {
                 type: row[atColumn.E].toLowerCase(),
                 isSata: row[atColumn.F].split(",").length>1
             })
-        } // Ends template context (for template)
+        } // Ends template context
         // console.log({templateContext});
 
         that.__correctChoice = row[atColumn.F];
