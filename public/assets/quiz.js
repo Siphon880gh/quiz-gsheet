@@ -3,10 +3,10 @@ setTimeout(()=>{
     if(typeof window?.formatters === "undefined") {
         alert("ERROR: Formatter modules not loaded. Please contact app developer.");
     }
-    if(typeof window?.formatters?.formatQuestionText === "undefined") {
+    if(typeof window?.formatters?.getQuestionsSubtemplate === "undefined") {
         alert("ERROR: Question Text Formatter module not loaded. Please contact app developer.");
     }
-    if(typeof window?.formatters?.modelizeChoices === "undefined") {
+    if(typeof window?.formatters?.injectChoicesSubtemplate === "undefined") {
         alert("ERROR: Choice Formatter module not loaded. Please contact app developer.");
     }
 }, 2000);
@@ -25,11 +25,15 @@ const questions = {
 }
 
 const ui = {
+    
     // Init UI readiness for dynamic rendering
     // Init keyboard pressing choices
     init: () =>{
         Handlebars.registerHelper("increment", (val=>{
             return parseInt(val) + 1;
+        }));
+        Handlebars.registerHelper("cvtNLToBr", (val=>{
+            return val.replaceAll("\n", "<br/>")
         }));
 
         document.body.addEventListener('keyup', function(e) {
@@ -43,6 +47,19 @@ const ui = {
             } // if isKeyNum
         }); // keyup
     },
+
+    advanceNextQuestion: (waitAnimation) => {
+        const that = ui;
+
+        // Advance to next question or Finished screen
+        setTimeout(()=>{
+            that.__questionNumber++;
+            if(that.__questionNumber<questions.questions.length)
+                that.showQuestion(that.__questionNumber);
+            else
+                that.nextPage();
+        }, waitAnimation)
+    }, // advancedNextQuestion
 
     pressedFlashCard: ()=> {
         let isFromSideA = Boolean(document.querySelector(".side-a:not(.d-none)"))
@@ -318,23 +335,16 @@ const ui = {
             Q:16,
             R:17
         }
-        const interpolateObject = {
+        const templateContext = {
             questionTitle: row[atColumn.B],
 
-            /**
-             * @method questionText
-             * @param {string} type
-             * @param {string} questionText
-             */
-            questionText: formatters.formatQuestionText({
+            questionInstruction: row[atColumn.D],
+
+            choicesModel: formatters.modelMyChoices({ type: row[atColumn.E].toLowerCase(), choices: row.slice([atColumn.G]) }),
+            
+            questionSubtemplate: formatters.getQuestionsSubtemplate({
                 type: row[atColumn.E].toLowerCase(), 
                 questionText: row[atColumn.C]
-            }),
-
-            questionInstruction: row[atColumn.D],
-            choices: formatters.modelizeChoices({
-                type: row[atColumn.E].toLowerCase(),
-                choices: row.slice([atColumn.G])
             }),
             
             // F column and onwards 
@@ -342,63 +352,34 @@ const ui = {
             
             questionIndex: i,
             questionsLength: questions.questions.length,
-            customBtn: (()=>{
-                let isSata = row[atColumn.F].split(",").length>1;
-                let type = row[atColumn.E].toLowerCase();
-
-                if(isSata) {
-                    return `<button class="btn btn-primary btn-sm float-end" onclick="if(document.querySelector('.chosen')) ui.pressedSATADone(); else { alert('ERROR: You have to make your choices first!'); }">Selected all that apply</button>`
-                } else if(type==="ranked") {
-                    return `<button class="btn btn-primary btn-sm float-start btn-rank" onclick="ui.pressedRankedDone();">Finished ordering</button>`
-                } else if(type==="mix and match") {
-                    return `<button class="btn btn-primary btn-sm float-start btn-rank" onclick="ui.pressedMatchDone();">Finished matching</button>`
-                } else {
-                    return "";
-                }
-            })()
-        } // Ends interpolate object (for template)
+            confirmChoiceSubtemplate: formatters.getConfirmChoiceSubtemplate({
+                type: row[atColumn.E].toLowerCase(),
+                isSata: row[atColumn.F].split(",").length>1
+            })
+        } // Ends template context (for template)
+        // console.log({templateContext});
 
         that.__correctChoice = row[atColumn.F];
         that.__isSata = row[atColumn.F].split(",").length>1;
 
+        // For Handlebars injection
         // Much of the UI logic depends on the Question type
         let type = row[atColumn.E].toLowerCase();
 
         // Handlebars
-        var template = document.getElementById("template-question");
-        var target = document.querySelector(".question");
+        var templateEl = document.getElementById("template-question");
+        var targetEl = document.querySelector(".question");
         // -- //
-        var templateQuestionBox = template.innerHTML;
-        templateQuestionBox = window.formatters.preinjectChoicesTemplate({type,template:templateQuestionBox});
-        var fillQuestionBox = Handlebars.compile(templateQuestionBox);
-        var htmlQuestionBox = fillQuestionBox(interpolateObject);
-        target.innerHTML = htmlQuestionBox;
+        var templateQuestionBox = templateEl.innerHTML;
+        templateQuestionBox =  window.formatters.injectChoicesSubtemplate({type, mainTemplate:templateQuestionBox});
+        var writeQuestionBox = Handlebars.compile(templateQuestionBox);
+        var htmlQuestionBox = writeQuestionBox(templateContext);
+        targetEl.innerHTML = htmlQuestionBox;
         
-        // Rearrange choice DOM's
-        // var questionChoicesContainer = target.querySelector("ul.question-choices");
-        // var questionChoices = questionChoicesContainer.querySelectorAll("li").forEach(li=>li.cloneNode(true));
-        // questionChoicesContainer.innerHTML = "";
- 
-        // console.log({questionChoices});
-        // debugger;
+        window.formatters.repaintChoicesAfterRender({type})
 
-        // questionChoices = questionChoices.sort(() => .5 - Math.random());
-        // for(let i=0; i<questionChoices.length; i++) {
-        //     let questionChoice = questionChoices[i];
-        //     questionChoicesContainer.append(questionChoice);
-        // }
-
-        that.advanceNextQuestion = (waitAnimation) => {
-
-            // Advance to next question or Finished screen
-            setTimeout(()=>{
-                that.__questionNumber++;
-                if(that.__questionNumber<questions.questions.length)
-                    that.showQuestion(that.__questionNumber);
-                else
-                    that.nextPage();
-            }, waitAnimation)
-        } // advancedNextQuestion
+        // Hydrate with multiple choice handling, ranking handling, etc
+        window.formatters.hydrateChoices({type})
         
         // Initialize countdown if appropriate
         if(i==0) {
@@ -420,12 +401,6 @@ const ui = {
                 }, 1000)
             }
         } // if i is 0
-
-        // console.log({interpolateObject});
-
-        // Hydrate with multiple choice handling, ranking handling, etc
-        window.formatters.hydrateChoices({type})
-
     }, // Ends showQuestion
 } // ui
 

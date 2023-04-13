@@ -361,10 +361,28 @@ a.nav-link {
 
 .wrapper--mix-match-containers {
     width: 50%;
+    overflow-x: clip;
+}
+
+.question-nav:has(.btn-match) {
+    width: 50%;
+    transform: translateX(20px);
+}
+
+@media screen and (max-width:1080px) {
+    .wrapper--mix-match-containers {
+        width: 100%;
+    }
+    .question-nav:has(.btn-match) {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:768px) {
     .wrapper--mix-match-containers {
+        width: 100%;
+    }
+    .question-nav:has(.btn-match) {
         width: 100%;
     }
 }
@@ -389,7 +407,7 @@ a.nav-link {
 }
 
 .mix-match-droppable {
-    width: 300px;
+    min-width: 300px;
     padding: 5px 10px 5px 5px;
     float: right;
     margin: 10px;
@@ -402,8 +420,8 @@ a.nav-link {
 
 .mix-match-droppable p {
     float: right;
-    width: 50px;
-    height: 30px;
+    /* width: 50px;
+    height: 30px; */
     padding: 5px 5px 0 0;
     text-align: center;
     margin: 0;
@@ -412,59 +430,10 @@ a.nav-link {
 .mix-match-droparea {
     float: left;
     border: 1px dashed rgba(0, 155, 255, 0.5);
-    width: 108px;
-    height: 30px
+    min-width: 108px;
+    min-height: 30px
 }
 
-
-/* Flipping other side. A/B Split Design */
-
-
-/*
-.mix-match-container {
-    clear: both;
-    margin: 10px;
-    width: 100%
+.mix-match-droppable.ui-state-highlight>.mix-match-droparea {
+    border-color: transparent;
 }
-
-.mix-match-draggable {
-    padding: 0 5px;
-    float: left;
-    margin: 10px 10px 10px 0;
-    background: rgba(0, 155, 255, 0.25);
-    color: black;
-    cursor: move;
-}
-
-.mix-match-draggable p {
-    margin: 2px 0
-}
-
-.mix-match-droppable {
-    width: 300px;
-    padding: 5px 10px 5px 5px;
-    float: left;
-    margin: 10px;
-    border: 1px solid rgba(50, 155, 255, 0.25);
-}
-
-.mix-match-droppable.ui-state-highlight {
-    background-color: rgba(50, 155, 255, 0.25) !important;
-}
-
-.mix-match-droppable p {
-    float: left;
-    width: 50px;
-    height: 30px;
-    padding: 5px 5px 0 0;
-    text-align: center;
-    margin: 0;
-}
-
-.mix-match-droparea {
-    float: right;
-    border: 1px dashed rgba(0, 155, 255, 0.5);
-    width: 108px;
-    height: 30px
-}
-*/

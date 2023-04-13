@@ -102,14 +102,14 @@ $overrideCSS
                 ?>
             </section>
         </header>
-        <div class="question-description">{{{questionText}}}</div>
+        <div class="question-description">{{{questionSubtemplate}}}</div>
         <div class="question-instruction">{{{questionInstruction}}}</div>
         <nav class="question-choices-wrapper">
-           __preinjectTemplateChoices__
+           __inject__choices__subtemplate__
         </nav>
         <section class="question-nav p-2 clearfix">
-            {{#if customBtn}}
-                {{{customBtn}}}
+            {{#if confirmChoiceSubtemplate}}
+                {{{confirmChoiceSubtemplate}}}
             {{/if}}
         </section>
     </script>

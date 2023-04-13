@@ -11,7 +11,7 @@ if(typeof window.formatters === "undefined") {
  * @param {string} type Already is lower cased
  * 
  */
-window.formatters.formatQuestionText = ({type, questionText})=>{
+window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
 
     switch(type) {
         case "picture":
@@ -75,4 +75,4 @@ window.formatters.formatQuestionText = ({type, questionText})=>{
         default:
             return questionText;
     } // switch
-}
+} // getQuestionsSubtemplate
