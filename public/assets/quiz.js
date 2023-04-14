@@ -21,6 +21,18 @@ const questions = {
     shuffle: ()=>{
         const that = questions;
         that.questions = that.questions.sort(() => .5 - Math.random());
+    },
+    doubleQuestions: ()=>{
+        const that = questions;
+        that.questions = that.questions.concat(that.questions);
+        that.questions = that.questions.sort(() => .5 - Math.random());
+    },
+
+    tripleThisQuestion: (index)=>{
+        const that = questions;
+        const sameQuestion = that.questions[index]
+        that.questions = that.questions.concat(sameQuestion,sameQuestion,sameQuestion);
+        that.questions = that.questions.sort(() => .5 - Math.random());
     }
 }
 
@@ -36,6 +48,7 @@ const ui = {
             return val.replaceAll("\n", "<br/>")
         }));
 
+        // Can use keyboard to answer questions
         document.body.addEventListener('keyup', function(e) {
             const isKeyNum = !isNaN(parseInt(e.key));
             if(isKeyNum) {
@@ -46,6 +59,10 @@ const ui = {
                 }
             } // if isKeyNum
         }); // keyup
+    },
+
+    getQuestionIndex: function() {
+        return this.__questionNumber;
     },
 
     advanceNextQuestion: (waitAnimation) => {
@@ -293,7 +310,7 @@ const ui = {
     },
     __tallyCorrectChoices: 0,
     __pageNumber: 0,
-    __questionNumber: 0,
+    __questionNumber: -1,
 
 
     nextPage: () =>{
@@ -324,8 +341,11 @@ const ui = {
                 break;
         }
     },
-    showQuestion: (i)=>{
+    showQuestion: function(i) {
         const that = ui;
+        if(i===0) {
+            this.__questionNumber = 0;
+        }
 
         // Question
         const row = questions.questions[i];

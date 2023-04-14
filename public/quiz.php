@@ -49,8 +49,14 @@ $overrideCSS
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $_SESSION["root_url"]; ?>">
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modal-more-questions" style="cursor:pointer;">
                             More Questions
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $_SESSION["root_url"]; ?>">
+                            More Quizzes
                         </a>
                     </li>
                 </ul>
@@ -88,12 +94,32 @@ $overrideCSS
         </main>
     </div> <!-- Ends container-fluid -->
 
+
+    <!-- Modal: More Questions -->
+    <div class="modal fade" id="modal-more-questions" tabindex="-1" aria-labelledby="modalMoreQuestionsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalMoreQuestionsLabel">Extend Quiz</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <button type="button" class="btn btn-primary btn-sm" onclick="questions.doubleQuestions(); alert('Done! You now have the questions twice and shuffled');">2x Questions</button>
+            <button type="button" class="btn btn-primary btn-sm" onclick="if(ui.getQuestionIndex()===-1) { alert('Start the quiz first!'); } else { questions.tripleThisQuestion(ui.getQuestionIndex()); alert('Done! You now have this question three more times'); }">3x This Question</button>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
     <!-- PHP writes to first, then Handlebars takes over -->
     <script id="template-question" type="text/x-handlebars">
         <header class="question-header text-secondary">
             <h2 class="question-title display-5-off">{{{questionTitle}}}</h2>
             <section class="quiz-stats text-end">
-                <span id="progress">{{increment questionIndex}}/{{questionsLength}}</span>
+                <span id="progress"><span id="progress-index">{{increment questionIndex}}</span>/{{questionsLength}}</span>
                 <?php
                 
                     if(isset($timeLeft) && gettype($timeLeft)=="integer" && $timeLeft>0) {
@@ -119,6 +145,9 @@ $overrideCSS
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-question-text.js?v=<?php echo time(); ?>"></script>
     <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/formatters/format-choices.js?v=<?php echo time(); ?>"></script>
     <script src="<?php echo $_SESSION["root_url"] . "public/" ?>assets/quiz.js?v=<?php echo time(); ?>"></script>
