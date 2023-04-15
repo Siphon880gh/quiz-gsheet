@@ -374,7 +374,7 @@ const ui = {
 
             questionInstruction: row[atColumn.D],
 
-            choicesModel: formatters.modelMyChoices({ type: row[atColumn.E].toLowerCase(), choices: row.slice([atColumn.G]) }),
+            choicesModel: formatters.modelMyChoices({ type: row[atColumn.E].toLowerCase(), choices: row.slice(atColumn.G) }),
             
             questionSubtemplate: formatters.getQuestionsSubtemplate({
                 type: row[atColumn.E].toLowerCase(), 

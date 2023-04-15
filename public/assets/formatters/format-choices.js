@@ -44,11 +44,11 @@ window.formatters.injectChoicesSubtemplate = ({type, mainTemplate})=>{
                 <i class="fas fa-sort" title="Can drag and drop to change order"></i>
                 <ol class="question-choices sortable-list">
                     
-                {{{#each choicesModel}}}
+                {{#each choicesModel}}
                     <li class="question-choice ui-state-default" data-choice-index="{{increment this.index}}">
-                        {{this.text}}
+                        {{{this.text}}}
                     </li>
-                {{{/each}}}
+                {{/each}}
                         
                         
                 </ol> <!-- question-choices-->
@@ -78,7 +78,7 @@ window.formatters.injectChoicesSubtemplate = ({type, mainTemplate})=>{
         mainTemplate = mainTemplate.replaceAll("__inject__choices__subtemplate__", `
             <ul class="question-choices" data-question-index="{{questionIndex}}" disabled>
                 {{#each choicesModel}}
-                <li class="question-choice" data-choice-index="{{increment this.index}}">{{this.text}}</li>
+                    <li class="question-choice" data-choice-index="{{increment this.index}}">{{{this.text}}}</li>
                 {{/each}}
             </ul>
         `);

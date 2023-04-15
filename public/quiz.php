@@ -104,8 +104,18 @@ $overrideCSS
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <button type="button" class="btn btn-primary btn-sm" onclick="questions.doubleQuestions(); alert('Done! You now have the questions twice and shuffled');">2x Questions</button>
-            <button type="button" class="btn btn-primary btn-sm" onclick="if(ui.getQuestionIndex()===-1) { alert('Start the quiz first!'); } else { questions.tripleThisQuestion(ui.getQuestionIndex()); alert('Done! You now have this question three more times'); }">3x This Question</button>
+            <div class="text-center">
+                Take all the questions again. Will shuffle:
+                <a  role="button" class="nav-link" onclick="questions.doubleQuestions(); alert('Done! You now have the questions twice and shuffled');">2x All Questions</a>
+
+            </div>
+            <div>
+                <p></p>
+            </div>
+            <div class="text-center">
+                See more of the current question:
+                <a  role="button" class="nav-link" onclick="if(ui.getQuestionIndex()===-1) { alert('Start the quiz first!'); } else { questions.tripleThisQuestion(ui.getQuestionIndex()); alert('Done! You now have this question three more times'); }">3x This Question</a>
+            </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
