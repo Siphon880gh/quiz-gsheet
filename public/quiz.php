@@ -8,7 +8,7 @@
     <script>
         // PHP brings in Google Sheet Data directly is faster
         window.payload = `<?php echo $json; ?>`;
-        window.payload = JSON.parse(window.payload)
+        window.payload = JSON.parse(window.payload);
     </script>
 
     <!-- Styling  -->

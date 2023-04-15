@@ -46,7 +46,7 @@ window.formatters.injectChoicesSubtemplate = ({type, mainTemplate})=>{
                     
                 {{#each choicesModel}}
                     <li class="question-choice ui-state-default" data-choice-index="{{increment this.index}}">
-                        {{{this.text}}}
+                        {{{cvtNLToBr this.text}}}
                     </li>
                 {{/each}}
                         

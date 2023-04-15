@@ -19,11 +19,13 @@ $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 $values = $response->getValues();
 // var_dump($values);
 
-// Setup render
+// Make parseable
+// Otherwise: bad control character in string literal in JSON
 for($i = 0; $i<count($values); $i++) {
-    $values[$i] = preg_replace("/\n/", " ", $values[$i]);
+    $values[$i] = preg_replace("/\n/", "\\n", $values[$i]);
+//     $values[$i] = preg_replace("/\n/", "<br/>", $values[$i]);
 }
-//$json = preg_replace("\n", " ", $values);
+
 $json = json_encode($values);
 $json = str_replace("`","\\`", $json); // escape backticks
 ?>

@@ -406,8 +406,8 @@ const ui = {
         // -- //
         var templateQuestionBox = templateEl.innerHTML;
         templateQuestionBox =  window.formatters.injectChoicesSubtemplate({type, mainTemplate:templateQuestionBox});
-        var writeQuestionBox = Handlebars.compile(templateQuestionBox);
-        var htmlQuestionBox = writeQuestionBox(templateContext);
+        var fillQuestionBox = Handlebars.compile(templateQuestionBox);
+        var htmlQuestionBox = fillQuestionBox(templateContext);
         targetEl.innerHTML = htmlQuestionBox;
         
         window.formatters.repaintChoicesAfterRender({type})
