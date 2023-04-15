@@ -17,15 +17,17 @@ $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 
 // OFF|on: Get values tested
 $values = $response->getValues();
-// var_dump($values);
 
 // Make parseable
-// Otherwise: bad control character in string literal in JSON
 for($i = 0; $i<count($values); $i++) {
+    // Otherwise bad control character in string literal in JSON:
     $values[$i] = preg_replace("/\n/", "\\n", $values[$i]);
-//     $values[$i] = preg_replace("/\n/", "<br/>", $values[$i]);
+    // Otherwise double quote breaks JSON. Will convert back on Javascript side.
+    $values[$i] = preg_replace("/\"/", "__DOUBLE__QUOTE__", $values[$i]);
 }
 
+// In the future might consider flag: JSON_UNESCAPED_SLASHES
 $json = json_encode($values);
-$json = str_replace("`","\\`", $json); // escape backticks
+// echo $json;
+// die();
 ?>

@@ -53,11 +53,11 @@ window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
             </div>
             `;
         case "flash card":
-            let cardSeparator = "====";
+            let cardSeparator = "===";
             if(!questionText.includes(cardSeparator)) {
                 return `<div class='error alert alert-danger'><b>Error:<b/> Flash card question is not formatted correctly at the Google Sheet. Please contact quiz publisher.</div>`
             }
-            let [sideA,sideB]=questionText.split("====");
+            let [sideA,sideB]=questionText.split(/^[=]{3,}$/m);
 
             return `
                 <div class="question-flash-card" onclick="ui.pressedFlashCard();">
