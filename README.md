@@ -155,7 +155,7 @@ In the above example, the Naturopath and Personal Quizzes don't show up until yo
 Over at the Google sheet, I shared the sheet with the email address that is in the private json key (under client_email). You can also get the client email of the service account at Google Cloud Console.
 
 The sheet must have the first row reserved for column headings. Then the columns should follow this format of columns in this order, and you can name the columns in whichever way makes sense:
-- Optional Numbering for Google sheet sorting. Even if it's optional and you leave it blank at the rows, this column must exist because the code expects a certain number of columns from the left
+- Optional Numbering for Google sheet sorting. You can have numbers here 1,2,3,4 so you can easily sort your Google Sheet. You can hide specific questions at Google Sheet with -1. Even if it's optional and you leave it blank at the rows, this column must exist because the code expects a certain number of columns from the left. 
 - Title of the question that will appear on the quiz
 - Text of the question, or image url, or sound clip url, depending on the type of question. In other words, the question value
 - Instruction text that appears under your question on the quiz. Eg. "Select correct choice".

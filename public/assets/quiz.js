@@ -17,7 +17,7 @@ const rows = payload.slice(1);
 
 // Setup business logic
 const questions = {
-    questions: rows,
+    questions: rows.filter(row=>parseInt(row[0])!==-1),
     shuffle: ()=>{
         const that = questions;
         that.questions = that.questions.sort(() => .5 - Math.random());
