@@ -360,13 +360,13 @@ a.nav-link {
 /* Thanks to: https://jsfiddle.net/esedic/3ud6e7xz/ */
 
 .wrapper--mix-match-containers {
-    width: 50%;
+    width: 75%;
     overflow-x: clip;
 }
 
 .question-nav:has(.btn-match),
 .question-nav:has(.btn-match-practice) {
-    width: 50%;
+    width: 75%;
     transform: translateX(20px);
 }
 
@@ -404,6 +404,7 @@ a.nav-link {
     background: rgba(0, 155, 255, 0.25);
     color: black;
     cursor: move;
+    max-width: 50%;
 }
 
 .mix-match-draggable p {
@@ -416,6 +417,7 @@ a.nav-link {
     float: right;
     margin: 10px;
     border: 1px solid rgba(50, 155, 255, 0.25);
+    max-width: 50%;
 }
 
 .mix-match-droppable-whitespace {

@@ -13,6 +13,9 @@ if(typeof window.formatters === "undefined") {
  */
 window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
 
+    // Can't do this because you want newline === as separators
+    // questionText = questionText.replaceAll("\n", "<br/>");
+
     switch(type) {
         case "picture":
             return `
@@ -58,6 +61,8 @@ window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
                 return `<div class='error alert alert-danger'><b>Error:<b/> Flash card question is not formatted correctly at the Google Sheet. Please contact quiz publisher.</div>`
             }
             let [sideA,sideB]=questionText.split(/^[=]{3,}$/m);
+            sideA = sideA.replaceAll("\n", "<br/>");
+            sideB = sideB.replaceAll("\n", "<br/>");
 
             return `
                 <div class="question-flash-card" onclick="ui.pressedFlashCard();">
@@ -73,6 +78,7 @@ window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
             `
 
         default:
+            questionText = questionText.replaceAll("\n", "<br/>");
             return questionText;
     } // switch
 } // getQuestionsSubtemplate
