@@ -12,7 +12,7 @@ $inputs = [
 
     /* Display */
     "pageTitle"=>"Quiz: Coming Soon Questions",
-    "pageDescription"=>"These are new questions that will be incorporated into the quizzes. Just checking if the formatting from Google Sheet is okay.",
+    "pageDescription"=>"These are new questions that will be incorporated into the quizzes. Just testing if the formatting from Google Sheet is okay and the question and choices appear as intended.",
 
     /* Optionals OR set as defaults 0 and "" respectively */
     "timeLeft"=>0,
