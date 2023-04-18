@@ -220,8 +220,8 @@ a.nav-link {
 }
 
 .question-choice.shouldve-chosen {
-    background-color: var(--colorCorrect);
-    border: 1px solid var(--colorCorrectDark);
+    background-color: var(--colorCorrectDark);
+    border: 1px solid var(--colorCorrect);
     font-weight: 700;
     color: var(--answeredTextColor);
     ;

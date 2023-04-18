@@ -300,6 +300,17 @@ const ui = {
                 wasOneWrong = true;
             }
         });
+        if(chosenLis.length !== corrects.length) {
+            // alert("Mismatched counts");
+            corrects.forEach(answerKeyIndex=>{
+                // console.log(answerKeyIndex);
+                const checkIndexDom = document.querySelector(`.question-choice[data-choice-index="${answerKeyIndex}"]`);
+                if(!$(checkIndexDom).hasClass("chosen")) {
+                    $(checkIndexDom).addClass("shouldve-chosen");
+                    wasOneWrong = true;
+                }
+            })
+        }
         if( ! wasOneWrong ) { // is correct
             if(document.querySelector(".btn-sata"))
                 document.querySelector(".btn-sata").setAttribute("disabled", true);
