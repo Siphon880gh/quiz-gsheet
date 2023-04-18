@@ -486,6 +486,16 @@ width: 100%;
     border-color: var(--colorCorrect);
 }
 
+
+/* Mix and matched choices correct; Disable button while waiting for next question to queue up; No Confirm practice choices button necessary */
+
 body:has(.btn-match[disabled]) .mix-match-droppable {
+    background-color: var(--colorCorrect) !important;
+}
+
+
+/* Ranked choices correct; Disable button while waiting for next question to queue up; No Confirm practice choices button necessary */
+
+body:has(.btn-rank[disabled]) .question-choices {
     background-color: var(--colorCorrect) !important;
 }

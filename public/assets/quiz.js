@@ -161,6 +161,7 @@ const ui = {
         } else {
             // User correct
             $(".question-choices").sortable("disable");
+            $(".btn-rank").attr("disabled", true);
             that.__tallyCorrectChoices++;
             that.advanceNextQuestion(2000);
         }
@@ -238,7 +239,7 @@ const ui = {
             // User correct
             $('.mix-match-droppable').droppable("disable");
             $('.mix-match-draggable').draggable("disable");
-            document.querySelector(".btn-match").setAttribute("disabled", true);
+            $(".btn-match").attr("disabled", true);
 
             that.__tallyCorrectChoices++;
             that.advanceNextQuestion(1000);
