@@ -13,13 +13,15 @@ window.formatters.modelMyChoices = ({type, choices})=>{
     if(type==="mix and match") {
         let someoneHasSideB = false;
         choices = choices.map((choiceRaw,i)=>{
-            let hasSideB = choiceRaw.split("====").length>1;
+            let parts = choiceRaw.split(/^[=]{3,}$/m);
+            parts = parts.map(part=>part.replaceAll("\n", "<br/>"))
+            let hasSideB = parts.length>1;
             if(hasSideB) someoneHasSideB = true;
             
             return {
                 index: i,
-                sideA: choiceRaw.split("====")[0].replaceAll("\n", "<br/>"),
-                sideB: hasSideB?choiceRaw.split("====")[1].replaceAll("\n", "<br/>"):false
+                sideA: parts[0],
+                sideB: hasSideB?parts[1]:false
             }
         });
         if(!someoneHasSideB) {

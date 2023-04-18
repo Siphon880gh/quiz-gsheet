@@ -265,7 +265,11 @@ The app also allows for Select All That Apply (SATA). Simply have more than one 
 
 Additional types of questions exist that deal with formatting the choices rather than the question (Flash card deals with formatting the question). Regardless, you just have to follow the formatting rules at Google Sheet for that respectively type of question and make sure the "Question Type" column has the right keyword. 
 
-The "Ranked" question type allows you to drag and drop the choices into the correct sequence, and consequently at Google Sheet your choice columns should follow the correct sequence. The "Mixed and match" question type allows you to play mix and match with the choices; consequently you have to follow a flash card format for each choice column cell because each column cell is actually a pairing of two correct matches. Because of the nature of the problem, the correct choice column is not applicable to "Ranked" and "Mix and match" questions. You can leave that blank or place "na"; it will simply be ignored anyways.
+The "Ranked" question type allows you to drag and drop the choices into the correct sequence, and consequently at Google Sheet your choice columns should follow the correct sequence. 
+
+The "Mixed and match" question type allows you to play mix and match with the choices; consequently you have to follow a flash card format for each choice cell because each choice is actually a pairing of two correct matches. You may have extra choices as distractors; Distractors do not need to be paired so they don't have to follow a flash card format with the "===="; With distractors, your left column of choices will intentionally have more than the right column of droppable areas. 
+
+Because of the nature of the problem, the correct choice column is not applicable to "Ranked" and "Mix and match" questions. You can leave that blank or place "na"; it will simply be ignored anyways.
 
 We covered how the question type can influence the rendering of choices and/or question. Specifically for question rendering, we covered "Flash card". There are also "Video", "Absolute pitch", and "Relative pitch". Let's now dive into how I implemented the rendering logic.
 
