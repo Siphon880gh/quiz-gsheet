@@ -11,16 +11,20 @@ window.formatters.modelMyChoices = ({type, choices})=>{
     // Contextualize the choices for DOM rendering
 
     if(type==="mix and match") {
+        let someoneHasSideB = false;
         choices = choices.map((choiceRaw,i)=>{
-            if(!choiceRaw.includes("====")) {
-                alert("ERROR: The mix and match choice columns are incorrectly formatted. Please contact quiz publisher.")
-            }
+            let hasSideB = choiceRaw.split("====").length>1;
+            if(hasSideB) someoneHasSideB = true;
+            
             return {
                 index: i,
                 sideA: choiceRaw.split("====")[0].replaceAll("\n", "<br/>"),
-                sideB: choiceRaw.split("====")[1].replaceAll("\n", "<br/>")
+                sideB: hasSideB?choiceRaw.split("====")[1].replaceAll("\n", "<br/>"):false
             }
         });
+        if(!someoneHasSideB) {
+            alert("ERROR: The mix and match choice columns are incorrectly formatted. Please contact quiz publisher.")
+        }
     } else {
         choices = choices.map((choiceRaw,i)=>{
             return {
@@ -64,11 +68,19 @@ window.formatters.injectChoicesSubtemplate = ({type, mainTemplate})=>{
                         <div data-value="k-{{increment index}}" class="mix-match-draggable">
                             <p>{{{cvtNLToBr sideA}}}</p>
                         </div>
-                        <div data-value="h-{{increment index}}" class="mix-match-droppable">
-                            <div class="mix-match-droparea"></div>
-                                <p>{{{cvtNLToBr sideB}}}</p>
+                        {{#if sideB}}
+                            <div data-value="h-{{increment index}}" class="mix-match-droppable">
+                                <div class="mix-match-droparea"></div>
+                                    <p>{{{cvtNLToBr sideB}}}</p>
+                                </div>
                             </div>
-                        </div>
+                        {{else}}
+                            <div data-value="h-{{increment index}}" class="mix-match-droppable-whitespace">
+                                <div class="mix-match-droparea-whitespace"></div>
+                                    <p>Empty</p>
+                                </div>
+                            </div>
+                        {{/if}}
                 {{/each}}
                         
             </div>
@@ -119,51 +131,6 @@ window.formatters.repaintChoicesAfterRender = ({type}) => {
         }
 
         let exec = (type) => {
-            // Standardization 1:
-            // Standardize widths/heights of dropareas to the max width and height of the draggable choices in order to make visually appealing yet concealing the answers
-            (()=>{
-                let maxWidth = 0;
-                let maxHeight = 0;
-                let keysCount = $(`[data-value^="k-"]`).length;
-
-                $(`[data-value^="k-"]`).each((i,k)=>{
-                    let currentWidth = $(k).width();
-                    // console.log({currentWidth})
-
-                    if(currentWidth>maxWidth) {
-                        maxWidth = currentWidth;
-                    }
-                    let currentHeight = $(k).height();
-                    if(currentHeight>maxHeight) {
-                        maxHeight = currentHeight;
-                    }
-
-                    if(i===keysCount-1) {
-                        $(".mix-match-droparea").width(maxWidth);
-                        $(".mix-match-droparea").height(maxHeight);
-                    }
-                }); // each k
-            })();
-
-            // Standardization 2:
-            // Standardize widths/heights of Droppable container at the right column to the biggest width and height
-            (()=>{
-                let maxWidth = 0;
-                let keysCount = $(`[data-value^="h-"]`).length;
-
-                $(`[data-value^="h-"]`).each((i,h)=>{
-                    let currentWidth = $(h).width();
-                    // console.log({currentWidth})
-
-                    if(currentWidth>maxWidth) {
-                        maxWidth = currentWidth;
-                    }
-
-                    if(i===keysCount-1) {
-                        $(".mix-match-droppable").width(maxWidth);
-                    }
-                }); // each k
-            })();
 
             // Shuffle key column (aka draggables)
             let $unmixed = $(`[data-value^="k-"]`);
@@ -196,13 +163,61 @@ window.formatters.repaintChoicesAfterRender = ({type}) => {
                       $(this).addClass('ui-state-highlight');
                       draggable.position({
                           of: $(this),
-                          my: 'left top',
-                          at: 'left+6 top+6'
+                          my: 'left center',
+                          at: 'left+15 center'
                       });
-
-                      $(draggable).data("user-matched-to", parseInt($(droppable).data("value").split("-")[1]))
+                      $(droppable).data("contained-draggable-id-is", parseInt($(draggable).data("value").split("-")[1]))
                   } // drop
             });
+
+
+            // Standardization 1:
+            // Standardize widths/heights of dropareas to the max width and height of the draggable choices in order to make visually appealing yet concealing the answers
+            (()=>{
+                let maxWidth = 0;
+                let maxHeight = 0;
+                let keysCount = $(`[data-value^="k-"]`).length;
+
+                $(`[data-value^="k-"]`).each((i,k)=>{
+                    let currentWidth = $(k).width();
+                    // console.log({currentWidth})
+
+                    if(currentWidth>maxWidth) {
+                        maxWidth = currentWidth;
+                    }
+                    let currentHeight = $(k).height();
+                    if(currentHeight>maxHeight) {
+                        maxHeight = currentHeight;
+                    }
+
+                    if(i===keysCount-1) {
+                        if(maxWidth>0)
+                            $(".mix-match-droparea").width(maxWidth);
+                        if(maxHeight>0)
+                            $(".mix-match-droparea").css("min-height", maxHeight+"px");
+                    }
+                }); // each k
+            })();
+
+            // Standardization 2:
+            // Standardize widths/heights of droppable container at the right column to the biggest width and height
+            (()=>{
+                let maxWidth = 0;
+                let keysCount = $(`[data-value^="h-"]`).length;
+
+                $(`[data-value^="h-"]`).each((i,h)=>{
+                    let currentWidth = $(h).width();
+                    // console.log({currentWidth})
+
+                    if(currentWidth>maxWidth) {
+                        maxWidth = currentWidth;
+                    }
+
+                    if(i===keysCount-1) {
+                        $(".mix-match-droppable").width(maxWidth);
+                    }
+                }); // each k
+            })();
 
         } // exec
 

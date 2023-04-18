@@ -185,17 +185,17 @@ const ui = {
             let failedOnce = false;
 
             // Validate border and capture failed or passed
-            $('.mix-match-draggable').each((v,dragged)=>{
-                let i = $(dragged).data("value").split("-")[1];
-                let j = $(dragged).data("user-matched-to");
+            $('.mix-match-droppable').each((index,droppable)=>{
+                let i = $(droppable).data("value").split("-")[1];
+                let j = $(droppable).data("contained-draggable-id-is");
                 i=parseInt(i)
                 j=parseInt(j)
                 // console.log({i,j})
                 if(i!==j) {
-                    $(`.mix-match-droppable[data-value="h-${j}"]`).addClass("wrong")
+                    $(`.mix-match-droppable[data-value="h-${i}"]`).addClass("wrong")
                     failedOnce = true;
                 } else {
-                    $(`.mix-match-droppable[data-value="h-${j}"]`).addClass("correct")
+                    $(`.mix-match-droppable[data-value="h-${i}"]`).addClass("correct")
                 }
             })
 
