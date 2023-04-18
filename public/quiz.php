@@ -63,7 +63,7 @@ $overrideCSS
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $_SESSION["root_url"]; ?>">
-                            More Quizzes
+                            MORE QUIZZES
                         </a>
                     </li>
                 </ul>
