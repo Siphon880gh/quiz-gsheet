@@ -72,8 +72,10 @@ window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
                     <div class="side-b d-none">
                         ${sideB}
                     </div>
-                    <i class="fas fa-angle-left control-left text-secondary"></i>
-                    <i class="fas fa-angle-right control-right"></i>
+                    <div class="flash-card-nav">
+                        <i class="fas fa-angle-left control-left text-secondary"></i>
+                        <i class="fas fa-angle-right control-right"></i>
+                    </div>
                 </div>
             `
 

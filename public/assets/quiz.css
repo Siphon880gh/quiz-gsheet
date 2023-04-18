@@ -271,18 +271,32 @@ a.nav-link {
     margin-bottom: 4ch;
 }
 
+.flash-card-nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 2px;
+    width: 30px;
+    height: 20px;
+    margin-top: 10px;
+    opacity: .75;
+}
+
 .question-flash-card .control-left {
-    position: absolute;
+    /* position: absolute;
     bottom: -20px;
-    left: 0;
+    left: 0; */
+    float: left;
+    padding-right: 10px;
     cursor: pointer;
+    font-size: 80%;
 }
 
 .question-flash-card .control-right {
-    position: absolute;
+    /* position: absolute;
     bottom: -20px;
-    left: 1ch;
+    left: 1ch; */
+    float: right;
     cursor: pointer;
+    font-size: 80%;
 }
 
 .picture-type {
