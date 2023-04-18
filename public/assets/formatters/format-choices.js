@@ -14,7 +14,7 @@ window.formatters.modelMyChoices = ({type, choices})=>{
         let someoneHasSideB = false;
         choices = choices.map((choiceRaw,i)=>{
             let parts = choiceRaw.split(/^[=]{3,}$/m);
-            parts = parts.map(part=>part.replaceAll("\n", "<br/>"))
+            parts = parts.map(part=>part.trim().replaceAll("\n", "<br/>"))
             let hasSideB = parts.length>1;
             if(hasSideB) someoneHasSideB = true;
             
@@ -165,8 +165,8 @@ window.formatters.repaintChoicesAfterRender = ({type}) => {
                       $(this).addClass('ui-state-highlight');
                       draggable.position({
                           of: $(this),
-                          my: 'left center',
-                          at: 'left+15 center'
+                          my: 'center center', // left center
+                          at: 'center center+15'
                       });
                       $(droppable).data("contained-draggable-id-is", parseInt($(draggable).data("value").split("-")[1]))
                   } // drop
