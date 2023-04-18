@@ -134,7 +134,7 @@ window.formatters.repaintChoicesAfterRender = ({type}) => {
 
         let exec = (type) => {
 
-            // Shuffle key column (aka draggables)
+            // Shuffle left column keys (aka draggables)
             let $unmixed = $(`[data-value^="k-"]`);
             let $mixed = [];
             $unmixed.each((i,el)=>{
@@ -148,6 +148,15 @@ window.formatters.repaintChoicesAfterRender = ({type}) => {
             $(".mix-match-container").each((i, c)=>{
                 $(c).prepend($mixed[i])
             })
+
+            // Rearrange Mix and match rows so that the right choices are all flushed to the top
+            const $mmContainersWrapper = $(".wrapper--mix-match-containers");
+            $(".mix-match-droppable-whitespace").each((i,whitespace)=>{
+                const $whitespace = $(whitespace);
+                const $mmContainer = $whitespace.closest(".mix-match-container");
+                $mmContainer.appendTo($mmContainersWrapper);
+                
+            });
 
             // Unhide the initially hidden (Didn't want to see original order flashed before shuffled order)
             $(".wrapper--mix-match-containers").removeClass("d-none");
