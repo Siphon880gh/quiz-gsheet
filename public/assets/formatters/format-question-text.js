@@ -61,8 +61,8 @@ window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
                 return `<div class='error alert alert-danger'><b>Error:<b/> Flash card question is not formatted correctly at the Google Sheet. Please contact quiz publisher.</div>`
             }
             let [sideA,sideB]=questionText.split(/^[=]{3,}$/m);
-            sideA = sideA.replaceAll("\n", "<br/>");
-            sideB = sideB.replaceAll("\n", "<br/>");
+            sideA = sideA.trim().replaceAll("\n", "<br/>");
+            sideB = sideB.trim().replaceAll("\n", "<br/>");
 
             return `
                 <div class="question-flash-card" onclick="ui.pressedFlashCard();">
