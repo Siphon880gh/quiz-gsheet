@@ -105,7 +105,7 @@ window.formatters.injectChoicesSubtemplate = ({type, mainTemplate})=>{
 window.formatters.getConfirmChoiceSubtemplate = ({type, isSata})=>{
 
     if(isSata) {
-        return `<button class="btn btn-primary btn-sm float-end" onclick="if(document.querySelector('.chosen')) ui.pressedSATADone(); else { alert('ERROR: You have to make your choices first!'); }">Selected all that apply</button>`
+        return `<button class="btn btn-primary btn-sm float-end btn-sata" onclick="if(document.querySelector('.chosen')) ui.pressedSATADone(); else { alert('ERROR: You have to make your choices first!'); }">Selected all that apply</button>`
     } else if(type==="ranked") {
         return `<button class="btn btn-primary btn-sm float-start btn-rank" onclick="ui.pressedRankedDone();">Finished ordering</button>`
     } else if(type==="mix and match") {

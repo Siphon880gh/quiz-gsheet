@@ -11,13 +11,35 @@ setTimeout(()=>{
     }
 }, 2000);
 
+// Dev experience: Enums
+const atColumn = {
+    A:0,
+    B:1,
+    C:2,
+    D:3,
+    E:4,
+    F:5,
+    G:6,
+    H:7,
+    I:8,
+    J:9,
+    K:10,
+    L:11,
+    M:12,
+    N:13,
+    O:14,
+    P:15,
+    Q:16,
+    R:17
+}
+
 // Data loader
 const headers = payload[0];
 const rows = payload.slice(1);
 
 // Setup business logic
 const questions = {
-    questions: rows.filter(row=>parseInt(row[0])!==-1),
+    questions: rows.filter(row=>(parseInt(row[0])!==-1&&row.length!==0)),
     shuffle: ()=>{
         const that = questions;
         that.questions = that.questions.sort(() => .5 - Math.random());
@@ -278,7 +300,9 @@ const ui = {
                 wasOneWrong = true;
             }
         });
-        if( ! wasOneWrong ) {
+        if( ! wasOneWrong ) { // is correct
+            if(document.querySelector(".btn-sata"))
+                document.querySelector(".btn-sata").setAttribute("disabled", true);
             that.__tallyCorrectChoices++;
             that.advanceNextQuestion(2000);
             
@@ -292,6 +316,8 @@ const ui = {
                 })
                 
                 // Show button and wait for user to confirm OK to go to next question
+                if(document.querySelector(".btn-sata"))
+                    document.querySelector(".btn-sata").remove();
                 let btn = document.createElement("button");
                 btn.classList.add("btn")
                 btn.classList.add("btn-primary")
@@ -349,41 +375,61 @@ const ui = {
         }
 
         // Question
-        const row = questions.questions[i];
-        let atColumn = {
-            A:0,
-            B:1,
-            C:2,
-            D:3,
-            E:4,
-            F:5,
-            G:6,
-            H:7,
-            I:8,
-            J:9,
-            K:10,
-            L:11,
-            M:12,
-            N:13,
-            O:14,
-            P:15,
-            Q:16,
-            R:17
+        let row = questions.questions[i];
+
+        if(row.length-1<atColumn.F) {
+            console.log({row})
+            console.error("Error: Row missing crucial columns before templateContext");
+            alert("A question is not formatted correctly at the Google Sheet. Please contact quiz publisher.");
+            debugger;
         }
+
         const templateContext = {
             questionTitle: row[atColumn.B],
 
             questionInstruction: row[atColumn.D],
 
-            choicesModel: formatters.modelMyChoices({ type: row[atColumn.E].toLowerCase(), choices: row.slice(atColumn.G) }),
+            choicesModel: ()=>{
+                try {
+                    let model = formatters.modelMyChoices({ type: row[atColumn.E].toLowerCase(), choices: row.slice(atColumn.G) });
+                    return model;
+                } catch(err) {
+                    console.group("Errored loading into choices model")
+                    console.log(row.toString());
+                    console.log(JSON.stringify(row));
+                    console.log(err);
+                    console.groupEnd();
+                }
+            },
             
-            questionSubtemplate: formatters.getQuestionsSubtemplate({
-                type: row[atColumn.E].toLowerCase(), 
-                questionText: row[atColumn.C]
-            }),
+            questionSubtemplate: ()=>{
+                try {
+                    let params = {
+                        type: row[atColumn.E].toLowerCase(), 
+                        questionText: row[atColumn.C]
+                    }
+                    return formatters.getQuestionsSubtemplate(params);
+                } catch(err) {
+                    console.group("Errored loading into choices model")
+                    console.log(row.toString());
+                    console.log(JSON.stringify(row));
+                    console.log(err);
+                    console.groupEnd();
+                    return "";
+                }
+            },
             
-            // F column and onwards 
-            __isSata: row[atColumn.F].split(",").length>1,
+            __isSata: (()=>{
+                
+                // F column and onwards 
+                if(row.length-1<atColumn.F) {
+                    console.log({row})
+                    console.error("Error: Row missing crucial columns at __isSata");
+                    alert("A question is not formatted correctly at the Google Sheet. Please contact quiz publisher.");
+                    debugger;
+                }
+                return row[atColumn.F].split(",").length>1;
+            })(),
             
             questionIndex: i,
             questionsLength: questions.questions.length,
