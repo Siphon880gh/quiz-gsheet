@@ -8,6 +8,9 @@ if(typeof window.formatters === "undefined") {
  */
 window.formatters.modelMyChoices = ({type, choices})=>{
 
+    // Accidental blank cells?
+    choices = choices.filter(choice=>choice.length);
+
     // Contextualize the choices for DOM rendering
 
     if(type==="mix and match") {

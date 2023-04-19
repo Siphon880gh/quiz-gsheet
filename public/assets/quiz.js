@@ -92,6 +92,8 @@ const ui = {
 
         // Advance to next question or Finished screen
         setTimeout(()=>{
+            // Remove previous playing audios/videos/iframe-embeds 
+            document.querySelectorAll("iframe, audio, video").forEach(el=>{el.remove()});
             that.__questionNumber++;
             if(that.__questionNumber<questions.questions.length)
                 that.showQuestion(that.__questionNumber);

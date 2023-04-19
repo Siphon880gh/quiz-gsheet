@@ -1,7 +1,7 @@
 # Main
 .DS_Store
 vendor
-*.creds.json
+gsheets/**/*.json
 
 # User private quizzes
 hosting/
