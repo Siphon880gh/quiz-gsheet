@@ -23,6 +23,7 @@ $inputs = [
             <li>Patient turning</li>
             <li>Bed to sitting</li>
             <li>Bathing in bed</li>
+            <li>Suppository position, Foley position, etc</li>
             <li>Setting up new bed (linens, etc)</li>
         </ul>
     </div>
