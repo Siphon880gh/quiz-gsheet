@@ -46,25 +46,28 @@ $overrideCSS
                 <i class="nav-mobile-icon fas fa-bars" onclick="event.target.classList.toggle('active')"></i>
                 <ul class="nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $_SESSION["root_url"]; ?>">
+                            <i class="fas fa-arrow-left"></i> More Quizzes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        |
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#" onclick="questions.shuffle(); alert('Reshuffled questions');">
-                            Reshuffle
+                            <i class="fas fa-random"></i> Reshuffle
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $_SESSION["spreadsheet-link"]; ?>" target="_blank">
-                            Google Sheet
+                            <i class="fas fa-file-excel"></i> Google Sheet
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modal-more-questions" style="cursor:pointer;">
-                            More Questions
+                        <i class="fas fa-times-circle"></i> More Questions
                         </a>
                     </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $_SESSION["root_url"]; ?>">
-                            MORE QUIZZES
-                        </a>
                     </li>
                 </ul>
             </nav>
@@ -113,7 +116,7 @@ $overrideCSS
         <div class="modal-body">
             <div class="text-center">
                 Take all the questions again. Will shuffle:
-                <a  role="button" class="nav-link" onclick="questions.doubleQuestions(); alert('Done! You now have the questions twice and shuffled');">2x All Questions</a>
+                <a  role="button" class="nav-link" onclick="questions.doubleQuestions(); alert('Done! You now have the questions twice and shuffled');">x2 All Questions</a>
 
             </div>
             <div>
@@ -121,7 +124,7 @@ $overrideCSS
             </div>
             <div class="text-center">
                 See more of the current question:
-                <a  role="button" class="nav-link" onclick="if(ui.getQuestionIndex()===-1) { alert('Start the quiz first!'); } else { questions.tripleThisQuestion(ui.getQuestionIndex()); alert('Done! You now have this question three more times'); }">3x This Question</a>
+                <a  role="button" class="nav-link" onclick="if(ui.getQuestionIndex()===-1) { alert('Start the quiz first!'); } else { questions.tripleThisQuestion(ui.getQuestionIndex()); alert('Done! You now have this question three more times'); }">x3 This Question</a>
             </div>
         </div>
         <div class="modal-footer">
