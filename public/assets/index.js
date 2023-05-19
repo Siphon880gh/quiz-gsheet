@@ -2,6 +2,7 @@ function initIndexUI() {
     const dirsEl = document.querySelector(".dirs");
     dirsEl.innerHTML = ""; // So can be reinit
     
+    window.dirs = window.dirs.reverse();
     window.dirs.forEach(dir=>{
         const isSegmentedPath = dir.split("/").length;
         if(isSegmentedPath) {

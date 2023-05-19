@@ -196,9 +196,8 @@ Question Type column can be blank or something generic like "Text". However, you
 
 Treat as a multiple choice question and your question text can be: "The ___ is the powerhouse of the cell". One of your choices will have the correct text.
 
-### Administering True/False Question
+### Administering True/False Question (True False)
 Simply have two columns of answers only.
-
 
 Correct Choice column is either 1 or 2
 Choice 1: TRUE
