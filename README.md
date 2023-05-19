@@ -226,7 +226,9 @@ Side B
 ```
 Question Type: `Mix and match`
 
-Note that you're not forced to have the rest of the other questions (Google Sheet rows) to be Flash cards
+Note that you're not forced to have the rest of the other questions (Google Sheet rows) to be Flash cards.
+
+Note that if you use AI to generate questions in CSV format so that you can copy over to Google Sheet, because newlines mean new rows, the AI will render the cell as: "Side A\n===\nSide B". That's fine.
 
 ### Administering Flash Card Question
 Question Text:
@@ -239,7 +241,9 @@ Question Type: `Flash cards`
 
 Make sure it's __4 equal signs__.
 
-Note that you're not forced to have the rest of the other questions (Google Sheet rows) to be Flash cards
+Note that you're not forced to have the rest of the other questions (Google Sheet rows) to be Flash cards.
+
+Note that if you use AI to generate questions in CSV format so that you can copy over to Google Sheet, because newlines mean new rows, the AI will render the cell as: "Side A\n===\nSide B". That's fine.
 
 ## :runner: Usage:
 
