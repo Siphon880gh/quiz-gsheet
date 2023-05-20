@@ -105,8 +105,12 @@ if($usingCallback) {
 
     <script>
     // PHP brings in Google Sheet Data directly is faster
-    window.dirs = `<?php echo json_encode($gsheetNames); ?>`;
-    window.dirs = JSON.parse(window.dirs)
+    try {
+        window.dirs = `<?php echo json_encode($gsheetNames); ?>`;
+        window.dirs = JSON.parse(window.dirs)
+    } catch(err) {
+        console.error({error:err, "To web developer: If error in JSON, then get the JSON from DevTools and copy it to Online JSON Editor. The top line it errors on is where the problem is, likely a character that is not recognized. You can immediately test in Online JSON Editor."})
+    }
     </script>
 
 </head>
