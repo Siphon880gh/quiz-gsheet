@@ -18,6 +18,23 @@ ul {
 }
 
 
+.promote-features {
+    color: rgba(0,0,0,0.5);
+    font-size: .65rem;
+    background-color: transparent;
+    margin: 0 auto;
+    text-align: right;
+    line-height: .7rem;
+}
+
+.promote-features a {
+    text-decoration: none;
+}
+.creds-socials {
+    margin: 5px 0;
+}
+
+
 /* Utility Classes
 ----------------------- */
 
