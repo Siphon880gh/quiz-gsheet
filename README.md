@@ -47,7 +47,6 @@ ______________________________________________________________________ */
 $inputs = [
     /* Connections */
     "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1SHqEB2MVho0jP81cT9bDEo5VUZOzkfwNC1BZ3qB8VQE/",
-    "spreadsheetId"=>"1SHqEB2MVho0jP81cT9bDEo5VUZOzkfwNC1BZ3qB8VQE",
     "tabName"=>"AbsolutePitch",
 
     /* Display */
@@ -62,11 +61,14 @@ $inputs = [
     }"
 ];
 
-/* DEVELOPER READABILITY
-This is for readability
+/* DEVELOPER READABILITY & MAINTAINABILITY
+This is for readability & maintainability
 ______________________________________________________________________ */
 $_SESSION["spreadsheet-link"] = $inputs["spreadsheetUrl"];
-$connectToSpreadSheetUrlId = $inputs["spreadsheetId"];
+
+$re = '/.*\/(.+)\/$/m';
+preg_match_all($re, $inputs["spreadsheetUrl"], $matches, PREG_SET_ORDER, 0);
+$connectToSpreadSheetUrlId = $matches[0][1];
 $connectToTab = $inputs["tabName"];
 
 $pageTitle = $inputs["pageTitle"];

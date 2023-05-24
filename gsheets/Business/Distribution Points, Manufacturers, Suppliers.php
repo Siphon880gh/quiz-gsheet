@@ -7,7 +7,6 @@ ______________________________________________________________________ */
 $inputs = [
     /* Connections */
     "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/198ORIPMLTx5R_USCMcJlyFua9RwmUeheIv-cJP3QbP4/",
-    "spreadsheetId"=>"198ORIPMLTx5R_USCMcJlyFua9RwmUeheIv-cJP3QbP4",
     "tabName"=>"Distribution Points, Manufacturers, Suppliers",
 
     /* Display */
@@ -22,11 +21,14 @@ $inputs = [
     }"
 ];
 
-/* DEVELOPER READABILITY
-This is for readability
+/* DEVELOPER READABILITY & MAINTAINABILITY
+This is for readability & maintainability
 ______________________________________________________________________ */
 $_SESSION["spreadsheet-link"] = $inputs["spreadsheetUrl"];
-$connectToSpreadSheetUrlId = $inputs["spreadsheetId"];
+
+$re = '/.*\/(.+)\/$/m';
+preg_match_all($re, $inputs["spreadsheetUrl"], $matches, PREG_SET_ORDER, 0);
+$connectToSpreadSheetUrlId = $matches[0][1];
 $connectToTab = $inputs["tabName"];
 
 $pageTitle = $inputs["pageTitle"];
