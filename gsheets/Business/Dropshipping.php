@@ -6,13 +6,13 @@ Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
 $inputs = [
     /* Connections */
-    "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I/",
-    "spreadsheetId"=>"1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I",
-    "tabName"=>"ABG Practice",
+    "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/198ORIPMLTx5R_USCMcJlyFua9RwmUeheIv-cJP3QbP4/",
+    "spreadsheetId"=>"198ORIPMLTx5R_USCMcJlyFua9RwmUeheIv-cJP3QbP4",
+    "tabName"=>"Dropshipping",
 
     /* Display */
-    "pageTitle"=>"Quiz: ABG Practice",
-    "pageDescription"=>"ABG exercises",
+    "pageTitle"=>"Business Quiz: Dropshipping",
+    "pageDescription"=>"Dropshipping concepts. In the future will have more scenario type questions and questions geared towards starting your own Dropshipping business.",
 
     /* Optionals OR set as defaults 0 and "" respectively */
     "timeLeft"=>0,

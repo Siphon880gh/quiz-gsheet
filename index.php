@@ -33,8 +33,8 @@ if($usingCallback) {
     function glob_recursive($pattern, $flags = 0)
     {
         $files = glob($pattern, $flags);
-        foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR) as $dir)
-        // foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir)
+        // foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR) as $dir)
+        foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir)
     {
         $files = array_merge($files, glob_recursive($dir.'/'.basename($pattern), $flags));
     }
@@ -109,7 +109,7 @@ if($usingCallback) {
         window.dirs = `<?php echo json_encode($gsheetNames); ?>`;
         window.dirs = JSON.parse(window.dirs)
     } catch(err) {
-        console.error({error:err, "To web developer: If error in JSON, then get the JSON from DevTools and copy it to Online JSON Editor. The top line it errors on is where the problem is, likely a character that is not recognized. You can immediately test in Online JSON Editor."})
+        console.error({error:err, message: "To web developer: If error in JSON, then get the JSON from DevTools and copy it to Online JSON Editor. The top line it errors on is where the problem is, likely a character that is not recognized. You can immediately test in Online JSON Editor."})
     }
     </script>
 

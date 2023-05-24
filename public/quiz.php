@@ -60,7 +60,7 @@ $overrideCSS
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $_SESSION["spreadsheet-link"]; ?>" target="_blank">
-                            <i class="fas fa-file-excel"></i> Google Sheet
+                            <i class="fas fa-table"></i> Google Sheet
                         </a>
                     </li>
                     <li class="nav-item">
