@@ -66,7 +66,9 @@ const ui = {
         Handlebars.registerHelper("increment", (val=>{
             return parseInt(val) + 1;
         }));
-        Handlebars.registerHelper("cvtNLToBr", (val=>{
+
+        /* Transitioning out: Obsoleted by a precompile stage of `replaceAll("\n", "<br/>")` */
+        Handlebars.registerHelper("newlineBr", (val=>{
             return val.replaceAll("\n", "<br/>")
         }));
 

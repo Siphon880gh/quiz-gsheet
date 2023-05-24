@@ -11,6 +11,9 @@ window.formatters.modelMyChoices = ({type, choices})=>{
     // Accidental blank cells?
     choices = choices.filter(choice=>choice.length);
 
+    // Newline
+    // choices = choices.map(val=> val.replaceAll("\n", "<br/>"))
+
     // Contextualize the choices for DOM rendering
 
     if(type==="mix and match") {
@@ -27,9 +30,9 @@ window.formatters.modelMyChoices = ({type, choices})=>{
                 sideB: hasSideB?parts[1]:false
             }
         });
-        if(!someoneHasSideB) {
-            alert("ERROR: The mix and match choice columns are incorrectly formatted. Please contact quiz publisher.")
-        }
+        // if(!someoneHasSideB) {
+        //     alert("ERROR: The mix and match choice columns are incorrectly formatted. Please contact quiz publisher.")
+        // }
     } else {
         choices = choices.map((choiceRaw,i)=>{
             return {
@@ -55,7 +58,7 @@ window.formatters.injectChoicesSubtemplate = ({type, mainTemplate})=>{
                     
                 {{#each choicesModel}}
                     <li class="question-choice ui-state-default" data-choice-index="{{increment this.index}}">
-                        {{{cvtNLToBr this.text}}}
+                        {{{this.text}}}
                     </li>
                 {{/each}}
                         
@@ -71,12 +74,12 @@ window.formatters.injectChoicesSubtemplate = ({type, mainTemplate})=>{
                 {{#each choicesModel}}
                     <div class="mix-match-container">
                         <div data-value="k-{{increment index}}" class="mix-match-draggable">
-                            <p>{{{cvtNLToBr sideA}}}</p>
+                            <p>{{{sideA}}}</p>
                         </div>
                         {{#if sideB}}
                             <div data-value="h-{{increment index}}" class="mix-match-droppable">
                                 <div class="mix-match-droparea"></div>
-                                    <p>{{{cvtNLToBr sideB}}}</p>
+                                    <p>{{{sideB}}}</p>
                                 </div>
                             </div>
                         {{else}}

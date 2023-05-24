@@ -217,8 +217,11 @@ Side B
 Question Type: `Mix and match`
 
 Note that you're not forced to have the rest of the other questions (Google Sheet rows) to be Flash cards.
+You can have extra choices that don't have a match as a distractor. For example:
+![Mix and match allows for more choices than can match](./README-assets/mix-match-extra-column.png)
 
-Note that if you use AI to generate questions in CSV format so that you can copy over to Google Sheet, because newlines mean new rows, the AI will render the cell as: "Side A\n===\nSide B". That's fine.
+
+Note that if you use AI to generate questions in CSV format so that you can copy over to Google Sheet, because newlines mean new rows, the AI will render the cell as: "Side A\n===\nSide B". Then you can copy to the Google Sheet as is without having to manually replace the '\n' with blank lines. That's fine.
 
 ### Administering Flash Card Question
 Question Text:
@@ -230,10 +233,11 @@ Side B
 Question Type: `Flash cards`
 
 Make sure it's __4 equal signs__.
+May have HTML like `<img src...>
 
 Note that you're not forced to have the rest of the other questions (Google Sheet rows) to be Flash cards.
 
-Note that if you use AI to generate questions in CSV format so that you can copy over to Google Sheet, because newlines mean new rows, the AI will render the cell as: "Side A\n===\nSide B". That's fine.
+Note that if you use AI to generate questions in CSV format so that you can copy over to Google Sheet, because newlines mean new rows, the AI will render the cell as: "Side A\n===\nSide B". Then you can copy to the Google Sheet as is without having to manually replace the '\n' with blank lines. That's fine.
 
 ## :runner: Usage:
 
