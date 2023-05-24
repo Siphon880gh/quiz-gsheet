@@ -86,8 +86,8 @@ ______________________________________________________________________ */
 // Error? gsheets accept only flat directory listing. It would have all folders then inside folder would have the quiz php files and credential creds.json files.
 require_once "../../controllers/check-initialized.php";
 
-// Check credential file correct. HINT: Named the same as PHP script and ends with ".creds.json"
-$credsGsheetJSONFile = rawurldecode(basename(__FILE__, '.php') . ".creds.json");
+// Check credential file correct.
+$credsGsheetJSONFile = $inputs["creds"];
 file_exists($credsGsheetJSONFile) or die("Error: Failed to load credentials $credsGsheetJSONFile. Contact administrator");
 
 // Load in Composer libraries
@@ -111,26 +111,19 @@ You cannot have folders inside folders. Here is a file tree example of folders a
 ____gsheets
 | |____Medicine
 | | |____Cardiovascular Pharmacology Quiz.php
-| | |____Cardiovascular Pharmacology Quiz.creds.json
 | | |____Infections.php
-| | |____Infections.creds.json
-| | |____Minimally Invasive Skills SATA.creds.json
 | | |____Minimally Invasive Skills SATA.php
 | | |____Respiratory Pathophysiology.php
-| | |____Respiratory Pathophysiology.creds.json
 | | |____Stroke NIHSS Signs Video Quiz.php
-| | |____Stroke NIHSS Signs Video QUiz.creds.json
 | |____Web Development
 | | |____Javascript Flash Cards.php
-| | |____Javascript Flash Cards.creds.json
 | | |____MySQL True False Questions.php
-| | |____MySQL True False Questions.creds.json
 
 ```
 
-Along with the php files, you have the credential files which are named the same except they end with `.creds.json`; and that's the private key you download upon creating your service account with Google Sheet API enabled at your Developer Cloud Console. You would have to rename their .json key file into a file that matches the quiz php's filename, then end the file extension with `.creds.json` instead of `.php`.  There is a likelihood that your creds.json files end up having the same contents, however for ease-of-use and scalability, I decided to stick with this protocol.
+Along with the php files, you have a credential file that end with `.json`; and that's the private key you download upon creating your service account with Google Sheet API enabled at your Developer Cloud Console. You want to move this file into keys/, then link to it at your quiz php file (For example: `"creds"=>"../../keys/my-service-account-thats-shared-with-the-google-sheet.json",`). In addition, make sure you take note of the client email address in that private key file (it's unencrypted), because you want to share the Google Sheet to that email. Because the file is unencrypted, you want to have .htaccess block access to file reading. The backend PHP will have no problem reading the file, while the public is not authorized.
 
-The index.php will automatically list the quizzes under their respective folder names, and your quiz will open when clicked if the credential files are named correctly.
+The index.php will automatically list the quizzes under their respective folder names, and your quiz will open when clicked if the credential file is correct.
 
 If you want a quiz group or folder to be hidden until you enter a password, your quiz group can be named with a minus, then password, then space, followed by your category name. The index.php front page won't list your folder until you enter the correct password. Here is an example tree folder. You can enter multiple passwords on the front page to show both these categories:
 
@@ -138,19 +131,13 @@ If you want a quiz group or folder to be hidden until you enter a password, your
 ____gsheets
 | |____-HolisticSecret Naturopath
 | | |____Alternative health exercises for back pain.php
-| | |____Alternative health exercises for back pain.creds.json
 | | |____Herbs for Improved Energy Quiz.php
-| | |____Herbs for Improved Energy Quiz.creds.json
 | |____-WengSecret Personal Quizzes
 | | |____Private Stock Trading Strategies.php
-| | |____Private Stock Trading Strategies.creds.json
 | | |____Code Numbers for Interdepartmental Communication.php
-| | |____Code Numbers for Interdepartmental Communication.creds.json
 | |____Web Development
 | | |____Javascript Flash Cards.php
-| | |____Javascript Flash Cards.creds.json
 | | |____MySQL True False Questions.php
-| | |____MySQL True False Questions.creds.json
 ```
 
 In the above example, the Naturopath and Personal Quizzes don't show up until you unlock them with the passwords HolisticSecret and WengSecret. Other users wouldn't know there's anything to unlock because the categories don't appear. But the important key here is you have to precede the folder name with a minus and password.
@@ -257,7 +244,9 @@ When taking a quiz, just follow the instructions on screen. If it's a timed quiz
 You can select choices by clicking them or pressing your keyboard 1,2,3,4..9 depending on the number of multiple choices. A question with greater than 9 multiple choices will only support the keys 1,2,3,4...9 and you would have to click manually for the other choices. Usually questions that are Select all that apply (SATA) have that many choices.
 
 ## :triangular_ruler: Architecture:
-I used Composer to install the PHP Google API client. There was no documentation on Google's site on how to authenticate using the PHP Google API client, but I figured it out like this: The API client selected for Google Sheet API (versus other Google API's) that then connected gsheet/folder/quiz_name.php using credential file at quiz_name.creds.json at the same folder. The quiz named PHP file has the spreadsheet id and tab name necessarily to connect, and the Google Sheet has been shared to the email associated to the service account. The credential file was generated from the service account at the Google Cloud platform when creating a private json key and it downloaded a file. The spreadsheet URL is just for the front facing when you click "Google Sheet" at the top bar, for your admin editing convenience. You must keep the PHP and creds.json files named the same so the app knows to pair the two to make the quiz work.
+I used Composer to install the PHP Google API client. There was no documentation on Google's site on how to authenticate using the PHP Google API client, but I figured it out like this: The API client selected for Google Sheet API (versus other Google API's) that then connected gsheet/folder/quiz_name.php using credential file at keys/. The quiz named PHP file has the spreadsheet url and tab name necessarily to connect, and the Google Sheet has been shared to the email associated to the service account. The Google Sheet API would connect to the Google Sheet ID which the PHP code extracts from the Google Sheet URL.
+
+The credential file was generated from the service account at the Google Cloud platform when creating a private json key and it downloaded a file. The spreadsheet URL is just for the front facing when you click "Google Sheet" at the top bar, for your admin editing convenience. You must keep link the PHP quiz file to the credential file at keys/ with the "creds" field.
 
 Elsewhere, index.php lists all the quiz named php files under their respective quiz group folder(s). The ones hidden are folder names preceded with a minus, followed by a password, then space (eg. -Secret Secret Quizzes). PHP glob was recursively done on the gsheet folder to list the quiz groups and their respective quizzes (synonymous to folders, php files, and creds.json files) but leaving out the folder names preceded with minus -. A "passwords" navigation link was created for the user to enter password(s), then the code will glob recursively and append onto the index.php quiz list based on the matched pattern of the user input against the directory.
 
