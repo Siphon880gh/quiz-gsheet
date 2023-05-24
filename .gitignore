@@ -6,3 +6,7 @@ gsheets/**/*.json
 # User private quizzes
 hosting/
 gsheets/-*
+
+# Service accounts and possible wrappers
+keys/*.json
+keys/*.php

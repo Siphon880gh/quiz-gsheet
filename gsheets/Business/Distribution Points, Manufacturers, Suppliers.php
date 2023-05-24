@@ -8,6 +8,7 @@ $inputs = [
     /* Connections */
     "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/198ORIPMLTx5R_USCMcJlyFua9RwmUeheIv-cJP3QbP4/",
     "tabName"=>"Distribution Points, Manufacturers, Suppliers",
+    "creds"=>"../../keys/quizer-temporal-fx-381723.json",
 
     /* Display */
     "pageTitle"=>"Quiz: Distribution Points, Manufacturers, Suppliers",
@@ -45,8 +46,8 @@ ______________________________________________________________________ */
 // Error? gsheets accept only flat directory listing. It would have all folders then inside folder would have the quiz php files and credential creds.json files.
 require_once "../../controllers/check-initialized.php";
 
-// Check credential file correct. HINT: Named the same as PHP script and ends with ".creds.json"
-$credsGsheetJSONFile = rawurldecode(basename(__FILE__, '.php') . ".creds.json");
+// Check credential file correct.
+$credsGsheetJSONFile = $inputs["creds"];
 file_exists($credsGsheetJSONFile) or die("Error: Failed to load credentials $credsGsheetJSONFile. Contact administrator");
 
 // Load in Composer libraries

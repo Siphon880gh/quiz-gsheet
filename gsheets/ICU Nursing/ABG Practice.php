@@ -7,8 +7,8 @@ ______________________________________________________________________ */
 $inputs = [
     /* Connections */
     "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I/",
-    "spreadsheetId"=>"1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I",
     "tabName"=>"ABG Practice",
+    "creds"=>"../../keys/quizer-temporal-fx-381723.json",
 
     /* Display */
     "pageTitle"=>"Quiz: ABG Practice",
@@ -22,11 +22,14 @@ $inputs = [
     }"
 ];
 
-/* DEVELOPER READABILITY
-This is for readability
+/* DEVELOPER READABILITY & MAINTAINABILITY
+This is for readability & maintainability
 ______________________________________________________________________ */
 $_SESSION["spreadsheet-link"] = $inputs["spreadsheetUrl"];
-$connectToSpreadSheetUrlId = $inputs["spreadsheetId"];
+
+$re = '/.*\/(.+)\/$/m';
+preg_match_all($re, $inputs["spreadsheetUrl"], $matches, PREG_SET_ORDER, 0);
+$connectToSpreadSheetUrlId = $matches[0][1];
 $connectToTab = $inputs["tabName"];
 
 $pageTitle = $inputs["pageTitle"];
@@ -43,8 +46,8 @@ ______________________________________________________________________ */
 // Error? gsheets accept only flat directory listing. It would have all folders then inside folder would have the quiz php files and credential creds.json files.
 require_once "../../controllers/check-initialized.php";
 
-// Check credential file correct. HINT: Named the same as PHP script and ends with ".creds.json"
-$credsGsheetJSONFile = rawurldecode(basename(__FILE__, '.php') . ".creds.json");
+// Check credential file correct.
+$credsGsheetJSONFile = $inputs["creds"];
 file_exists($credsGsheetJSONFile) or die("Error: Failed to load credentials $credsGsheetJSONFile. Contact administrator");
 
 // Load in Composer libraries
