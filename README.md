@@ -13,7 +13,9 @@ By Weng Fei Fung. Easily create various types of quizzes from Google Sheet. A Go
 - [Description](#page_facing_up-description) <!-- - [Screenshots](#camera-screenshots) -->
 - [Live Demo](#computer-live-demo)
 - [Installation and Quiz Administration](#minidisc-installation-and-quiz-administration)
-- [Usage](#runner-usage)
+- [AI-Assisted Quiz Administration](#minidisc-ai-assisted-quiz-administration)
+- [Troubleshooting](#minidisc-troubleshooting)
+- [Test Taker Usage](#runner-test-taker-usage)
 - [Architecture](#triangular_ruler-architecture)
 - [Future Version](#crystal_ball-future-version)
 ---
@@ -158,7 +160,6 @@ Eg. 2,3,4
 Note for SATA, you do not write "SATA" for the Question Type column because you can have picture types or video types that are SATA. For example, you see a picture of a patients signs/symptoms and you select all the possible diagnoses.
 - All other columns to the right are choices. You can have four columns if you want a standard multiple choice question with a,b,c,d choices. If you have two columns, you can name them True and False to make it a True/False question. Or with a two column you can name them "Got it correct" and "Got it wrong" to keep track of your flash cards but you should also have the Type column as "Flash Card" (End of quiz will review your wrong questions)
 
-
 ### Question Types Support:
 
 Follow the appropriate Google Sheet format for your Question Type.
@@ -241,7 +242,78 @@ Note that you're not forced to have the rest of the other questions (Google Shee
 
 Note that if you use AI to generate questions in CSV format so that you can copy over to Google Sheet, because newlines mean new rows, the AI will render the cell as: "Side A\n===\nSide B". Then you can copy to the Google Sheet as is without having to manually replace the '\n' with blank lines. That's fine.
 
-## :runner: Usage:
+## :minidisc: AI-Assisted Quiz Administration:
+
+You can have AI generate your questions in CSV format at ChatGPT, then clean it up in Google Sheet.
+
+1. Here is a prompt:
+```
+There is a whole lesson down below.
+
+Please generate 20 questions in the form of multiple choices, select all that apply, fill in the blanks, true or false, flash cards, mix and match, and order in the correct sequence. Do not access online. Only generate questions from this lesson.
+
+For multiple choice questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question. Column 4 will instruct how to answer the question. Column 5 will be filled exact text "Multiple Choice". Column 6 will be the correct answer (Please have 1 for a, 2 for b, 3 for c, and 4 for d). Columns 5 and onwards will be a multiple choice. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. Please have no labels a), b), c), etc for multiple choices because they will be in columns anyways.
+
+For select all that apply questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question. Column 4 will instruct how to answer the question. Column 5 will be filled exact text "SATA". Column 6 will be the correct answer(s) (Please have 1 for a, 2 for b, 3 for c, and 4 for d). For example, if the correct answers are a,b,c, then Column 6 will have "1,2,3". Columns 7 and onwards will have the multiple choices. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. Please have no labels a), b), c), etc for multiple choices because they will be in columns anyways.
+
+For fill in the blank questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question with underlines for blanks. Column 4 will instruct how to answer the question. Column 5 will be filled exact text "Fill in the blank". Column 6 will be filled exact text "1". Column 7 will be the answer. Columns 8, 9, and 10 will be incorrect answers that sound possibly correct to the student. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. 
+
+For true or false questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question. Column 4 will instruct how to answer the question. Column 5 will be filled exact text "True False". Column 6 will be the correct answer (Please have 1 for True, and 2 for False). For example, if the correct answer is true, then Column 6 will have 1. Columns 7 will be filled exact text "True". Column 8 will be filled exact text "False". For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma.
+
+For flash cards: Each flash card has a front side and back side. Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the front side of the card, followed by a line of "====", followed by the back side of the card, all in one cell. Column 4 will be filled exact text "Did you remember correctly?". Column 5 will be filled exact text "Flash card". Column 6 will be filled exact text "1". Column 7 will be filled exact text "Yes". Column 8 will be filled exact text "No". For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. 
+
+For Order in the Correct Sequence type questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question and instruction to order the choices into the correct sequence. Column 4 will be filled exact text "Order into the correct sequence". Column 5 will be filled exact text "Ranked". Column 6 will be filled exact text "Na". Columns 7  and onwards will be the choices in their corresponding correct order. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. If the choices start with a), b), c), etc, please remove them because they will be in the order of the columns anyways.
+
+For the above mix and match questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question and instruction to mix and match the choices. Column 4 will be filled exact text "Mix and match". Column 5 will be filled exact text "Mix and match". Column 6 will be filled exact text "Na". Columns 7, 8, 9, and 10 will be the answer keys to the Mix and match. For example, column 7 will be will be multiline in quotes; the first line will be a choice; the second line will be "===="; the third line will be a choice that is the correct match. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. Do not shuffle the matches. Do not denote the choices with letters or numbers.
+
+Please have them all in one csv table. The rows can be polymorphic and I do not need the header row.
+
+The lesson is as follows:
+```
+
+2. Make sure to copy the lesson/article/notes as part of the prompt at the end.
+
+3. You may want to send subsequent prompts:
+
+```
+If your message was cut off, please continue
+```
+
+```
+Did those questions cover the whole lesson? If not, please continue generating more questions.
+```
+
+```
+Create additional questions that delve deeper into specific scenarios or require application of the knowledge in a practical context.
+```
+
+```
+Please give 5 mix and match questions. Continue the same CSV format.
+```
+
+
+4. Copy the AI generated CSV into a text file with file extension `.csv`
+
+5. At Google Sheet: Import file -> Upload -> Browse ->-> Insert new sheet(s). Make sure not ticked "Convert text to numbers, dates, and formulas"
+
+Why not use Excel? Google Sheet is able to understand that commas inside quotes are not column delimiters, whereas Excel cannot as of 5/24/23.
+
+6. Make sure the answer column is either NA or some numbers representing the correct choice. That will let you know if some column is off which sets all the other columns off. Make sure the Google Sheet looks correct.
+
+7. Connect the app to your AI generated questions. Then test it as a test taker. If there are problems, refer to [Troubleshooting](#minidisc-troubleshooting) below.
+
+## :minidisc: Troubleshooting:
+
+You just added a quiz and clicking "Start" does not load any questions? Firstly, check if you have any questions, if you connected to the correct URL, you connected to the correct tab name, and whether that Google Sheet has been shared with your service account's client email address yet.
+
+Another place to check is your DevTools console. If it complains about JSON syntax error, there is likely a formatting issue in the Google Sheet that would break JSON (Such as having text "\B").
+
+1, Run window.payload in DevTools console
+2. Then copy the JSON String into [Online Json Editor](https://jsoneditoronline.org/)
+3. Will tell you exactly where your JSON is off. Then that will clue you in on what to change at Google Sheet.
+
+
+## :runner: Test Taker Usage:
 
 Opening the front page will show you all categorized quizzes you can take. If there are secret quizzes, then click "Passwords" to show them.
 
