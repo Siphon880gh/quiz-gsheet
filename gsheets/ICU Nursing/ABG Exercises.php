@@ -7,12 +7,12 @@ ______________________________________________________________________ */
 $inputs = [
     /* Connections */
     "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I/",
-    "tabName"=>"ABG Practice",
+    "tabName"=>"ABG Exercises",
     "creds"=>"../../keys/quizer-temporal-fx-381723.json",
 
     /* Display */
-    "pageTitle"=>"Quiz: ABG Practice",
-    "pageDescription"=>"ABG exercises",
+    "pageTitle"=>"Quiz: ABG Exercises",
+    "pageDescription"=>"ABG Exercises. Interpret ABGs. Are you up to the challenge?",
 
     /* Optionals OR set as defaults 0 and "" respectively */
     "timeLeft"=>0,

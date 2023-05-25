@@ -33,6 +33,8 @@ By Weng Fei Fung. Easily create various types of quizzes from Google Sheet. A Go
 
 Install PHP Google API Client by running `composer install google/apiclient` 
 
+If it complains, then run `composer require google/apiclient` instead.
+
 At gsheets/, create a folder that represents a group of quizzes. Even if you have one quiz, you must create a folder. The front page will show quizzes grouped by categories, and the categories are your folders, followed by quizzes that belong to those folders aka categories.
 
 Create a PHP file inside your folder, and that will represent your connection to a specific Google Sheet tab that has your quiz details. Remember the file ends with file extension .php. Then input your Google sheet id and tab name into the PHP file like this:
