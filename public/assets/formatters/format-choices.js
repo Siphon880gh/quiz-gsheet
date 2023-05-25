@@ -178,10 +178,11 @@ window.formatters.repaintChoicesAfterRender = ({type}) => {
                         const draggable = ui.draggable;
 
                       $(this).addClass('ui-state-highlight');
+                    //   debugger;
                       draggable.position({
-                          of: $(this),
+                          of: $(this).find(".mix-match-droparea"),
                           my: 'center center', // left center
-                          at: 'center center+15'
+                          at: 'center center'
                       });
                       $(droppable).data("contained-draggable-id-is", parseInt($(draggable).data("value").split("-")[1]))
                   } // drop

@@ -37,7 +37,7 @@ $overrideCSS
 <body>
     <?php
         // Bootstrap annoyingly removed Jumbotron, so to improve readability:
-        $jumbo = "container bg-light rounded-3 px-1 py-2 px-md-5 py-md-4 my-2 my-2 my-md-4 my-md-4";
+        $jumbo = "container bg-light rounded-3 px-3 py-3 px-md-5 py-md-4 my-2 my-2 my-md-4 my-md-4";
     ?>
     
     <div class="container-fluid">
