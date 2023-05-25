@@ -109,13 +109,13 @@ const ui = {
         if(isFromSideA) {
             document.querySelector(".side-a").classList.add("d-none")
             document.querySelector(".side-b").classList.remove("d-none")
-            document.querySelector(".question-flash-card .control-left").classList.remove("text-secondary")
-            document.querySelector(".question-flash-card .control-right").classList.add("text-secondary")
+            document.querySelector(".question-flash-card .control-left").classList.remove("flash-card-side-active")
+            document.querySelector(".question-flash-card .control-right").classList.add("flash-card-side-active")
         } else {
             document.querySelector(".side-a").classList.remove("d-none")
             document.querySelector(".side-b").classList.add("d-none")
-            document.querySelector(".question-flash-card .control-left").classList.add("text-secondary")
-            document.querySelector(".question-flash-card .control-right").classList.remove("text-secondary")
+            document.querySelector(".question-flash-card .control-left").classList.add("flash-card-side-active")
+            document.querySelector(".question-flash-card .control-right").classList.remove("flash-card-side-active")
         }
     },
 

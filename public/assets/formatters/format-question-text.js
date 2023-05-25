@@ -73,8 +73,9 @@ window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
                         ${sideB}
                     </div>
                     <div class="flash-card-nav">
-                        <i class="fas fa-angle-left control-left text-secondary"></i>
-                        <i class="fas fa-angle-right control-right"></i>
+                        <label>Flash card:</label>
+                        <i class="ri-bring-forward control-left flash-card-side-active"></i>&nbsp;
+                        <i class="ri-send-backward control-right"></i>
                     </div>
                 </div>
             `

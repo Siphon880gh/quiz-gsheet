@@ -291,7 +291,6 @@ Create additional questions that delve deeper into specific scenarios or require
 Please give 5 mix and match questions. Continue the same CSV format.
 ```
 
-
 4. Copy the AI generated CSV into a text file with file extension `.csv`
 
 5. At Google Sheet: Import file -> Upload -> Browse ->-> Insert new sheet(s). Make sure not ticked "Convert text to numbers, dates, and formulas"
