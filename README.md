@@ -13,6 +13,7 @@ By Weng Fei Fung. Easily create various types of quizzes from Google Sheet. A Go
 - [Description](#page_facing_up-description) <!-- - [Screenshots](#camera-screenshots) -->
 - [Live Demo](#computer-live-demo)
 - [Installation and Quiz Administration](#minidisc-installation-and-quiz-administration)
+- [Define Custom Folder Icons for Quiz Administration](#minidisc-define-custom-folder-icons)
 - [AI-Assisted Quiz Administration](#minidisc-ai-assisted-quiz-administration)
 - [Troubleshooting](#minidisc-troubleshooting)
 - [Test Taker Usage](#runner-test-taker-usage)
@@ -241,6 +242,26 @@ May have HTML like `<img src...>
 Note that you're not forced to have the rest of the other questions (Google Sheet rows) to be Flash cards.
 
 Note that if you use AI to generate questions in CSV format so that you can copy over to Google Sheet, because newlines mean new rows, the AI will render the cell as: "Side A\n===\nSide B". Then you can copy to the Google Sheet as is without having to manually replace the '\n' with blank lines. That's fine.
+
+## :minidisc: Define Custom Folder Icons:
+
+At the quiz listing, you may choose to have custom icons in place of folder icons. You would edit them inside icons.config.js using the displayed folder name.
+
+```
+        {
+            "displayName": "Business - Trader",
+            "replaceIcon": "fontawesome i html, ri i html, or emoji icon"
+        }
+```
+
+As for password protected folders, you can still add custom icons for them by using the displayed folder name (not the actual file/folder name that has the password). For example, if you password protected folder is `gsheets/-Secret Personal Quiz`, then the display folder is `Personal Quiz` because the password "Secret" was removed from the app from peaking eyes, so your configuration is:
+```
+        {
+            "displayName": "Personal Quiz",
+            "replaceIcon": "fontawesome i html, ri i html, or emoji icon"
+        }
+```
+
 
 ## :minidisc: AI-Assisted Quiz Administration:
 
