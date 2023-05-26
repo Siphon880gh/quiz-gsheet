@@ -18,6 +18,7 @@ By Weng Fei Fung. Easily create various types of quizzes from Google Sheet. A Go
 - [Troubleshooting](#minidisc-troubleshooting)
 - [Test Taker Usage](#runner-test-taker-usage)
 - [Architecture](#triangular_ruler-architecture)
+- [Pivot Strategy if Google Sheet API discontinued](#triangular_ruler-architecture)
 - [Future Version](#crystal_ball-future-version)
 ---
 
@@ -387,6 +388,34 @@ The redrawing step that happens after rendering from Handlebars template - that 
 Then the app will always hydrate the choices UI to be interactable. This is implemented at the format-choices.js:hydrateChoices() method. Depending on the Question Type, you may have multiple choices that you can click to advance to the next question, or you may have a ranking question where you drag and drop the choices into the correct sequence. Various presentation logic are possible based on the Question Type.
 
 Was initially vanilla Javascript. However, in order to speed up development time when it became more UI intensive with various drag and drop logic, I switched over to jQuery with jQuery UI. I might convert the jQuery and jQuery UI back to full vanilla Javascript in the future and then minify and bundle assets to gain a slight performance boost.
+
+## :triangular_ruler: Pivot Strategy If Google Sheet API Discontinued:
+If the Google Sheet API discontinues or tightens rate limits, or influx of traffic has increased too much, then there needs to be a strategy to mitigate the impact. As of 5/25/23, Google ofers the Google Sheet API for free with a generous rate limit. However, Google is known to start many small products then sunset them last minute.
+
+If this does happen, then the strategy is to have a caching stage at the server side if there are stricter rate-limits or the traffic has increased significantly. Otherwise, if Google Sheet API is sunset then we'll have to rely on another way to source the data. Below will describe how the data is structured and both strategies.
+
+Google Sheet API returns an array of arrays. Firstly, on the outer level, that's an array of spreadsheet rows. Then each row is an array representing the cell values. The first row is the header row though. For example:
+
+```
+[
+    ["Optional Sorting Rank (-1 for hide from quiz)", "Title/Subcategory", "Question", "Instruction", "Question Type", "Correct Choice", "Choice 1", "Choice 2", "Choice 3", "Choice 4", "Choice 5", "6", "7", "8", "9", "10", "11", "12"],
+    ["", "Concepts", "Which distribution point involves businesses selling products directly to customers without involving intermediaries?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "3", "Retail Stores", "Warehouses", "Direct Sales", "Wholesalers"],
+    ["", "Concepts", "Which distribution model involves transferring customer orders to manufacturers, wholesalers, or suppliers, who then ship the products directly to the customers?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "2", "Retail Stores", "Dropshipping", "Direct Sales", "Distributors"],
+    ["", "Concepts", "Which of the following is not typically a role of a supplier?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "3", "Providing raw materials", "Offering transportation services", "Selling products directly to customers", "Providing equipment for manufacturing"],
+    ["", "Concepts", "In which distribution model do businesses not keep products in stock, but transfer orders to other entities for fulfillment?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "3", "Retail Stores", "Warehouses", "Dropshipping", "Direct Sales"],
+    ["", "Concepts", "What type of distribution point involves virtual platforms such as e-commerce websites or mobile apps?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "3", "Retail Stores", "Warehouses", "Online Marketplaces", "Wholesalers"],
+    ["", "Concepts", "Who are the entities that purchase products in bulk from manufacturers and sell them in smaller quantities to retailers or other businesses?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "2", "Retail Stores", "Wholesalers", "Suppliers", "Distributors"],
+    ["", "Concepts", "What type of businesses typically sell products directly to customers without involving intermediaries?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "3", "Wholesalers", "Distributors", "Direct Sales", "Warehouses"],
+    ["", "Concepts", "Which of the following is not an example of a retail store?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "3", "Department stores", "Supermarkets", "Warehouses", "Convenience stores"],
+    ["", "Application", "You are a manufacturer of custom t-shirts. You receive a large order from an online retailer who doesn't keep any inventory. This retailer is likely following which distribution model?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "3", "Retail Stores", "Direct Sales", "Dropshipping", "Wholesalers"],
+    ["", "Application", "You own a large warehouse where goods are stored, sorted, and dispatched to various department stores across the country. What role do you play in the distribution process?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "4", "Distributor", "Wholesaler", "Retailer", "Warehouse"],
+    ["", "Concepts", "A local grocery store sources its products from various companies and sells them directly to consumers. What type of distribution point is this?", "Select the option that corresponds to the correct answer.", "Multiple Choice", "1", "Wholesaler", "Distributor", "Retail Store", "Online Marketplace"]
+]
+```
+
+Google Sheet API can tell you the last time a spreadsheet is updated. So if you track that date/time, and it changes, then you'll want to pull a fresh copy rather than load the cached JSON from your server.
+
+In the case you do not have access to Google Sheet API anymore, you could take the data entry into .xlsx files that you upload to the webhost. You'd setup Python Pandas that can easily read from the .xlsx file and the spreadsheet tab. This would entirely replace Google Sheet API. For convenience, you may want to setup a pipeline that uploads via SFTP when your .xlsx files change.
 
 ## :crystal_ball: Future version
 - Review wrong answers when finished
