@@ -1,3 +1,7 @@
+.clearfix {
+    clear: both;    
+}
+
 ul.dirs {
     font-size: 140%;
     list-style: none;

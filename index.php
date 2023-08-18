@@ -123,8 +123,7 @@ if($usingCallback) {
     ?>
     
     <div class="container-fluid">
-        <header class="site-header clearfix">
-            <h1 class="site-title display-3 float-start">Quiz</h1>
+        <header class="site-header text-center">
             <nav class="site-nav float-end">
                 <ul class="nav">
                     <li class="nav-item">
@@ -134,6 +133,9 @@ if($usingCallback) {
                     </li>
                 </ul>
             </nav>
+            <h1 class="clearfix site-title display-3">Quiz</h1>
+            <p>By Weng Fei Fung<br/>These questions are managed from Google Sheets so it's easy to add more questions.<br/><a href="https://wengindustry.com/me/contact" target="_blank">Suggest quizzes</a> or <a href="https://github.com/Siphon880gh/quiz-gsheet" target="_blank">see my Github</a> if you want to implement your own quizzes or contribute to the app.</p>
+
         </header>
 
         <main class="site-body">
