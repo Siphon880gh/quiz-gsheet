@@ -8,7 +8,7 @@ $inputs = [
     /* Connections */
     "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I/",
     "tabName"=>"Vasopressor Concepts",
-    "creds"=>"../../keys/quizer-temporal-fx-381723.json",
+    "creds"=>dirname(__FILE__) . "/../../../../../keys/quizer-temporal-fx-381723.json",
 
     /* Display */
     "pageTitle"=>"Quiz: Vasopressor Concepts",

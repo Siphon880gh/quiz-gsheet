@@ -8,7 +8,7 @@ $inputs = [
     /* Connections */
     "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1SHqEB2MVho0jP81cT9bDEo5VUZOzkfwNC1BZ3qB8VQE/",
     "tabName"=>"AbsolutePitch",
-    "creds"=>"../../keys/quizer-temporal-fx-381723.json",
+    "creds"=>dirname(__FILE__) . "/../../../../../keys/quizer-temporal-fx-381723.json",
 
     /* Display */
     "pageTitle"=>"Quiz: Identify Absolute Pitches",

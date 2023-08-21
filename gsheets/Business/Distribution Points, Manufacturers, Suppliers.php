@@ -8,7 +8,7 @@ $inputs = [
     /* Connections */
     "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/198ORIPMLTx5R_USCMcJlyFua9RwmUeheIv-cJP3QbP4/",
     "tabName"=>"Distribution Points, Manufacturers, Suppliers",
-    "creds"=>"../../keys/quizer-temporal-fx-381723.json",
+    "creds"=>dirname(__FILE__) . "/../../../../../keys/quizer-temporal-fx-381723.json",
 
     /* Display */
     "pageTitle"=>"Quiz: Distribution Points, Manufacturers, Suppliers",
