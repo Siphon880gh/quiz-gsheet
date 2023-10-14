@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+
+echo __FILE__;
+
+die();
+
 /* INPUTS
 Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
