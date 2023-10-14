@@ -1,7 +1,32 @@
 <?php
+// TODO: quiz2 will be for 
     $pageTitle = "AI Assisted Questions";
     $pageDesc = "On the fly generated AI questions";
     $json=""; // Leave blank
+
+    /* The AI Prompt would be:
+
+    I am studying for loops of python.
+
+Please generate as many questions in the form of multiple choices, select all that apply, fill in the blanks, true or false, flash cards, mix and match, and order in the correct sequence. Do not access online. Only generate questions from this lesson.
+
+For multiple choice questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question. Column 4 will instruct how to answer the question. Column 5 will be filled exact text "Multiple Choice". Column 6 will be the correct answer (Please have 1 for a, 2 for b, 3 for c, and 4 for d). Columns 5 and onwards will be a multiple choice. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. Please have no labels a), b), c), etc for multiple choices because they will be in columns anyways.
+
+For select all that apply questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question. Column 4 will instruct how to answer the question. Column 5 will be filled exact text "SATA". Column 6 will be the correct answer(s) (Please have 1 for a, 2 for b, 3 for c, and 4 for d). For example, if the correct answers are a,b,c, then Column 6 will have "1,2,3". Columns 7 and onwards will have the multiple choices. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. Please have no labels a), b), c), etc for multiple choices because they will be in columns anyways.
+
+For fill in the blank questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question with underlines for blanks. Column 4 will instruct how to answer the question. Column 5 will be filled exact text "Fill in the blank". Column 6 will be filled exact text "1". Column 7 will be the answer. Columns 8, 9, and 10 will be incorrect answers that sound possibly correct to the student. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. 
+
+For true or false questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question. Column 4 will instruct how to answer the question. Column 5 will be filled exact text "True False". Column 6 will be the correct answer (Please have 1 for True, and 2 for False). For example, if the correct answer is true, then Column 6 will have 1. Columns 7 will be filled exact text "True". Column 8 will be filled exact text "False". For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma.
+
+For flash cards: Each flash card has a front side and back side. Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the front side of the card, followed by a line of "====", followed by the back side of the card, all in one cell. Column 4 will be filled exact text "Did you remember correctly?". Column 5 will be filled exact text "Flash card". Column 6 will be filled exact text "1". Column 7 will be filled exact text "Yes". Column 8 will be filled exact text "No". For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. 
+
+For Order in the Correct Sequence type questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question and instruction to order the choices into the correct sequence. Column 4 will be filled exact text "Order into the correct sequence". Column 5 will be filled exact text "Ranked". Column 6 will be filled exact text "Na". Columns 7  and onwards will be the choices in their corresponding correct order. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. If the choices start with a), b), c), etc, please remove them because they will be in the order of the columns anyways.
+
+For the above mix and match questions: Please convert them into csv format. Column 1 will be filled exact text "". Column 2 will be filled exact text "". Column 3 is the question and instruction to mix and match the choices. Column 4 will be filled exact text "Mix and match". Column 5 will be filled exact text "Mix and match". Column 6 will be filled exact text "Na". Columns 7, 8, 9, and 10 will be the answer keys to the Mix and match. For example, column 7 will be will be multiline in quotes; the first line will be a choice; the second line will be "===="; the third line will be a choice that is the correct match. For each comma separated value, do not surround with quotation marks or double quotation marks unless you need to escape a comma. Do not shuffle the matches. Do not denote the choices with letters or numbers.
+
+I do not care for header row. Once you have the CSV, please convert into a javascript array of arrays. At the first level of the array, those are the CSV lines. The second level of arrays are the values separated by comma.
+
+*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
