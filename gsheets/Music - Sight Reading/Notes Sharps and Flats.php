@@ -6,20 +6,22 @@ Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
 $inputs = [
     /* Connections */
-    "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1ADoGCwc-u2DpuEHx_UurLjxV_d8cSvaGHoGdCD-iI5I/",
-    "tabName"=>"Coming Soon Questions",
+    "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/",
+    "tabName"=>"Sample-SharpsFlats",
     "creds"=>dirname(__FILE__) . "/../../../../../keys/quizer-temporal-fx-381723.json",
 
     /* Display */
-    "pageTitle"=>"Quiz: Coming Soon Questions",
-    "pageDescription"=>"These are new questions that will be incorporated into the quizzes. Just testing if the formatting from Google Sheet is okay and the question and choices appear as intended.",
+    "pageTitle"=>"Quiz: Music Sharp and Flat Notes",
+    "pageDescription"=>"Play a quick quiz game to test your sight reading skills in music.",
 
     /* Optionals OR set as defaults 0 and "" respectively */
-    "timeLeft"=>0,
-    "cssOverride"=>".question {
+    "timeLeft"=>40,
+    "cssOverride"=>"
+    .question {
         border: 1px solid black;
         background-color: white !important;
-    }"
+    }
+    "
 ];
 
 /* DEVELOPER READABILITY & MAINTAINABILITY

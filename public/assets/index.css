@@ -2,6 +2,13 @@
     clear: both;    
 }
 
+.w-128 {
+    max-width: 32rem;
+}
+.w-256 {
+    max-width: 64rem;
+}
+
 ul.dirs {
     font-size: 140%;
     list-style: none;

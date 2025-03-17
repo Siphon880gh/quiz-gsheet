@@ -9,12 +9,16 @@
             "replaceIcon": "<i class='ri-bank-line'></i>"
         },
         {
-            "displayName": "Ear Training",
+            "displayName": "Medical - _Nursing",
+            "replaceIcon": "<i class='ri-nurse-line'></i>"
+        },
+        {
+            "displayName": "Music - Ear Training",
             "replaceIcon": "<i class='ri-headphone-line'></i>"
         },
         {
-            "displayName": "ICU Nursing",
-            "replaceIcon": "<i class='ri-nurse-line'></i>"
+            "displayName": "Music - Sight Reading",
+            "replaceIcon": "<i class='ri-headphone-line'></i>"
         }
     ]
 }

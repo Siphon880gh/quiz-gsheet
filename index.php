@@ -103,6 +103,7 @@ if($usingCallback) {
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.min.css" rel="stylesheet">
     <link href="<?php echo $_SESSION["root_url"] . "public/" ?>assets/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo $_SESSION["root_url"] . "public/" ?>assets/index.css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 
     <script>
     // PHP brings in Google Sheet Data directly is faster
@@ -134,8 +135,31 @@ if($usingCallback) {
                 </ul>
             </nav>
             <h1 class="clearfix site-title display-3">Quiz</h1>
-            <p>By Weng Fei Fung<br/>These questions are managed from Google Sheets so it's easy to add more questions.<br/><a href="https://wengindustry.com/me/contact" target="_blank">Suggest quizzes</a> or <a href="https://github.com/Siphon880gh/quiz-gsheet" target="_blank">see my Github</a> if you want to implement your own quizzes or contribute to the app.</p>
 
+            <div class="flex flex-col w-fit gap-1 my-4">
+
+                <a href="mailto:weng.f.fung@gmail.com">By Weng Fei Fung<a/>
+                <div class="flex flex justify-center gap-2">
+                    <a target="_blank" href="https://github.com/Siphon880gh" rel="nofollow">
+                        <img src="https://img.shields.io/badge/GitHub--blue?style=social&logo=GitHub" alt="Github" data-canonical-src="https://img.shields.io/badge/GitHub--blue?style=social&logo=GitHub" style="max-width:10ch; vertical-align: middle;">
+                    </a>
+
+                    <a target="_blank" href="https://www.linkedin.com/in/weng-fung/" rel="nofollow">
+                        <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&labelColor=blue" alt="Linked-In" data-canonical-src="https://img.shields.io/badge/LinkedIn-blue?style=flat&amp;logo=linkedin&amp;labelColor=blue" style="max-width:10ch; vertical-align: middle;">
+                    </a>
+
+                    <a target="_blank" href="https://www.youtube.com/@WayneTeachesCode/" rel="nofollow">
+                        <img src="https://img.shields.io/badge/Youtube-red?style=flat&logo=youtube&labelColor=red" alt="Youtube" data-canonical-src="https://img.shields.io/badge/Youtube-red?style=flat&amp;logo=youtube&amp;labelColor=red" style="max-width:10ch; vertical-align: middle;">
+                    </a>  
+                </div>
+                
+                
+            </div>
+
+
+            <p class="w-256 mx-auto">
+            Take quizzes on various topics from business, to medicine, to music. These questions are automatically generated from Google Sheets so it's easy to add more questions. You can <a href="https://wengindustry.com/me/contact" target="_blank">suggest quiz topics</a>. If you're a curious developer, see my <a href="https://github.com/Siphon880gh/quiz-gsheet" target="_blank">Github repo</a>.
+            </p>
         </header>
 
         <main class="site-body">

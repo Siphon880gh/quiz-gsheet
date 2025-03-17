@@ -6,20 +6,22 @@ Will be processed into $json and $overrideStyleBlock for templates
 ______________________________________________________________________ */
 $inputs = [
     /* Connections */
-    "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/198ORIPMLTx5R_USCMcJlyFua9RwmUeheIv-cJP3QbP4/",
-    "tabName"=>"Trader",
+    "spreadsheetUrl"=>"https://docs.google.com/spreadsheets/d/1ArIhTwTrEACKEvYDsvw4cONX9-LbeH2_FLh1kcfUsQs/",
+    "tabName"=>"Sample-AbsolutePitch",
     "creds"=>dirname(__FILE__) . "/../../../../../keys/quizer-temporal-fx-381723.json",
 
     /* Display */
-    "pageTitle"=>"Business Quiz: Trader",
-    "pageDescription"=>"Trader concepts. In the future will have more scenario type questions and questions geared towards analyzing stocks quantitatively and macroeconomically.",
+    "pageTitle"=>"Quiz: Identify Absolute Pitches",
+    "pageDescription"=>"Play a quick quiz game to test your ears' absolute pitch skills.",
 
     /* Optionals OR set as defaults 0 and "" respectively */
-    "timeLeft"=>0,
-    "cssOverride"=>".question {
+    "timeLeft"=>40,
+    "cssOverride"=>"
+    .question {
         border: 1px solid black;
         background-color: white !important;
-    }"
+    }
+    "
 ];
 
 /* DEVELOPER READABILITY & MAINTAINABILITY
