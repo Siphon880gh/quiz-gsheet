@@ -10,13 +10,8 @@ function getHttpHttps() {
     return "http://";
 }
 $_SESSION["root_dir"] = __DIR__;
-$_SESSION["root_url"] = getHttpHttps() . ($_SERVER["HTTP_HOST"]) . $_SERVER['REQUEST_URI'];
-
-// Wrangle away URL queries
-$string = $_SESSION["root_url"] ;
-$pattern = '/(.*)\?+.*/i';
-$replacement = '${1}';
-$_SESSION["root_url"] = preg_replace($pattern, $replacement, $string);
+$scriptDir = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/';
+$_SESSION["root_url"] = getHttpHttps() . $_SERVER["HTTP_HOST"] . $scriptDir;
 
 /* Scenario: User had visited subpage without initializing. Had forced redirect here. Now redirect to callback URL */
 $usingCallback = isset($_GET["callback"]);
