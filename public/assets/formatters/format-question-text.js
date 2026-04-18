@@ -32,7 +32,7 @@ window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
         case "absolute pitch":
             return `
             <div>
-                <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/tools/quiz-gsheet-hosting/music-sight-reading/mp3/poster/piano.jpg" type="audio/mp3" controls autoplay loop webkit-playsinline playsinline></video>
+                <video src="${questionText}" width="250" height="250" poster="https://wengindustry.com/hosted/quiz-gsheet/music-sight-reading/mp3/poster/piano.jpg" type="audio/mp3" controls autoplay loop webkit-playsinline playsinline></video>
             </div>
             `;
         case "relative pitch":
@@ -41,7 +41,7 @@ window.formatters.getQuestionsSubtemplate = ({type, questionText})=>{
                 return "<div class='error alert alert-danger'><b>Error:<b/> Relative pitch question is not formatted correctly at the Google Sheet. Please contact quiz publisher.</div>"
             }
 
-            const poster = "https://wengindustry.com/tools/quiz-gsheet-hosting/music-sight-reading/mp3/poster/piano.jpg";
+            const poster = "https://wengindustry.com/hosted/quiz-gsheet/music-sight-reading/mp3/poster/piano.jpg";
             const [identifiedPitchA, soundPitchA, soundPitchB] = wrangled.map(wranglee=>wranglee.trim());
             return `
             <div class="relative-pitch" style="display:flex; justify-content: space-around;">
