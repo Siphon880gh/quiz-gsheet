@@ -200,6 +200,17 @@ Make sure the Question Type cell is correct so the app knows how to read the row
 - Absolute pitch
 - Relative pitch
 
+See `gsheets/Test/sample-quiz.csv` for one row per interaction above (loaded by `gsheets/Test/Sample Quiz.php`).
+
+#### Question type nuances
+
+Some formats are driven by **how you fill the row**, not only by the Question Type label:
+
+- **Select all that apply (SATA)** — The app turns on SATA when the Correct Choice cell has **comma-separated** indices (for example `1,2,4`). You do **not** need `SATA` in the Question Type column. Leave it as `Multiple Choice`, `Picture`, `Video`, or another media type when the prompt is an image or clip and the learner picks every answer that applies.
+- **Fill in the blank** — Treat it like multiple choice: use `Multiple Choice` (or a blank/generic type such as `Text`) and put blanks in the question text (for example `The ___ is the powerhouse of the cell`). Put the correct wording in one choice column and distractors in the others. A separate `Fill in the blank` value in Question Type is optional; the app does not require it.
+- **Plain text questions** — If Question Type is blank or unrecognized (for example `Text` or `Normal`), the question renders as plain text with the usual clickable choice list—same interaction as a standard multiple choice row.
+- **SATA + picture or video** — Use `Picture` or `Video` in Question Type for the media, and still use comma-separated numbers in Correct Choice for SATA. The confirm button appears because of the correct-answer format, not because of a `SATA` type name.
+
 Google Sheet screenshots or templates coming soon!
 
 ### Administering Multiple Choice Questions
