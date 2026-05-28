@@ -41,7 +41,7 @@ If it complains, then run `composer require google/apiclient` instead.
 
 At gsheets/, create a folder that represents a group of quizzes. Even if you have one quiz, you must create a folder. The front page will show quizzes grouped by categories, and the categories are your folders, followed by quizzes that belong to those folders aka categories.
 
-Create a PHP file inside your folder, and that will represent your connection to a specific Google Sheet tab that has your quiz details. Remember the file ends with file extension .php. Then input your Google sheet id and tab name into the PHP file like this:
+Create a PHP file inside your folder, and that will represent your connection to a specific Google Sheet tab (or a local CSV file) that has your quiz details. Remember the file ends with file extension .php. Then input your Google sheet id and tab name into the PHP file like this:
 
 ```
 <?php
@@ -107,7 +107,25 @@ require_once "../../controllers/render-quiz.php";
 ?>
 ```
 
-Notice you are only changing the code under INPUTS. You must have the spreadsheet URL, spreadsheet ID, and the tab name you are loading the quiz from. The spreadsheet ID is from the spreadsheet link, eg. "https://docs.google.com/spreadsheets/d/__GOOGLE_SHEET_ID__/". I chose to make the ID manual rather than parse from the spreadsheet URL in case Google changes their URL scheme.
+Notice you are only changing the code under INPUTS. For Google Sheets you must have the spreadsheet URL and the tab name you are loading the quiz from. The spreadsheet ID is parsed from the spreadsheet link, eg. "https://docs.google.com/spreadsheets/d/__GOOGLE_SHEET_ID__/". I chose to parse from the URL rather than a separate ID field in case Google changes their URL scheme.
+
+### Local CSV (no Google API)
+
+For development or offline quizzes, use `spreadsheetLocal` instead of `spreadsheetUrl`, `tabName`, and `creds`. Point it at a CSV file in the same folder as your quiz PHP file (same column layout as Google Sheet rows). The app reads the file with PHP `fgetcsv` and skips the Google API client and service-account credentials.
+
+Example: `gsheets/Test/Sample Quiz.php` loads `gsheets/Test/sample-quiz.csv`. Use `require_once "../../controllers/quiz-engine.php";` in the ENGINE section (see that file) so credentials and Composer are only loaded when you use Google Sheets.
+
+```
+$inputs = [
+    "spreadsheetLocal"=>"sample-quiz.csv",
+    "pageTitle"=>"Quiz: Sample (Local CSV)",
+    "pageDescription"=>"Development quiz from local CSV.",
+    "timeLeft"=>0,
+    "cssOverride"=>""
+];
+```
+
+Paths are relative to the quiz PHP file unless you pass an absolute path. `connect-gsheet.php` detects `spreadsheetLocal` and loads `connect-local-csv.php` instead of calling the Sheets API.
 
 Optionally, you can enable a countdown timer if it's a timed quiz. When the time runs out, the quiz ends even if not all the questions are answered. You can also optionally add styling specific to your quiz (feel free to inspect the HTML of the quiz to figure out what classes and ID's you can use).
 
@@ -121,6 +139,9 @@ ____gsheets
 | | |____Minimally Invasive Skills SATA.php
 | | |____Respiratory Pathophysiology.php
 | | |____Stroke NIHSS Signs Video Quiz.php
+| |____Test
+| | |____Sample Quiz.php
+| | |____sample-quiz.csv
 | |____Web Development
 | | |____Javascript Flash Cards.php
 | | |____MySQL True False Questions.php
@@ -343,7 +364,7 @@ When taking a quiz, just follow the instructions on screen. If it's a timed quiz
 You can select choices by clicking them or pressing your keyboard 1,2,3,4..9 depending on the number of multiple choices. A question with greater than 9 multiple choices will only support the keys 1,2,3,4...9 and you would have to click manually for the other choices. Usually questions that are Select all that apply (SATA) have that many choices.
 
 ## :triangular_ruler: Architecture:
-I used Composer to install the PHP Google API client. There was no documentation on Google's site on how to authenticate using the PHP Google API client, but I figured it out like this: The API client selected for Google Sheet API (versus other Google API's) that then connected gsheet/folder/quiz_name.php using credential file at keys/. The quiz named PHP file has the spreadsheet url and tab name necessarily to connect, and the Google Sheet has been shared to the email associated to the service account. The Google Sheet API would connect to the Google Sheet ID which the PHP code extracts from the Google Sheet URL.
+I used Composer to install the PHP Google API client. There was no documentation on Google's site on how to authenticate using the PHP Google API client, but I figured it out like this: The API client selected for Google Sheet API (versus other Google API's) that then connected gsheet/folder/quiz_name.php using credential file at keys/. The quiz named PHP file has the spreadsheet url and tab name necessarily to connect, and the Google Sheet has been shared to the email associated to the service account. The Google Sheet API would connect to the Google Sheet ID which the PHP code extracts from the Google Sheet URL. If the quiz `$inputs` include `spreadsheetLocal`, `connect-gsheet.php` loads the CSV via `connect-local-csv.php` and the same row-to-JSON encoding path as the API response; `quiz-engine.php` skips credentials and Composer in that case.
 
 The credential file was generated from the service account at the Google Cloud platform when creating a private json key and it downloaded a file. The spreadsheet URL is just for the front facing when you click "Google Sheet" at the top bar, for your admin editing convenience. You must keep link the PHP quiz file to the credential file at keys/ with the "creds" field.
 
@@ -415,7 +436,7 @@ Google Sheet API returns an array of arrays. Firstly, on the outer level, that's
 
 Google Sheet API can tell you the last time a spreadsheet is updated. So if you track that date/time, and it changes, then you'll want to pull a fresh copy rather than load the cached JSON from your server.
 
-In the case you do not have access to Google Sheet API anymore, you could take the data entry into .xlsx files that you upload to the webhost. You'd setup Python Pandas that can easily read from the .xlsx file and the spreadsheet tab. This would entirely replace Google Sheet API. For convenience, you may want to setup a pipeline that uploads via SFTP when your .xlsx files change.
+In the case you do not have access to Google Sheet API anymore, you could take the data entry into .xlsx files that you upload to the webhost. You'd setup Python Pandas that can easily read from the .xlsx file and the spreadsheet tab. This would entirely replace Google Sheet API. For convenience, you may want to setup a pipeline that uploads via SFTP when your .xlsx files change. A lighter-weight option already in the repo is `spreadsheetLocal`: export or save your tab as CSV next to the quiz PHP file under `gsheets/` (see `gsheets/Test/`).
 
 ## :crystal_ball: Future version
 - Review wrong answers when finished

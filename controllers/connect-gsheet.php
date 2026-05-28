@@ -1,6 +1,13 @@
 <?php
 // imported $credsGsheetJSONFile from gsheets/nameX/nameY.php
 
+if (!empty($inputs["spreadsheetLocal"])) {
+    require_once __DIR__ . "/connect-local-csv.php";
+    return;
+}
+
+require_once __DIR__ . "/spreadsheet-values.php";
+
 // Setup creds
 $client = new \Google_Client();
 $client->setApplicationName('Google Sheets API');
@@ -18,16 +25,7 @@ $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 // OFF|on: Get values tested
 $values = $response->getValues();
 
-// Make parseable
-for($i = 0; $i<count($values); $i++) {
-    // Otherwise bad control character in string literal in JSON:
-    $values[$i] = preg_replace("/\n/", "\\n", $values[$i]);
-    // Otherwise double quote breaks JSON. Will convert back on Javascript side.
-    $values[$i] = preg_replace("/\"/", "__DOUBLE__QUOTE__", $values[$i]);
-}
-
-// In the future might consider flag: JSON_UNESCAPED_SLASHES
-$json = json_encode($values);
+$json = spreadsheet_values_to_json($values);
 // echo $json;
 // die();
 ?>
