@@ -10,7 +10,7 @@ $inputs = [
 
     /* Display */
     "pageTitle"=>"Quiz: All Question Types (Paste CSV)",
-    "pageDescription"=>"Paste CSV exported from a spreadsheet (include the header row). Try copying gsheets/Test/sample-quiz.csv.",
+    "pageDescription"=>"Paste question CSV in the quiz format—each row becomes an interactive question.",
 
     /* Optionals OR set as defaults 0 and "" respectively */
     "timeLeft"=>0,

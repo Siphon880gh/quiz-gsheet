@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["spreadsheetCsv"])) {
     $trimmedCsv = trim($submittedCsv);
 
     if ($trimmedCsv === "") {
-        $pasteFormError = "Paste your quiz CSV data (including the header row), then submit.";
+        $pasteFormError = "Paste question CSV in the quiz format (including the header row), then submit.";
     } else {
         $values = spreadsheet_csv_rows_from_string($trimmedCsv);
         $validationError = validate_quiz_spreadsheet_values($values);
@@ -22,6 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["spreadsheetCsv"])) {
         }
     }
 }
+
+$sampleCsvPath = $_SESSION["root_dir"] . "/gsheets/Test/sample-quiz.csv";
+$sampleCsv = is_readable($sampleCsvPath) ? file_get_contents($sampleCsvPath) : "";
 
 require_once $_SESSION["root_dir"] . "/public/paste-spreadsheet.php";
 exit();
