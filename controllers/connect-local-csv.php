@@ -7,14 +7,14 @@ if (!preg_match('#^/#', $csvPath)) {
     $csvPath = dirname($_SERVER["SCRIPT_FILENAME"]) . "/" . $csvPath;
 }
 
-file_exists($csvPath) or die("Error: Failed to load spreadsheet $csvPath. Contact administrator");
+if (!file_exists($csvPath)) {
+    die_quiz_source_error("local CSV file", "file not found: $csvPath");
+}
 
-$values = [];
-if (($handle = fopen($csvPath, "r")) !== false) {
-    while (($row = fgetcsv($handle, 0, ",", '"', "\\")) !== false) {
-        $values[] = $row;
-    }
-    fclose($handle);
+$values = spreadsheet_csv_rows_from_path($csvPath);
+$validationError = validate_quiz_spreadsheet_values($values);
+if ($validationError !== null) {
+    die_quiz_source_error("local CSV file", $validationError);
 }
 
 $json = spreadsheet_values_to_json($values);

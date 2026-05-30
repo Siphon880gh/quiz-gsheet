@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $pageTitle; ?></title>
     <script>
-        // PHP brings in Google Sheet Data directly is faster
-        window.payload = `<?php echo $json; ?>`;
-        window.payload = JSON.parse(window.payload);
+        // Embed JSON as a JS literal (not a template string) so \n, \r, and ` in data are not reinterpreted by JS before the quiz runs.
+        window.payload = <?php echo $json; ?>;
         for(i=0;i<window.payload.length;i++) {
             for(j=0; j<window.payload[i].length; j++) {
                     // At the level of row i -> cell j 
@@ -59,11 +58,13 @@ $overrideCSS
                             <i class="fas fa-random"></i> Reshuffle
                         </a>
                     </li>
+<?php if (!empty($_SESSION["spreadsheet-link"])) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $_SESSION["spreadsheet-link"]; ?>" target="_blank">
                             <i class="fas fa-table"></i> Google Sheet
                         </a>
                     </li>
+<?php } ?>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modal-more-questions" style="cursor:pointer;">
                         <i class="fas fa-times-circle"></i> More Questions

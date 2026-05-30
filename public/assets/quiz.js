@@ -34,7 +34,8 @@ const atColumn = {
 }
 
 // Data loader
-const headers = payload[0];
+const payload = Array.isArray(window.payload) ? window.payload : [];
+const headers = payload[0] || [];
 const rows = payload.slice(1);
 
 // Setup business logic
@@ -499,5 +500,9 @@ const ui = {
         } // if i is 0
     }, // Ends showQuestion
 } // ui
+
+// Inline onclick handlers in quiz.php expect these names globally.
+window.questions = questions;
+window.ui = ui;
 
 ui.init();

@@ -2,9 +2,10 @@
 
 require_once __DIR__ . "/check-initialized.php";
 
-$useSpreadsheetLocal = !empty($inputs["spreadsheetLocal"]);
+$useOfflineSource = !empty($inputs["spreadsheetLocal"])
+    || !empty($inputs["spreadsheetUserProvides"]);
 
-if (!$useSpreadsheetLocal) {
+if (!$useOfflineSource) {
     $credsGsheetJSONFile = $inputs["creds"];
     file_exists($credsGsheetJSONFile) or die("Error: Failed to load credentials $credsGsheetJSONFile. Contact administrator");
     require_once $_SESSION["root_dir"] . "/vendor/autoload.php";

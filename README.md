@@ -127,6 +127,28 @@ $inputs = [
 
 Paths are relative to the quiz PHP file unless you pass an absolute path. `connect-gsheet.php` detects `spreadsheetLocal` and loads `connect-local-csv.php` instead of calling the Sheets API.
 
+### User-provided CSV (paste in browser)
+
+For quizzes where each visitor brings their own data, set `spreadsheetUserProvides` to any non-empty value (`1`, `"1"`, `true`, etc.). The app shows a paste form on GET; after the user submits CSV in the form, the quiz loads from that content. Refreshing the quiz page returns to the paste form (nothing is stored in session).
+
+Use `require_once "../../controllers/quiz-engine.php";` in the ENGINE section (same as local CSV) so credentials and Composer are not required.
+
+```
+$inputs = [
+    "spreadsheetUserProvides"=>1,
+    "pageTitle"=>"Quiz: Paste Your CSV",
+    "pageDescription"=>"Paste quiz spreadsheet data exported as CSV.",
+    "timeLeft"=>0,
+    "cssOverride"=>""
+];
+```
+
+Example: `gsheets-samples/Test-UserProvides/Sample Quiz.php`. Copy-paste from `gsheets/Test/sample-quiz.csv` to try all question types.
+
+If more than one source key is set, precedence is: `spreadsheetUserProvides`, then `spreadsheetLocal`, then Google Sheets (`spreadsheetUrl` + `tabName` + `creds`).
+
+When a source fails to load or the data does not match the quiz template, the app shows an error that includes a developer hint: columns A–F (numbering, title, question, instruction, question type, correct choice) then choices; header labels may be named anything (see `gsheets/Test/sample-quiz.csv`).
+
 Optionally, you can enable a countdown timer if it's a timed quiz. When the time runs out, the quiz ends even if not all the questions are answered. You can also optionally add styling specific to your quiz (feel free to inspect the HTML of the quiz to figure out what classes and ID's you can use).
 
 You cannot have folders inside folders. Here is a file tree example of folders aka categories and their respective quizzes:
@@ -375,7 +397,7 @@ When taking a quiz, just follow the instructions on screen. If it's a timed quiz
 You can select choices by clicking them or pressing your keyboard 1,2,3,4..9 depending on the number of multiple choices. A question with greater than 9 multiple choices will only support the keys 1,2,3,4...9 and you would have to click manually for the other choices. Usually questions that are Select all that apply (SATA) have that many choices.
 
 ## :triangular_ruler: Architecture:
-I used Composer to install the PHP Google API client. There was no documentation on Google's site on how to authenticate using the PHP Google API client, but I figured it out like this: The API client selected for Google Sheet API (versus other Google API's) that then connected gsheet/folder/quiz_name.php using credential file at keys/. The quiz named PHP file has the spreadsheet url and tab name necessarily to connect, and the Google Sheet has been shared to the email associated to the service account. The Google Sheet API would connect to the Google Sheet ID which the PHP code extracts from the Google Sheet URL. If the quiz `$inputs` include `spreadsheetLocal`, `connect-gsheet.php` loads the CSV via `connect-local-csv.php` and the same row-to-JSON encoding path as the API response; `quiz-engine.php` skips credentials and Composer in that case.
+I used Composer to install the PHP Google API client. There was no documentation on Google's site on how to authenticate using the PHP Google API client, but I figured it out like this: The API client selected for Google Sheet API (versus other Google API's) that then connected gsheet/folder/quiz_name.php using credential file at keys/. The quiz named PHP file has the spreadsheet url and tab name necessarily to connect, and the Google Sheet has been shared to the email associated to the service account. The Google Sheet API would connect to the Google Sheet ID which the PHP code extracts from the Google Sheet URL. If the quiz `$inputs` include `spreadsheetLocal` or `spreadsheetUserProvides`, `connect-gsheet.php` loads CSV via `connect-local-csv.php` or `connect-user-csv.php` and the same row-to-JSON encoding path as the API response; `quiz-engine.php` skips credentials and Composer in those cases.
 
 The credential file was generated from the service account at the Google Cloud platform when creating a private json key and it downloaded a file. The spreadsheet URL is just for the front facing when you click "Google Sheet" at the top bar, for your admin editing convenience. You must keep link the PHP quiz file to the credential file at keys/ with the "creds" field.
 
