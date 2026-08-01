@@ -9,6 +9,10 @@
             "replaceIcon": "<i class='ri-bank-line'></i>"
         },
         {
+            "displayName": "Medical - _ACLS",
+            "replaceIcon": "<i class='ri-heart-pulse-line'></i>"
+        },
+        {
             "displayName": "Medical - _Nursing",
             "replaceIcon": "<i class='ri-nurse-line'></i>"
         },

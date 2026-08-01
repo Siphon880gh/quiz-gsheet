@@ -1,0 +1,35 @@
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Choice 6,Choice 7
+,MC,Which rhythms are shockable in adult cardiac arrest?,Select the correct answer.,Multiple Choice,2,Asystole and PEA,VF and pulseless VT,Sinus bradycardia and PEA,Atrial fibrillation and asystole
+,MC,What is the adult cardiac-arrest epinephrine dose?,Select the correct answer.,Multiple Choice,1,1 mg IV/IO every 3–5 minutes,0.5 mg IV every 3–5 minutes,300 mg IV/IO once,1 mg IV only after the third shock
+,MC,"In VF/pVT, when does the algorithm introduce epinephrine?",Select the correct answer.,Multiple Choice,3,Before the first shock,After the first shock,After the second shock,Only if amiodarone fails
+,MC,Amiodarone in cardiac arrest is used for which situation?,Select the correct answer.,Multiple Choice,2,Routine asystole/PEA,Refractory VF/pulseless VT,All nonshockable rhythms,Stable narrow-complex tachycardia
+,MC,What is the first amiodarone dose for refractory VF/pVT?,Select the correct answer.,Multiple Choice,3,150 mg IV/IO,1 mg IV/IO,300 mg IV/IO bolus,6 mg rapid IV push
+,MC,Adult CPR compression rate should be:,Select the correct answer.,Multiple Choice,2,80–100/min,100–120/min,60–80/min,140–160/min
+,MC,Adult CPR compression depth should be:,Select the correct answer.,Multiple Choice,1,At least 2 inches (5 cm),At least 1 inch (2.5 cm),Exactly 1.5 inches,No more than 2 cm
+,MC,"With an advanced airway in place during CPR, ventilations should be:",Select the correct answer.,Multiple Choice,4,30:2 with pauses for breaths,1 breath every 3 seconds,2 breaths every 15 compressions,1 breath every 6 seconds (10/min) with continuous compressions
+,MC,PETCO₂ <10 mm Hg during CPR suggests you should:,Select the correct answer.,Multiple Choice,1,Attempt to improve CPR quality,Immediately stop CPR,Give a second amiodarone dose,Switch to asystole dosing
+,MC,An abrupt sustained rise in PETCO₂ (often ≥40 mm Hg) can indicate:,Select the correct answer.,Multiple Choice,2,Worsening hypoxia,ROSC,Need for defibrillation energy increase,Hyperkalemia
+,FIB,"For monophasic defibrillation in adult cardiac arrest, use ___ J.",Select the answer that best fills the blank.,Fill in the blank,1,360,200,120,150
+,FIB,"Without an advanced airway, the compression-to-ventilation ratio is ___.",Select the answer that best fills the blank.,Fill in the blank,1,30:2,15:2,15:1,10:1
+,TF,Asystole and PEA should be defibrillated.,Select True or False.,True False,2,True,False
+,TF,"In PEA/asystole, epinephrine is given during the CPR pathway because no shock is indicated.",Select True or False.,True False,1,True,False
+,SATA,Which are signs of ROSC? (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2,4",Pulse and measurable blood pressure,Abrupt sustained increase in PETCO₂ (often ≥40 mm Hg),PETCO₂ persistently <10 mm Hg,Spontaneous arterial pressure waves if an arterial line is present
+,SATA,Which are listed among the H's (reversible causes)? (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2,3,5",Hypovolemia,Hypoxia,Hydrogen ion excess (acidosis),Tension pneumothorax,Hypothermia
+,SATA,Which are listed among the T's (reversible causes)? (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2,4,5",Tension pneumothorax,Cardiac tamponade,Hypokalemia,Toxins,Pulmonary thrombosis
+,FC,"Shockable VF/pVT easy sequence
+====
+Shock → CPR → Shock → CPR + Epi → Shock → CPR + Amiodarone",Did you remember correctly?,Flash card,1,Yes,No
+,FC,"Nonshockable PEA/asystole priorities
+====
+CPR + Epi ASAP → rhythm check every 2 min → treat H's & T's",Did you remember correctly?,Flash card,1,Yes,No
+,RANK,Order the initial cardiac-arrest actions.,Order into the correct sequence,Ranked,Na,Start CPR immediately,Give oxygen,Attach a monitor/defibrillator,Determine whether the rhythm is shockable
+,RANK,Order the easy shockable-rhythm medication sequence after shocks begin.,Order into the correct sequence,Ranked,Na,Shock,CPR,Shock,CPR + Epinephrine,Shock,CPR + Amiodarone
+,MM,Match each item to the correct description.,Mix and match,Mix and match,Na,"VF / pulseless VT
+===
+Shockable rhythms","Asystole / PEA
+===
+Nonshockable rhythms","Amiodarone first dose
+===
+300 mg IV/IO bolus","Amiodarone second dose
+===
+150 mg IV/IO"

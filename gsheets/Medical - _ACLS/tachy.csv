@@ -1,0 +1,35 @@
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Choice 6,Choice 7
+,MC,Tachyarrhythmia requiring the ACLS tachycardia pathway typically has a heart rate:,Select the correct answer.,Multiple Choice,3,≥50/min,≥100/min,≥150/min,≥200/min
+,MC,Unstable tachycardia with a pulse is treated with:,Select the correct answer.,Multiple Choice,1,Synchronized cardioversion,Immediate unsynchronized defibrillation only,Atropine 1 mg IV,Adenosine 300 mg IV
+,MC,A wide QRS is defined as:,Select the correct answer.,Multiple Choice,2,≥0.08 seconds,≥0.12 seconds (120 ms),≥0.20 seconds,Any QRS taller than 5 mm
+,MC,"For regular narrow-complex tachycardia, the first adenosine dose is:",Select the correct answer.,Multiple Choice,1,6 mg rapid IV push with saline flush,12 mg rapid IV push,1 mg IV bolus,150 mg IV over 10 minutes
+,MC,"If the first adenosine dose is ineffective, the second dose is:",Select the correct answer.,Multiple Choice,2,6 mg,12 mg,1 mg,300 mg
+,MC,"Initial synchronized cardioversion energy for narrow, regular tachycardia is:",Select the correct answer.,Multiple Choice,3,100 J only,120–200 J biphasic,50–100 J,360 J monophasic
+,MC,"Wide, irregular tachycardia should receive:",Select the correct answer.,Multiple Choice,4,Synchronized cardioversion at 50 J,Adenosine 6 mg,Vagal maneuvers only,Defibrillation dose — NOT synchronized
+,MC,Amiodarone for stable wide-QRS tachycardia is given as:,Select the correct answer.,Multiple Choice,2,300 mg IV/IO bolus,150 mg IV over 10 minutes,1 mg IV every 3–5 minutes,6 mg rapid IV push
+,MC,Procainamide infusion rate for stable wide-QRS tachycardia is:,Select the correct answer.,Multiple Choice,1,20–50 mg/min IV,2–10 mcg/min,5–20 mcg/kg/min,100 mg over 1 minute
+,MC,"For stable narrow-QRS tachycardia, after IV access and ECG, first attempt:",Select the correct answer.,Multiple Choice,3,Immediate cardioversion,Amiodarone 150 mg,Vagal maneuvers,Transcutaneous pacing
+,FIB,"Persistent tachyarrhythmia is unstable when it causes hypotension, altered mental status, shock, ischemic chest discomfort, or ___.",Select the answer that best fills the blank.,Fill in the blank,1,acute heart failure,bradycardia,asystole,hypothermia
+,FIB,Adenosine is particularly tied to ___ rhythms in this algorithm.,Select the answer that best fills the blank.,Fill in the blank,1,regular,irregular,wide irregular,asystolic
+,TF,Consider sedation before synchronized cardioversion when feasible.,Select True or False.,True False,1,True,False
+,TF,Sotalol should be avoided with a prolonged QT.,Select True or False.,True False,1,True,False
+,SATA,Which findings mark unstable tachycardia? (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2,3,4",Hypotension,Acutely altered mental status,Signs of shock,Ischemic chest discomfort,Sinus rhythm with HR 90
+,SATA,"For stable wide-QRS tachycardia, which actions are appropriate? (Select all that apply.)","Toggle each correct choice, then press confirm.",SATA,"1,2,3,4",Establish IV access,Obtain a 12-lead ECG if available,Consider adenosine only if regular and monomorphic,Consider an antiarrhythmic infusion,Immediate defibrillation dose without assessment
+,SATA,Procainamide should be avoided with which conditions? (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2",Prolonged QT,CHF,Hypoxia alone,Fever
+,FC,"Unstable tachycardia with a pulse
+====
+Synchronized cardioversion",Did you remember correctly?,Flash card,1,Yes,No
+,FC,"Instability checklist H-M-S-I-H
+====
+Hypotension, altered Mental status, Shock, Ischemic chest discomfort, acute Heart failure",Did you remember correctly?,Flash card,1,Yes,No
+,RANK,Order the stable narrow-QRS tachycardia sequence.,Order into the correct sequence,Ranked,Na,Establish IV access,Obtain a 12-lead ECG if available,Attempt vagal maneuvers,Give adenosine if regular,Consider a β-blocker or calcium channel blocker
+,RANK,Order the fast ACLS tachycardia decision path.,Order into the correct sequence,Ranked,Na,Tachycardia with a pulse,Determine stable or unstable,If unstable: cardiovert,If stable: check whether QRS is wide or narrow
+,MM,Match each rhythm category to the initial energy approach shown.,Mix and match,Mix and match,Na,"Narrow, regular
+===
+50–100 J synchronized","Narrow, irregular
+===
+120–200 J biphasic (or 200 J monophasic) synchronized","Wide, regular
+===
+100 J synchronized","Wide, irregular
+===
+Defibrillation dose — not synchronized"

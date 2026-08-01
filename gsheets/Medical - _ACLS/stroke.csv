@@ -1,0 +1,36 @@
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Choice 6,Choice 7
+,MC,Suspected stroke requires:,Select the correct answer.,Multiple Choice,1,Immediate activation of the emergency response system,Waiting 3 hours before assessment,Atropine 1 mg IV first,Synchronized cardioversion
+,MC,Initial EMS priorities for suspected stroke are:,Select the correct answer.,Multiple Choice,2,CT before ABCs,"ABCs: airway, breathing, and circulation",Immediate fibrinolytic therapy in the field,Aspirin before glucose check
+,MC,EMS should determine which time as accurately as possible?,Select the correct answer.,Multiple Choice,3,Time of last meal only,Hospital discharge time,Time of symptom onset or last known normal/well,Time of last ECG
+,MC,Blood glucose should be checked because:,Select the correct answer.,Multiple Choice,1,Hypoglycemia can mimic stroke,Hyperglycemia always rules out stroke,Glucose replaces the need for CT,Glucose determines defibrillation energy
+,MC,Emergency brain imaging is obtained to:,Select the correct answer.,Multiple Choice,2,Measure atropine response,Determine whether the stroke is ischemic or hemorrhagic,Replace the neurologic exam,Delay stroke-team activation
+,MC,"If CT shows hemorrhage, fibrinolytic therapy for ischemic stroke is:",Select the correct answer.,Multiple Choice,4,Still given at half dose,Given after aspirin,Required within 10 minutes,Not pursued through this pathway
+,MC,"If the patient is an appropriate fibrinolytic candidate and treatment is acceptable, the diagram recommends:",Select the correct answer.,Multiple Choice,1,IV rtPA,Amiodarone 150 mg,Atropine 1 mg,Adenosine 6 mg
+,MC,"After rtPA, anticoagulant or antiplatelet therapy is held for:",Select the correct answer.,Multiple Choice,3,1 hour,6 hours,The first 24 hours,72 hours
+,MC,"If an ischemic-stroke patient is not a fibrinolytic candidate, the diagram directs clinicians toward:",Select the correct answer.,Multiple Choice,2,Immediate neurosurgery only,Aspirin administration,Defibrillation,Transcutaneous pacing
+,MC,ED target for immediate general assessment and stabilization is:,Select the correct answer.,Multiple Choice,1,10 minutes from ED arrival,25 minutes from ED arrival,45 minutes from ED arrival,60 minutes from ED arrival
+,MC,ED target for treatment decision / fibrinolytic treatment when indicated is:,Select the correct answer.,Multiple Choice,4,10 minutes,25 minutes,45 minutes,60 minutes
+,FIB,A major principle of stroke care in the diagram is “___ is brain.”,Select the answer that best fills the blank.,Fill in the blank,1,time,oxygen,atropine,shock
+,FIB,Stroke severity should be assessed using a standardized scale such as the ___ or Canadian Neurological Scale.,Select the answer that best fills the blank.,Fill in the blank,1,NIH Stroke Scale (NIHSS),Glasgow Coma Scale only,APGAR,SOFA
+,TF,EMS should alert the receiving hospital before arrival.,Select True or False.,True False,1,True,False
+,TF,"A 12-lead ECG should be obtained, but evaluation of the stroke should continue rapidly.",Select True or False.,True False,1,True,False
+,SATA,Initial ED evaluation includes: (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2,3,4,5",ABCs and vital signs,Oxygen if hypoxemic,IV access and laboratory testing,Blood glucose and neurologic screening,Activation of the stroke team and emergency brain imaging
+,SATA,"After rtPA, patients require: (Select all that apply.)","Toggle each correct choice, then press confirm.",SATA,"1,2,3",Aggressive blood-pressure monitoring according to protocol,Close observation for neurologic deterioration,Emergent admission to a stroke unit or ICU,Immediate anticoagulation in the first hour
+,SATA,If imaging demonstrates intracranial hemorrhage: (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2,3",Obtain consultation from a neurologist or neurosurgeon,Consider transfer if specialist care is unavailable,Begin a hemorrhage-specific pathway and admit to stroke unit or ICU,Give IV rtPA immediately
+,FC,"High-yield stroke sequence
+====
+Recognize → ABCs/glucose → last-known-well → activate stroke team → CT/MRI → hemorrhage? → fibrinolytic eligibility → rtPA if eligible / aspirin if not → stroke unit or ICU",Did you remember correctly?,Flash card,1,Yes,No
+,FC,"ED time goal: brain imaging evaluated for hemorrhage
+====
+45 minutes from ED arrival",Did you remember correctly?,Flash card,1,Yes,No
+,RANK,Order the ED time goals shown in the diagram.,Order into the correct sequence,Ranked,Na,10 min: immediate general assessment and stabilization,25 min: rapid neurologic/stroke-team assessment toward imaging,45 min: brain imaging evaluated for hemorrhage,60 min: treatment decision / fibrinolytic treatment when indicated,3 hours: admission to stroke unit or ICU
+,RANK,Order the high-yield suspected-stroke sequence.,Order into the correct sequence,Ranked,Na,Recognize stroke,ABCs/glucose and establish last-known-well,Activate stroke team and obtain CT/MRI,Determine hemorrhage vs no hemorrhage,Assess fibrinolytic eligibility → rtPA if eligible / aspirin if not
+,MM,Match each ED time goal to the action shown.,Mix and match,Mix and match,Na,"10 min
+===
+Immediate general assessment and stabilization","25 min
+===
+Rapid neurologic/stroke-team assessment toward imaging","45 min
+===
+Brain imaging evaluated for hemorrhage","60 min
+===
+Treatment decision / fibrinolytic treatment when indicated"

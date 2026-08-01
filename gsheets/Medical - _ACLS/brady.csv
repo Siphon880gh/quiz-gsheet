@@ -1,0 +1,34 @@
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Choice 6,Choice 7
+,MC,Bradycardia is typically considered clinically significant when heart rate is:,Select the correct answer.,Multiple Choice,1,<50 beats/minute,<60 beats/minute,<40 beats/minute,≥150 beats/minute
+,MC,First-line medication for symptomatic bradycardia is:,Select the correct answer.,Multiple Choice,2,Epinephrine 1 mg IV,Atropine IV,Amiodarone 300 mg,Adenosine 6 mg
+,MC,Atropine dosing for symptomatic bradycardia is:,Select the correct answer.,Multiple Choice,3,0.5 mg once only,6 mg rapid IV push,"1 mg IV bolus every 3–5 minutes, max 3 mg",150 mg IV over 10 minutes
+,MC,Maximum total atropine dose is:,Select the correct answer.,Multiple Choice,2,1 mg,3 mg,6 mg,17 mg/kg
+,MC,"If atropine is ineffective, proceed to:",Select the correct answer.,Multiple Choice,4,Immediate rtPA,Aspirin only,Defibrillation at 360 J,Transcutaneous pacing and/or dopamine or epinephrine infusion
+,MC,Dopamine infusion dosing for bradycardia is:,Select the correct answer.,Multiple Choice,1,"5–20 mcg/kg/min, titrate to response",2–10 mcg/min fixed,1 mg IV every 3–5 minutes,20–50 mg/min
+,MC,Epinephrine infusion dosing for bradycardia is:,Select the correct answer.,Multiple Choice,2,1 mg IV/IO every 3–5 minutes,"2–10 mcg/min, titrate to response",300 mg IV bolus,5–20 mg/kg/min
+,MC,"If none of the instability signs are present in bradycardia, you should:",Select the correct answer.,Multiple Choice,3,Give atropine immediately,Start transcutaneous pacing,Monitor and observe,Give amiodarone
+,MC,"Obtain a 12-lead ECG if available, but:",Select the correct answer.,Multiple Choice,1,Do not delay urgent treatment to obtain it,Always delay treatment until ECG is complete,Skip monitoring entirely,Use it instead of IV access
+,FIB,"Persistent bradycardia requires treatment if it causes hypotension, altered mental status, shock, ischemic chest discomfort, or ___.",Select the answer that best fills the blank.,Fill in the blank,1,acute heart failure,fibrillation,stroke,fever
+,FIB,A useful memory sequence is: Bradycardia + poor perfusion → Atropine → Pacing and/or Dopamine/Epinephrine → ___.,Select the answer that best fills the blank.,Fill in the blank,1,Expert consultation / transvenous pacing,Immediate defibrillation,rtPA,Vagal maneuvers
+,TF,First assess whether the slow heart rate is appropriate for the patient's clinical condition.,Select True or False.,True False,1,True,False
+,TF,Give oxygen if the patient is hypoxemic.,Select True or False.,True False,1,True,False
+,SATA,Which findings indicate symptomatic/unstable bradycardia needing treatment? (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2,3,4",Hypotension,Acutely altered mental status,Signs of shock,Ischemic chest discomfort,Asymptomatic HR 55 with normal perfusion
+,SATA,Initial supportive measures for bradycardia include: (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2,3,4",Maintain a patent airway,Assist breathing as needed,Place on a cardiac monitor,Establish IV access,Immediate unsynchronized defibrillation
+,SATA,Causes of bradycardia specifically highlighted include: (Select all that apply.),"Toggle each correct choice, then press confirm.",SATA,"1,2,3,5",Myocardial ischemia/infarction,Calcium-channel blockers,Beta blockers,Wide irregular VT as the primary cause,Hyperkalemia
+,FC,"Atropine for symptomatic bradycardia
+====
+1 mg IV bolus every 3–5 minutes; maximum total 3 mg",Did you remember correctly?,Flash card,1,Yes,No
+,FC,"If atropine fails
+====
+Transcutaneous pacing and/or dopamine or epinephrine infusion; consider expert consultation / transvenous pacing",Did you remember correctly?,Flash card,1,Yes,No
+,RANK,Order the bradycardia + poor perfusion memory sequence.,Order into the correct sequence,Ranked,Na,Recognize bradycardia with poor perfusion,Give atropine,Pacing and/or dopamine/epinephrine,Expert consultation / transvenous pacing
+,RANK,Order initial supportive care steps for bradycardia.,Order into the correct sequence,Ranked,Na,Maintain patent airway / assist breathing as needed,Give oxygen if hypoxemic,Place on cardiac monitor; monitor BP and pulse oximetry,Establish IV access
+,MM,Match each therapy to its listed dose.,Mix and match,Mix and match,Na,"Atropine
+===
+1 mg IV bolus every 3–5 min (max 3 mg)","Dopamine infusion
+===
+5–20 mcg/kg/min","Epinephrine infusion
+===
+2–10 mcg/min","Digoxin (as a cause)
+===
+Toxicologic/drug-related bradycardia contributor"
