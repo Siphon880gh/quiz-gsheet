@@ -19,6 +19,16 @@ function setCategoryInUrl(category) {
     history.pushState(null, "", url);
 }
 
+function clearFilters() {
+    const select = document.querySelector(".category-filter");
+    const hasFilter = Boolean(getCategoryFromUrl()) || Boolean(select?.value);
+    if (!hasFilter) return;
+
+    setCategoryInUrl("");
+    if (select) select.value = "";
+    initIndexUI();
+}
+
 function folderNameFromDir(dir) {
     let folderName = dir.split("/")[0];
     // If was password protected, remove password from the folder name
@@ -60,6 +70,11 @@ function initCategoryFilter(categoriesConfig) {
 
         window.addEventListener("popstate", () => {
             initIndexUI();
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key !== "Escape") return;
+            clearFilters();
         });
 
         select.dataset.ready = "1";

@@ -129,7 +129,7 @@ if($usingCallback) {
                 <h1 class="site-title">Quiz</h1>
                 <p class="site-lede">
                     Business, medicine, and music quizzes generated from Google Sheets.
-                    <a href="https://wengindustry.com/me/contact" target="_blank" rel="noopener">Suggest a topic</a>
+                    <a href="https://github.com/Siphon880gh/quiz-gsheet/issues/new" target="_blank" rel="noopener">Suggest a topic</a>
                     or browse the
                     <a href="https://github.com/Siphon880gh/quiz-gsheet" target="_blank" rel="noopener">repo</a>.
                 </p>
