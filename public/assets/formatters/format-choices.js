@@ -19,7 +19,10 @@ window.formatters.modelMyChoices = ({type, choices})=>{
     if(type==="mix and match") {
         let someoneHasSideB = false;
         choices = choices.map((choiceRaw,i)=>{
-            let parts = choiceRaw.split(/^[=]{3,}$/m);
+            // Sheets sometimes store literal "\n" instead of real newlines (e.g. after CSV round-trips).
+            // Normalize both so "left\n====\nright" and multiline cells parse the same way.
+            let normalized = String(choiceRaw).replace(/\\n/g, "\n");
+            let parts = normalized.split(/^[=]{3,}$/m);
             parts = parts.map(part=>part.trim().replaceAll("\n", "<br/>"))
             let hasSideB = parts.length>1;
             if(hasSideB) someoneHasSideB = true;
