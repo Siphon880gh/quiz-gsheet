@@ -1,5 +1,5 @@
-"","Title","Question","Instruction","Question Type","Correct Choice","Choice 1","Choice 2","Choice 3","Choice 4","Choice 5","Choice 6","Choice 7"
-"","Multiple choice","What is 2 + 2?","Select the correct answer.","Multiple Choice","2","3","4","5","6"
+"","Title","Question","Instruction","Question Type","Correct Choice","Choice 1","Choice 2","Choice 3","Choice 4","Choice 5","Choice 6","Choice 7","Hint"
+"","Multiple choice","What is 2 + 2?","Select the correct answer.","Multiple Choice","2","3","4","5","6","","","","Think: what is two plus two?"
 "","Fill in the blank","The ___ is the powerhouse of the cell.","Select the answer that best fills the blank.","Multiple Choice","2","nucleus","mitochondria","ribosome","vacuole"
 "","True or false","The sky is blue on a clear day.","Select True or False.","True False","1","True","False"
 "","Select all that apply","Which of these are mammals? (Select all that apply.)","Toggle each correct choice, then press the confirm button.","Multiple Choice","1,2,4","Dog","Cat","Salmon","Horse","Eagle"

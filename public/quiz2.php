@@ -213,6 +213,12 @@ $overrideCSS
         <nav class="question-choices-wrapper">
            __inject__choices__subtemplate__
         </nav>
+        {{#if questionHint}}
+        <details class="question-hint">
+            <summary>Hint</summary>
+            <div class="question-hint-body">{{{questionHint}}}</div>
+        </details>
+        {{/if}}
         <section class="question-nav p-2 clearfix">
             {{#if confirmChoiceSubtemplate}}
                 {{{confirmChoiceSubtemplate}}}

@@ -1,7 +1,7 @@
 <?php
 
 function quiz_source_format_hint() {
-    return "For developers: confirm the spreadsheet/CSV uses the quiz column layout (A numbering, B title, C question, D instruction, E question type, F correct choice, then choice columns). Header labels can be named anything. See gsheets/Test/sample-quiz.csv.";
+    return "For developers: confirm the spreadsheet/CSV uses the quiz column layout (A numbering, B title, C question, D instruction, E question type, F correct choice). From column G onward, headers that begin with the word Choice are choice columns; headers that contain the word Hint are hint columns (multiple hints are appended). See gsheets/Test/sample-quiz.csv.";
 }
 
 /** Minimum columns through F (correct choice); matches public/assets/quiz.js atColumn. */

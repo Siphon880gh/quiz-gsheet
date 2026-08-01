@@ -1,32 +1,32 @@
-,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5
-,Strip 1,../../hosted-strips/normal-sinus-rhythm.gif,Identify the rhythm on this strip.,Picture,2,Second Degree Heart Block Type II,Normal Sinus Rhythm,Sinus Arrhythmia,Junctional Escape Rhythm,
-,Strip 2,../../hosted-strips/sinus-bradycardia.gif,Identify the rhythm on this strip.,Picture,3,Sinus Pause,Second Degree Heart Block Type II,Sinus Bradycardia,Premature Atrial Complex,
-,Strip 3,../../hosted-strips/sinus-tachycardia.gif,Identify the rhythm on this strip.,Picture,2,Accelerated Junctional Rhythm,Sinus Tachycardia,Premature Junctional Complex,Normal Sinus Rhythm,
-,Strip 4,../../hosted-strips/sinus-arrhythmia.gif,Identify the rhythm on this strip.,Picture,2,Junctional Escape Beat,Sinus Arrhythmia,Wolff-Parkinson-White Syndrome,Accelerated Junctional Rhythm,
-,Strip 5,../../hosted-strips/sinus-arrest.gif,Identify the rhythm on this strip.,Picture,3,Junctional Escape Beat,Wandering Atrial Pacemaker,Sinus Arrest,Failure to Pace,
-,Strip 6,../../hosted-strips/sinus-exit-block.gif,Identify the rhythm on this strip.,Picture,1,Sinus Exit Block,Atrial Fibrillation,Premature Junctional Complex,Sinus Pause,
-,Strip 7,../../hosted-strips/sinus-pause.gif,Identify the rhythm on this strip.,Picture,2,Failure to Pace,Sinus Pause,Third Degree Heart Block,Atrial Fibrillation,
-,Strip 8,../../hosted-strips/premature-atrial-complex.gif,Identify the rhythm on this strip.,Picture,4,Premature Junctional Complex,Sinus Tachycardia,Junctional Escape Beat,Premature Atrial Complex,
-,Strip 9,../../hosted-strips/wandering-atrial-pacemaker.gif,Identify the rhythm on this strip.,Picture,2,Bundle Branch Block,Wandering Atrial Pacemaker,Atrioventricular (Sequential) Pacemaker Rhythm,Supraventricular Tachycardia,
-,Strip 10,../../hosted-strips/multifocal-atrial-tachycardia.gif,Identify the rhythm on this strip.,Picture,2,Junctional Escape Rhythm,Multifocal Atrial Tachycardia,Atrial Pacemaker Rhythm,Sinus Pause,
-,Strip 11,../../hosted-strips/atrial-flutter.gif,Identify the rhythm on this strip.,Picture,1,Atrial Flutter,Junctional Tachycardia,Wandering Atrial Pacemaker,Junctional Escape Beat,
-,Strip 12,../../hosted-strips/atrial-fibrillation.gif,Identify the rhythm on this strip.,Picture,3,Sinus Bradycardia,Second Degree Heart Block Type I,Atrial Fibrillation,Sinus Arrhythmia,
-,Strip 13,../../hosted-strips/supraventricular-tachycardia.gif,Identify the rhythm on this strip.,Picture,4,Premature Atrial Complex,Third Degree Heart Block,Sinus Arrhythmia,Supraventricular Tachycardia,
-,Strip 14,../../hosted-strips/wolff-parkinson-white.gif,Identify the rhythm on this strip.,Picture,3,Sinus Exit Block,Junctional Escape Rhythm,Wolff-Parkinson-White Syndrome,Failure to Capture,
-,Strip 15,../../hosted-strips/premature-junctional-complex.gif,Identify the rhythm on this strip.,Picture,2,Ventricular Pacemaker Rhythm,Premature Junctional Complex,Sinus Arrhythmia,Failure to Capture,
-,Strip 16,../../hosted-strips/junctional-escape-beat.gif,Identify the rhythm on this strip.,Picture,2,Second Degree Heart Block Type I,Junctional Escape Beat,Supraventricular Tachycardia,Third Degree Heart Block,
-,Strip 17,../../hosted-strips/junctional-escape-rhythm.gif,Identify the rhythm on this strip.,Picture,1,Junctional Escape Rhythm,Sinus Arrest,Accelerated Junctional Rhythm,Normal Sinus Rhythm,
-,Strip 18,../../hosted-strips/accelerated-junctional-rhythm.gif,Identify the rhythm on this strip.,Picture,3,Normal Sinus Rhythm,Atrial Fibrillation,Accelerated Junctional Rhythm,Atrioventricular (Sequential) Pacemaker Rhythm,
-,Strip 19,../../hosted-strips/junctional-tachycardia.gif,Identify the rhythm on this strip.,Picture,2,Second Degree Heart Block Type II,Junctional Tachycardia,Sinus Arrest,Sinus Tachycardia,
-,Strip 20,../../hosted-strips/first-degree-heart-block.gif,Identify the rhythm on this strip.,Picture,3,Junctional Escape Beat,Accelerated Junctional Rhythm,First Degree Heart Block,Failure to Capture,
-,Strip 21,../../hosted-strips/second-degree-heart-block-type-i.gif,Identify the rhythm on this strip.,Picture,2,Sinus Arrhythmia,Second Degree Heart Block Type I,Atrial Fibrillation,Second Degree Heart Block Type II,
-,Strip 22,../../hosted-strips/second-degree-heart-block-type-ii.gif,Identify the rhythm on this strip.,Picture,3,Junctional Tachycardia,Ventricular Pacemaker Rhythm,Second Degree Heart Block Type II,Atrial Fibrillation,
-,Strip 23,../../hosted-strips/second-degree-heart-block-type-ii-unpatterned.gif,Identify the rhythm on this strip.,Picture,2,Premature Junctional Complex,Second Degree Heart Block Type II,Sinus Bradycardia,Sinus Tachycardia,
-,Strip 24,../../hosted-strips/third-degree-heart-block.gif,Identify the rhythm on this strip.,Picture,2,Second Degree Heart Block Type I,Third Degree Heart Block,Junctional Escape Rhythm,Atrial Flutter,
-,Strip 25,../../hosted-strips/bundle-branch-block.gif,Identify the rhythm on this strip.,Picture,2,Junctional Escape Beat,Bundle Branch Block,Sinus Arrhythmia,Atrial Fibrillation,
-,Strip 26,../../hosted-strips/atrial-pacemaker-rhythm.gif,Identify the rhythm on this strip.,Picture,4,Premature Atrial Complex,Failure to Pace,Atrial Flutter,Atrial Pacemaker Rhythm,
-,Strip 27,../../hosted-strips/ventricular-pacemaker-rhythm.gif,Identify the rhythm on this strip.,Picture,2,Sinus Exit Block,Ventricular Pacemaker Rhythm,Atrial Fibrillation,Atrial Pacemaker Rhythm,
-,Strip 28,../../hosted-strips/av-sequential-pacemaker-rhythm.gif,Identify the rhythm on this strip.,Picture,1,Atrioventricular (Sequential) Pacemaker Rhythm,Sinus Arrhythmia,Ventricular Pacemaker Rhythm,Second Degree Heart Block Type II,
-,Strip 29,../../hosted-strips/failure-to-capture.gif,Identify the rhythm on this strip.,Picture,3,Wolff-Parkinson-White Syndrome,Bundle Branch Block,Failure to Capture,Second Degree Heart Block Type II,
-,Strip 30,../../hosted-strips/failure-to-pace.gif,Identify the rhythm on this strip.,Picture,3,Failure to Capture,Wolff-Parkinson-White Syndrome,Failure to Pace,Sinus Pause,
-,Strip 31,../../hosted-strips/failure-to-sense.jpg,Identify the rhythm on this strip.,Picture,2,Normal Sinus Rhythm,Failure to Sense,Premature Junctional Complex,Failure to Capture,
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Hint
+,Strip 1,../../hosted-strips/normal-sinus-rhythm.gif,Identify the rhythm on this strip.,Picture,2,Second Degree Heart Block Type II,Normal Sinus Rhythm,Sinus Arrhythmia,Junctional Escape Rhythm,,Sinus
+,Strip 2,../../hosted-strips/sinus-bradycardia.gif,Identify the rhythm on this strip.,Picture,3,Sinus Pause,Second Degree Heart Block Type II,Sinus Bradycardia,Premature Atrial Complex,,Sinus
+,Strip 3,../../hosted-strips/sinus-tachycardia.gif,Identify the rhythm on this strip.,Picture,2,Accelerated Junctional Rhythm,Sinus Tachycardia,Premature Junctional Complex,Normal Sinus Rhythm,,Sinus
+,Strip 4,../../hosted-strips/sinus-arrhythmia.gif,Identify the rhythm on this strip.,Picture,2,Junctional Escape Beat,Sinus Arrhythmia,Wolff-Parkinson-White Syndrome,Accelerated Junctional Rhythm,,Sinus
+,Strip 5,../../hosted-strips/sinus-arrest.gif,Identify the rhythm on this strip.,Picture,3,Junctional Escape Beat,Wandering Atrial Pacemaker,Sinus Arrest,Failure to Pace,,Sinus
+,Strip 6,../../hosted-strips/sinus-exit-block.gif,Identify the rhythm on this strip.,Picture,1,Sinus Exit Block,Atrial Fibrillation,Premature Junctional Complex,Sinus Pause,,Sinus
+,Strip 7,../../hosted-strips/sinus-pause.gif,Identify the rhythm on this strip.,Picture,2,Failure to Pace,Sinus Pause,Third Degree Heart Block,Atrial Fibrillation,,Sinus
+,Strip 8,../../hosted-strips/premature-atrial-complex.gif,Identify the rhythm on this strip.,Picture,4,Premature Junctional Complex,Sinus Tachycardia,Junctional Escape Beat,Premature Atrial Complex,,Atrial
+,Strip 9,../../hosted-strips/wandering-atrial-pacemaker.gif,Identify the rhythm on this strip.,Picture,2,Bundle Branch Block,Wandering Atrial Pacemaker,Atrioventricular (Sequential) Pacemaker Rhythm,Supraventricular Tachycardia,,Atrial
+,Strip 10,../../hosted-strips/multifocal-atrial-tachycardia.gif,Identify the rhythm on this strip.,Picture,2,Junctional Escape Rhythm,Multifocal Atrial Tachycardia,Atrial Pacemaker Rhythm,Sinus Pause,,Atrial
+,Strip 11,../../hosted-strips/atrial-flutter.gif,Identify the rhythm on this strip.,Picture,1,Atrial Flutter,Junctional Tachycardia,Wandering Atrial Pacemaker,Junctional Escape Beat,,Atrial
+,Strip 12,../../hosted-strips/atrial-fibrillation.gif,Identify the rhythm on this strip.,Picture,3,Sinus Bradycardia,Second Degree Heart Block Type I,Atrial Fibrillation,Sinus Arrhythmia,,Atrial
+,Strip 13,../../hosted-strips/supraventricular-tachycardia.gif,Identify the rhythm on this strip.,Picture,4,Premature Atrial Complex,Third Degree Heart Block,Sinus Arrhythmia,Supraventricular Tachycardia,,Atrial
+,Strip 14,../../hosted-strips/wolff-parkinson-white.gif,Identify the rhythm on this strip.,Picture,3,Sinus Exit Block,Junctional Escape Rhythm,Wolff-Parkinson-White Syndrome,Failure to Capture,,Atrial
+,Strip 15,../../hosted-strips/premature-junctional-complex.gif,Identify the rhythm on this strip.,Picture,2,Ventricular Pacemaker Rhythm,Premature Junctional Complex,Sinus Arrhythmia,Failure to Capture,,Junctional
+,Strip 16,../../hosted-strips/junctional-escape-beat.gif,Identify the rhythm on this strip.,Picture,2,Second Degree Heart Block Type I,Junctional Escape Beat,Supraventricular Tachycardia,Third Degree Heart Block,,Junctional
+,Strip 17,../../hosted-strips/junctional-escape-rhythm.gif,Identify the rhythm on this strip.,Picture,1,Junctional Escape Rhythm,Sinus Arrest,Accelerated Junctional Rhythm,Normal Sinus Rhythm,,Junctional
+,Strip 18,../../hosted-strips/accelerated-junctional-rhythm.gif,Identify the rhythm on this strip.,Picture,3,Normal Sinus Rhythm,Atrial Fibrillation,Accelerated Junctional Rhythm,Atrioventricular (Sequential) Pacemaker Rhythm,,Junctional
+,Strip 19,../../hosted-strips/junctional-tachycardia.gif,Identify the rhythm on this strip.,Picture,2,Second Degree Heart Block Type II,Junctional Tachycardia,Sinus Arrest,Sinus Tachycardia,,Junctional
+,Strip 20,../../hosted-strips/first-degree-heart-block.gif,Identify the rhythm on this strip.,Picture,3,Junctional Escape Beat,Accelerated Junctional Rhythm,First Degree Heart Block,Failure to Capture,,Heart Block
+,Strip 21,../../hosted-strips/second-degree-heart-block-type-i.gif,Identify the rhythm on this strip.,Picture,2,Sinus Arrhythmia,Second Degree Heart Block Type I,Atrial Fibrillation,Second Degree Heart Block Type II,,Heart Block
+,Strip 22,../../hosted-strips/second-degree-heart-block-type-ii.gif,Identify the rhythm on this strip.,Picture,3,Junctional Tachycardia,Ventricular Pacemaker Rhythm,Second Degree Heart Block Type II,Atrial Fibrillation,,Heart Block
+,Strip 23,../../hosted-strips/second-degree-heart-block-type-ii-unpatterned.gif,Identify the rhythm on this strip.,Picture,2,Premature Junctional Complex,Second Degree Heart Block Type II,Sinus Bradycardia,Sinus Tachycardia,,Heart Block
+,Strip 24,../../hosted-strips/third-degree-heart-block.gif,Identify the rhythm on this strip.,Picture,2,Second Degree Heart Block Type I,Third Degree Heart Block,Junctional Escape Rhythm,Atrial Flutter,,Heart Block
+,Strip 25,../../hosted-strips/bundle-branch-block.gif,Identify the rhythm on this strip.,Picture,2,Junctional Escape Beat,Bundle Branch Block,Sinus Arrhythmia,Atrial Fibrillation,,Heart Block
+,Strip 26,../../hosted-strips/atrial-pacemaker-rhythm.gif,Identify the rhythm on this strip.,Picture,4,Premature Atrial Complex,Failure to Pace,Atrial Flutter,Atrial Pacemaker Rhythm,,Pacemaker
+,Strip 27,../../hosted-strips/ventricular-pacemaker-rhythm.gif,Identify the rhythm on this strip.,Picture,2,Sinus Exit Block,Ventricular Pacemaker Rhythm,Atrial Fibrillation,Atrial Pacemaker Rhythm,,Pacemaker
+,Strip 28,../../hosted-strips/av-sequential-pacemaker-rhythm.gif,Identify the rhythm on this strip.,Picture,1,Atrioventricular (Sequential) Pacemaker Rhythm,Sinus Arrhythmia,Ventricular Pacemaker Rhythm,Second Degree Heart Block Type II,,Pacemaker
+,Strip 29,../../hosted-strips/failure-to-capture.gif,Identify the rhythm on this strip.,Picture,3,Wolff-Parkinson-White Syndrome,Bundle Branch Block,Failure to Capture,Second Degree Heart Block Type II,,Pacemaker
+,Strip 30,../../hosted-strips/failure-to-pace.gif,Identify the rhythm on this strip.,Picture,3,Failure to Capture,Wolff-Parkinson-White Syndrome,Failure to Pace,Sinus Pause,,Pacemaker
+,Strip 31,../../hosted-strips/failure-to-sense.jpg,Identify the rhythm on this strip.,Picture,2,Normal Sinus Rhythm,Failure to Sense,Premature Junctional Complex,Failure to Capture,,Pacemaker

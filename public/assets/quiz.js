@@ -38,6 +38,58 @@ const payload = Array.isArray(window.payload) ? window.payload : [];
 const headers = payload[0] || [];
 const rows = payload.slice(1);
 
+/** From column G onward: headers starting with the word "Choice" are choices;
+ *  headers containing the word "Hint" are hints. Applies to all quiz sources
+ *  (Google Sheet, local CSV, user-pasted CSV) because they all share this payload. */
+function isChoiceHeader(header) {
+    return /^\s*choice\b/i.test(String(header ?? ""));
+}
+function isHintHeader(header) {
+    return /\bhint\b/i.test(String(header ?? ""));
+}
+const columnLayout = (() => {
+    const choiceIndices = [];
+    const hintIndices = [];
+    for (let i = atColumn.G; i < headers.length; i++) {
+        const h = String(headers[i] ?? "");
+        if (isChoiceHeader(h)) {
+            choiceIndices.push(i);
+        } else if (isHintHeader(h)) {
+            hintIndices.push(i);
+        }
+    }
+    return {
+        choiceIndices,
+        hintIndices,
+        usedNamedChoices: choiceIndices.length > 0
+    };
+})();
+
+function rowChoiceValues(row) {
+    if (columnLayout.usedNamedChoices) {
+        return columnLayout.choiceIndices.map(i => String(row[i] ?? ""));
+    }
+    // Legacy fallback: no Choice* headers — treat every non-Hint column from G as a choice
+    const hintSet = new Set(columnLayout.hintIndices);
+    const values = [];
+    for (let i = atColumn.G; i < row.length; i++) {
+        if (!hintSet.has(i)) {
+            values.push(String(row[i] ?? ""));
+        }
+    }
+    return values;
+}
+
+function rowHintHtml(row) {
+    const parts = columnLayout.hintIndices
+        .map(i => String(row[i] ?? "").trim())
+        .filter(part => part.length > 0);
+    if (!parts.length) {
+        return "";
+    }
+    return parts.join("\n\n").replaceAll("\n", "<br/>");
+}
+
 // Setup business logic
 const questions = {
     questions: rows.filter(row=>(parseInt(row[0])!==-1&&row.length!==0)),
@@ -400,14 +452,18 @@ const ui = {
             debugger;
         }
 
+        const questionHint = rowHintHtml(row);
+
         const templateContext = {
             questionTitle: row[atColumn.B],
 
             questionInstruction: row[atColumn.D],
 
+            questionHint,
+
             choicesModel: ()=>{
                 try {
-                    let model = formatters.modelMyChoices({ type: row[atColumn.E].toLowerCase(), choices: row.slice(atColumn.G) });
+                    let model = formatters.modelMyChoices({ type: row[atColumn.E].toLowerCase(), choices: rowChoiceValues(row) });
                     return model;
                 } catch(err) {
                     console.group("Errored loading into choices model")

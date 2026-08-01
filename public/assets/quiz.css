@@ -191,6 +191,36 @@ a.nav-link {
     font-style: italic;
 }
 
+.question-hint {
+    margin: 12px 20px 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 0.875rem;
+}
+
+.question-hint > summary {
+    cursor: pointer;
+    font-weight: 400;
+    user-select: none;
+    list-style: none;
+}
+
+.question-hint > summary::-webkit-details-marker {
+    display: none;
+}
+
+.question-hint > summary::before {
+    content: "· ";
+}
+
+.question-hint-body {
+    margin-top: 6px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.55);
+}
+
 .question-choices-wrapper {
     padding-left: 20px;
 }
