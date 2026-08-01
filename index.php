@@ -161,6 +161,12 @@ if($usingCallback) {
             <article class="intro <?php echo $jumbo; ?>" data-page=0>
                 <!-- <h2 class="intro-title display-5">Choose a quiz:</h2> -->
                 <section class="dirs-wrapper my-4">
+                    <div class="category-filter-wrap mb-3">
+                        <label for="category-filter" class="form-label mb-1">Filter</label>
+                        <select id="category-filter" class="category-filter form-select w-auto" aria-label="Filter by category">
+                            <option value="">All topics</option>
+                        </select>
+                    </div>
                     <ul class="dirs">
 
                     </ul>
