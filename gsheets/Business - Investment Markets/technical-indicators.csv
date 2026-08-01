@@ -1,0 +1,53 @@
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Choice 6,Choice 7,Hint
+,Concepts,SMA stands for…,Select the correct answer.,Multiple Choice,1,Simple Moving Average,Sudden Market Alarm,Short Margin Account,Spot Monetary Asset,,,,
+,Concepts,EMA differs from SMA mainly because it…,Select the correct answer.,Multiple Choice,2,Ignores all recent prices,Gives more weight to recent prices (reacts faster),Is only for forex pips,Equals net margin,,,,
+,Concepts,RSI is an oscillator typically scaled…,Select the correct answer.,Multiple Choice,3,−1 to +1 only,In dollars only,0–100,In shares outstanding,,,,
+,Concepts,Classic RSI overbought / oversold teaching levels are…,Select the correct answer.,Multiple Choice,1,Above 70 / below 30,Above 10 / below 5,Above 200 / below 100,Exactly 50 forever,,,,
+,Concepts,MACD is best described as…,Select the correct answer.,Multiple Choice,2,Price ÷ earnings,Difference between fast and slow EMAs (plus signal/histogram),Assets − liabilities,A candlestick wick,,,,
+,Concepts,Bollinger Bands use a middle band that is…,Select the correct answer.,Multiple Choice,1,An SMA with upper/lower bands at ± standard deviations,Only RSI,Only volume,A bond yield,,,,
+,Concepts,A Bollinger “squeeze” typically means…,Select the correct answer.,Multiple Choice,3,Guaranteed profit,LIVE brokerage fill,Low volatility that can precede a breakout,A share buyback,,,,
+,Concepts,Price above SMA is commonly taught as…,Select the correct answer.,Multiple Choice,1,Bullish bias (trend context),A filing requirement,Automatic short signal,Zero risk,,,,
+,FIB,___ averages closing prices over a period and smooths noise.,Select the answer that best fills the blank.,Fill in the blank,1,SMA (Simple Moving Average),10-K,Pip,PEA,,,,
+,TF,EMA usually reacts faster to new data than SMA.,Select True or False.,True False,1,True,False,,,,,,
+,TF,MACD crossovers are often taught as potential entry/exit signals (not guarantees).,Select True or False.,True False,1,True,False,,,,,,
+,SATA,Which are overlay categories in the trainer? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,2,3",Trend,Oscillator,Volatility,Payroll,Ventilation,,,
+,Flash,"RSI
+====
+Relative Strength Index — oscillator 0–100; >70 overbought, <30 oversold (teaching defaults).","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Flash,"Bollinger Bands
+====
+Middle = SMA; upper/lower = SMA ± 2× standard deviation. Squeeze = low volatility before breakout.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Mix,Match indicator to use case.,Drag items into matching slots.,Mix and match,N/A,"SMA
+===
+Trend identification / S-R context","EMA
+===
+Faster signals than SMA; swing trading","RSI
+===
+Overbought/oversold momentum","MACD
+===
+Trend/momentum crossovers","Bollinger
+===
+Volatility / mean reversion / breakouts",,,
+,Ranked,Order these from “smoother trend” teaching focus to “volatility bands”.,Drag into the correct order.,Ranked,N/A,SMA,EMA,MACD,RSI,Bollinger Bands,,,
+,Application,You want a 0–100 momentum oscillator for overbought/oversold. Choose…,Select the correct answer.,Multiple Choice,3,SMA,Bollinger middle only,RSI,Share count,,,,
+,Picture,https://upload.wikimedia.org/wikipedia/commons/9/92/Candlestick_chart_scheme_01-en.svg,This educational scheme labels open/high/low/close on a candle. What does the thick middle section represent?,Picture,2,Only volume,The real body (open–close range),Only the exchange fee,Net margin,,,,Wikimedia candle anatomy — foundation for reading indicator overlays
+,Picture,https://upload.wikimedia.org/wikipedia/commons/8/85/Candlestick_chart_scheme_02-en.svg,"On a standard candlestick anatomy diagram, the thin lines above/below the body are called…",Picture,1,Wicks / shadows (high–low extremes),Liabilities,P/E multiples,Currency pips only,,,,Wikimedia candle anatomy scheme 02
+,Concepts,Why learn candle anatomy before overlay indicators?,Select the correct answer.,Multiple Choice,1,Indicators are drawn from OHLC; misreading bodies/wicks breaks context,Indicators replace the need for price entirely,Anatomy is only for forex brokers,SMA forbids looking at candles,,,,Trainer chart stack: OHLC → overlays
+,Trend Chapter,Trend-following overlays (SMA/EMA) lag price because they…,Select the correct answer.,Multiple Choice,1,Average past closes — by design they react after moves begin,Predict the future perfectly,Are random numbers,Equal P/E,,,,
+,Trend Chapter,A golden cross (intro teaching) often refers to…,Select the correct answer.,Multiple Choice,2,A stock split,A shorter MA crossing above a longer MA,An IPO,A margin call,,,,
+,Trend Chapter,A death cross (intro teaching) often refers to…,Select the correct answer.,Multiple Choice,1,A shorter MA crossing below a longer MA,Guaranteed bankruptcy tomorrow,A dividend increase,A pip,,,,
+,Oscillators,Oscillators are most useful when…,Select the correct answer.,Multiple Choice,3,You ignore price entirely,Markets never range,You want momentum/extremes context — still not gospel,Filing season ends,,,,
+,Oscillators,RSI divergence (intro) means…,Select the correct answer.,Multiple Choice,1,Price and RSI disagree on highs/lows — possible momentum shift clue,Guaranteed reversal now,Options expiry,Spread = 0,,,,
+,Volatility Chapter,Bollinger Band width expanding suggests…,Select the correct answer.,Multiple Choice,2,Volatility collapsing,Volatility rising / larger moves,Dividends rising,Settlement failing,,,,
+,Volatility Chapter,Mean-reversion band ideas assume…,Select the correct answer.,Multiple Choice,1,Price may revert toward a middle after extremes — until a trend regime breaks that,Price never trends,Bands delete risk,LIVE fills,,,,
+,MACD Chapter,MACD histogram growing in the direction of a move suggests…,Select the correct answer.,Multiple Choice,3,Accounting fraud,IPO success,Momentum strengthening (teaching interpretation),A stock certificate,,,,
+,Combining Tools,A robust process usually…,Select the correct answer.,Multiple Choice,1,"Uses price structure first, then indicators as confirmation — not the reverse blindly",Uses 20 indicators with no thesis,Ignores risk,Requires LIVE theater,,,,
+,TF,More indicators always equal more accurate predictions.,Select True or False.,True False,2,True,False,,,,,,
+,Limits,Indicators can fail in…,Select the correct answer.,Multiple Choice,2,No markets,"Regime changes, news gaps, and low-liquidity tapes",Only textbooks,Only crypto,,,,
+,FIB,EMA weights ___ prices more heavily than SMA.,Select the answer that best fills the blank.,Fill in the blank,1,recent,ancient only,dividend,warehouse,,,,
+,Flash,"Lagging vs leading (teaching)
+====
+MAs lag by construction. Oscillators can seem “earlier” but still derive from past prices — not prophecy.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,SATA,Which are trainer overlay categories? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,2,3",Trend,Oscillator,Volatility,Payroll,Custody,,,
+,Application,Price makes a new high but RSI makes a lower high. Teaching label?,Select the correct answer.,Multiple Choice,1,"Bearish RSI divergence (clue, not destiny)",Mandatory short with 100x,IPO,Contango,,,,
+,Application,Bands squeeze for many bars then price breaks out with expansion. Common teaching read?,Select the correct answer.,Multiple Choice,2,Ignore — squeezes never resolve,Volatility expansion after compression — trade management still required,Automatic dividend,Settlement error,,,,

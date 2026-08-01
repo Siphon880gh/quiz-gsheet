@@ -1,0 +1,155 @@
+{
+  "status": "Done",
+  "category": "Business - Investment Markets",
+  "category_rationale": "Market literacy and instrument classes (equities, futures, options context, crypto, forex) \u2014 clearer than Money Raising; parallel to Business - Trader.",
+  "skill": ".cursor/skills/extract-stocks-trainer-quizzes/SKILL.md",
+  "loop": "AGENTS_LOOP-Stocks-Trainer-Quizzes.md",
+  "source": "context-stocks-trainer",
+  "queue_order": [
+    "scaffold",
+    "equities",
+    "futures",
+    "options-context",
+    "crypto",
+    "forex",
+    "market-types-bridge",
+    "candlestick-patterns",
+    "technical-indicators",
+    "financial-statements",
+    "news-decision-process",
+    "graphics-candles-enrichment",
+    "graphics-indicators-enrichment",
+    "thinking-mode-enrichment",
+    "trading-basics"
+  ],
+  "topics": {
+    "scaffold": {
+      "status": "done",
+      "notes": "Category Business - Investment Markets + icon + skill/loop/state"
+    },
+    "equities": {
+      "status": "done",
+      "quiz": "Equities (Stocks)",
+      "csv": "equities-stocks.csv",
+      "rows": 51,
+      "fundamentals_toc_pass": true
+    },
+    "futures": {
+      "status": "done",
+      "quiz": "Futures",
+      "csv": "futures.csv",
+      "rows": 43,
+      "fundamentals_toc_pass": true
+    },
+    "options-context": {
+      "status": "done",
+      "quiz": "Options Context",
+      "csv": "options-context.csv",
+      "rows": 41,
+      "fundamentals_toc_pass": true
+    },
+    "crypto": {
+      "status": "done",
+      "quiz": "Crypto",
+      "csv": "crypto.csv",
+      "rows": 38,
+      "fundamentals_toc_pass": true
+    },
+    "forex": {
+      "status": "done",
+      "quiz": "Forex",
+      "csv": "forex.csv",
+      "rows": 40,
+      "fundamentals_toc_pass": true
+    },
+    "market-types-bridge": {
+      "status": "done",
+      "quiz": "Market Types Bridge",
+      "csv": "market-types-bridge.csv",
+      "rows": 33,
+      "fundamentals_toc_pass": true
+    },
+    "candlestick-patterns": {
+      "status": "done",
+      "quiz": "Candlestick Patterns",
+      "csv": "candlestick-patterns.csv",
+      "rows": 49,
+      "graphics": "trainer SVG + Wikimedia Commons Picture rows",
+      "fundamentals_toc_pass": true
+    },
+    "technical-indicators": {
+      "status": "done",
+      "quiz": "Technical Indicators",
+      "csv": "technical-indicators.csv",
+      "rows": 36,
+      "fundamentals_toc_pass": true
+    },
+    "financial-statements": {
+      "status": "done",
+      "quiz": "Financial Statements",
+      "csv": "financial-statements.csv",
+      "rows": 36,
+      "fundamentals_toc_pass": true
+    },
+    "news-decision-process": {
+      "status": "done",
+      "quiz": "News and Decisions",
+      "csv": "news-and-decisions.csv",
+      "rows": 43,
+      "fundamentals_toc_pass": true
+    },
+    "graphics-candles-enrichment": {
+      "status": "done",
+      "notes": "Added 7 candlestick Picture/text rows from Wikimedia learning library",
+      "added": 7
+    },
+    "graphics-indicators-enrichment": {
+      "status": "done",
+      "notes": "Added 3 candle-anatomy Picture/text rows for indicator foundation",
+      "added": 3
+    },
+    "thinking-mode-enrichment": {
+      "status": "done",
+      "notes": "Added 10 decide-and-reveal coach-tip questions",
+      "added": 10
+    },
+    "trading-basics": {
+      "status": "done",
+      "quiz": "Trading Basics",
+      "source": "Google Sheet tab Trader (moved from Business - Trader)",
+      "php": "Trading Basics.php"
+    }
+  },
+  "question_counts": {
+    "equities": 51,
+    "futures": 43,
+    "options-context": 41,
+    "crypto": 38,
+    "forex": 40,
+    "market-types-bridge": 33,
+    "candlestick-patterns": 49,
+    "technical-indicators": 36,
+    "financial-statements": 36,
+    "news-decision-process": 43
+  },
+  "next_action": "STOP",
+  "last_updated_iso": "2026-08-01T12:18:57Z",
+  "consecutive_failures": 0,
+  "drain_pass": "graphics+thinkingMode residual 2026-08-01",
+  "fundamentals_toc_pass": {
+    "status": "done",
+    "added_by_file": {
+      "equities-stocks.csv": 34,
+      "futures.csv": 28,
+      "options-context.csv": 27,
+      "crypto.csv": 24,
+      "forex.csv": 26,
+      "market-types-bridge.csv": 19,
+      "candlestick-patterns.csv": 17,
+      "technical-indicators.csv": 16,
+      "financial-statements.csv": 18,
+      "news-and-decisions.csv": 15
+    },
+    "note": "Expanded each local quiz to chapter-style market fundamentals TOC coverage (educational/SAMPLE)."
+  }
+}

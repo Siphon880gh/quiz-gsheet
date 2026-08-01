@@ -1,0 +1,62 @@
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Choice 6,Choice 7,Hint
+,Concepts,A viral social post claims a buyout with no company filing. Best first move?,Select the correct answer.,Multiple Choice,2,Buy immediately,Treat as rumor until confirmed,Ignore all future news forever,Short 10x automatically,,,,
+,Concepts,Everyone expected a rate hold and the headline matches. The first spike often…,Select the correct answer.,Multiple Choice,1,Fades if it was already priced in,Guarantees a trend day,Means filings are fake,Deletes risk,,,,
+,Concepts,Chase vs fade — most accurate statement?,Select the correct answer.,Multiple Choice,3,Always chase breakouts,Always fade every spike,Choose using evidence quality + horizon,Never read headlines,,,,
+,Concepts,Source humility means…,Select the correct answer.,Multiple Choice,1,Weight claims by how primary/verifiable the source is,Trust the loudest account,Never read headlines,Assume all filings are rumors,,,,
+,Concepts,Company-news cases hide the aftermath until you decide primarily to…,Select the correct answer.,Multiple Choice,1,Practice deciding with only the brief (anti-hindsight),Simulate LIVE brokerage fills,Prove SAMPLE data is pure noise,Price options Greeks,,,,
+,Concepts,Coach tip for beat/miss thinking: size the surprise vs…,Select the correct answer.,Multiple Choice,2,Your favorite color,What was priced in (beat + cut guide ≠ automatic buy),RSI only,Pip size only,,,,
+,Concepts,Profit without cash is a process smell — next move?,Select the correct answer.,Multiple Choice,1,Trace working capital before you chase,Market-buy immediately,Ignore statements forever,Switch to LIVE theater,,,,
+,Concepts,"On a guidance cut, Hold fits only if…",Select the correct answer.,Multiple Choice,3,You need adrenaline,Charts are green,Your thesis survives the new guidance band,Social media is loud,,,,
+,FIB,___ means markets may already reflect widely expected news before the headline hits.,Select the answer that best fills the blank.,Fill in the blank,1,Priced in,Doji,SMA,Warehouse,,,,
+,TF,Rumor is the same as a disclosed filing or official release.,Select True or False.,True False,2,True,False,,,,,,
+,TF,Neither chase nor fade is always right — match to evidence and horizon.,Select True or False.,True False,1,True,False,,,,,,
+,SATA,Which belong to the trainer’s news/decision process vocabulary? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,2,3,4",Rumor vs filing,Priced in,Chase vs fade,Source humility,LIVE guaranteed fills,,,
+,Flash,"Rumor vs Filing
+====
+Social chatter ≠ disclosed filing or official release. Raise confidence only when a primary source confirms.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Flash,"Chase vs Fade
+====
+Chase = join the move; fade = bet it overshoots. Neither is always right — match evidence quality, liquidity, and horizon.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Mix,Match decision cue to coach tip.,Drag items into matching slots.,Mix and match,N/A,"Rumor vs filing
+===
+Size for uncertainty if ranges diverge","Priced in
+===
+Ask what was already known vs new","Cash-flow red flag
+===
+Trace working capital before chasing","Risk-off
+===
+Ask if the name is the story or collateral damage",,,,
+,Ranked,Order a process-first reaction to a rumor gap-up.,Drag into the correct order.,Ranked,N/A,Ask what is new vs already priced,Check for primary confirmation (filing/release),Decide chase/fade/hold using horizon,Size for being wrong,,,,
+,Application,Stock gaps on a rumor; process-first choice?,Select the correct answer.,Multiple Choice,2,"Market buy, no plan",Ask what is new vs priced; size for being wrong,Short 10x because gaps always fail,Disable all future news,,,,
+,Concepts,Combined earnings + headline thinking should…,Select the correct answer.,Multiple Choice,1,Reconcile filing facts with the headline narrative,Ignore filings forever,Treat neon charts as filings,Assume LIVE brokerage fills,,,,
+,Concepts,Beat + cut guidance is…,Select the correct answer.,Multiple Choice,2,An automatic buy signal,Not an automatic buy — size the surprise vs what was priced,Proof filings are fake,A candlestick pattern,,,,Coach tip: beat_miss
+,Concepts,"When margins compress, a process-first question is whether pressure is…",Select the correct answer.,Multiple Choice,1,"Mix, cost, or pricing power — then size",Only the chart color,Always fraud,Only forex pips,,,,Coach tip: margin_compression
+,Concepts,Balance-sheet stress teaching emphasizes that…,Select the correct answer.,Multiple Choice,3,Equity is senior to all debt,Liquidity never matters,Liquidity and leverage set the downside floor; equity is residual,Charts erase liabilities,,,,Coach tip: balance_sheet_stress
+,Concepts,"In a risk-off tape, ask whether the name is…",Select the correct answer.,Multiple Choice,2,Always the sole culprit,The story itself or just collateral damage from beta,Immune to beta,A LIVE options chain,,,,Coach tip: risk_off
+,Concepts,A macro print should be mapped first to…,Select the correct answer.,Multiple Choice,1,Rates / growth / risk appetite — then to this equity’s beta,Only one social post,Candlestick wicks only,Guaranteed trend days,,,,Coach tip: macro_print
+,Concepts,Geopolitics / supply shocks should be analyzed by…,Select the correct answer.,Multiple Choice,2,Ignoring margins,Naming the channel (margins vs multiples can differ),Assuming all names move identically,Deleting horizon,,,,Coach tip: geopolitics_supply
+,Concepts,Company-headline decisions should separate…,Select the correct answer.,Multiple Choice,1,Headline shock from durable cash-flow change (horizon first),RSI from SMA only,Pips from lots only,LIVE fills from SAMPLE forever the same way,,,,Coach tip: company_headline
+,Concepts,Momentum chase vs fade: fade needs…,Select the correct answer.,Multiple Choice,3,No catalyst ever,Blind rules only,A catalyst (and a read on early trend vs late crowd),Zero risk,,,,Coach tip: momentum_chase_vs_fade
+,SATA,Which coach process cues match Stock Trainer decide-and-reveal thinking? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,2,4,5",Size surprise vs priced-in expectations,Trace working capital when profit lacks cash,Trust the loudest account,Reconcile filing facts with headline narrative,Size for uncertainty when rumor ≠ filing,,,thinkingModeTips + news literacy
+,TF,A guidance cut resets the forward path; Hold only if the thesis survives the new band.,Select True or False.,True False,1,True,False,,,,,,Coach tip: guidance_cut
+,Earnings Season,An earnings print typically includes…,Select the correct answer.,Multiple Choice,1,Results vs expectations and often forward guidance,Only a candlestick,Only a pip chart,Mandatory stock splits,,,,
+,Earnings Season,Whisper numbers / street expectations matter because…,Select the correct answer.,Multiple Choice,2,They replace filings,"Markets often price the surprise vs expectations, not the raw number alone",They delete risk,They set FX fixes,,,,
+,Macro Calendar,"Scheduled macro releases (CPI, jobs, etc.) can cause…",Select the correct answer.,Multiple Choice,1,Sudden volatility spikes around the print,Zero market movement ever,Automatic dividends,Options to never expire,,,,
+,Position Sizing,Position size should reflect…,Select the correct answer.,Multiple Choice,3,FOMO only,Chat volume only,"Uncertainty, liquidity, and how wrong you can be",Neon intensity,,,,
+,Position Sizing,Reducing size when confidence is low is…,Select the correct answer.,Multiple Choice,1,Process discipline,Cowardice that always loses,Illegal,A candlestick,,,,
+,Playbook,Pre-trade checklist (teaching) includes…,Select the correct answer.,Multiple Choice,2,Only the tip from a stranger,"Thesis, invalidation, size, and horizon",Guaranteed targets only,Ignoring news,,,,
+,Playbook,Invalidation means…,Select the correct answer.,Multiple Choice,1,What evidence would prove your thesis wrong — so you exit/resize,A permanent hold no matter what,Deleting statements,Only RSI,,,,
+,Behavioral,FOMO chasing after a vertical spike often…,Select the correct answer.,Multiple Choice,3,Improves average entry always,Removes risk,Buys expensive uncertainty — process asks what is left that’s new,Equals a filing,,,,
+,Behavioral,Anchoring to your entry price can…,Select the correct answer.,Multiple Choice,2,Improve mark-to-market math,Bias holds/sells vs fresh evidence,Set interest rates,Create pips,,,,
+,TF,A good process can still lose money on a single SAMPLE case — outcomes ≠ always skill.,Select True or False.,True False,1,True,False,,,,,,
+,FIB,Your exit idea when the thesis breaks is called ___.,Select the answer that best fills the blank.,Fill in the blank,1,invalidation,contango,marubozu,custody,,,,
+,Flash,"Surprise vs expectations
+====
+Markets often move on the gap between the print and what was priced — not the headline number alone.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,SATA,Which belong in a pre-decision checklist? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,2,3,5",What is new vs priced in?,What would invalidate me?,What size if I’m wrong?,Trust the loudest account,Does this fit my horizon?,,,
+,Application,Beat earnings but guide down hard. Process cue from trainer tips?,Select the correct answer.,Multiple Choice,1,Not automatic buy — size surprise vs priced path / new guidance band,Market buy with max leverage,Ignore guidance,Treat as a doji only,,,,
+,Application,Macro risk-off dumps your high-beta name with no company news. Ask…,Select the correct answer.,Multiple Choice,2,Nothing — always double down,Is this the story or collateral damage?,Delete the chart,Convert to FX automatically,,,,
+,Learning Path,"In Stock Trainer, the chart soft-gate before graded cases means…",Select the correct answer.,Multiple Choice,1,Build candle/indicator fluency before decide-and-reveal cases,Skip all charts forever,Enable LIVE brokerage,Delete SAMPLE labels,,,,
+,TF,Graded decision cases in the trainer are soft-gated behind chart literacy milestones.,Select True or False.,True False,1,True,False,,,,,,
+,Risk Controls,A stop-loss order (concept) is meant to…,Select the correct answer.,Multiple Choice,2,Guarantee the best price always,Trigger an exit when price reaches a predefined adverse level (slippage still possible),Increase FOMO,Replace invalidation thinking,,,,
+,Position Sizing,Risk/reward (teaching) compares…,Select the correct answer.,Multiple Choice,1,How much you risk vs potential gain if the thesis works,Only social likes,Only RSI,Only lot size with no thesis,,,,

@@ -1,0 +1,64 @@
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Choice 6,Choice 7,Hint
+,Concepts,A Doji typically signals…,Select the correct answer.,Multiple Choice,2,Guaranteed trend continuation forever,Indecision (open ≈ close),Only bullish reversal,Only bearish reversal,,,,Neutral / indecision
+,Concepts,A Hammer is best described as…,Select the correct answer.,Multiple Choice,1,Bullish reversal with a long lower shadow,Bearish top with long upper shadow,Three-peak pattern,Volatility bands around SMA,,,,
+,Concepts,Bullish Engulfing means…,Select the correct answer.,Multiple Choice,3,RSI crossed 70,A bond matured,A large green body fully overlaps the prior small red body,Open equals close with no wicks,,,,
+,Concepts,Bearish Engulfing means…,Select the correct answer.,Multiple Choice,1,Red body fully engulfs prior green body,Long lower wick only,Three green stars,SMA slope only,,,,
+,Concepts,A Shooting Star is typically…,Select the correct answer.,Multiple Choice,2,Bullish bottom reversal,"Bearish top reversal (long upper shadow, small body at bottom)",A forex pip calculator,An earnings filing,,,,
+,Concepts,An Inverted Hammer (after a downtrend) is generally…,Select the correct answer.,Multiple Choice,1,Bullish bottom reversal signal,Identical to a guaranteed short,A balance-sheet liability,A LIVE options chain,,,,
+,Concepts,Morning Star is…,Select the correct answer.,Multiple Choice,3,One doji only,A volatility squeeze only,A three-candle bullish reversal at the bottom of a downtrend,A head-and-shoulders top,,,,
+,Concepts,Head and Shoulders is a…,Select the correct answer.,Multiple Choice,2,Bullish continuation wedge,Bearish reversal with three peaks (center highest),Cash-flow statement line,Currency pair,,,,
+,Concepts,Falling Wedge in the registry is typed as…,Select the correct answer.,Multiple Choice,1,Continuation (converging downward trendlines),Ownership share,Options Greek,Bank CD,,,,
+,FIB,A ___ shows open and close nearly equal — classic indecision.,Select the answer that best fills the blank.,Fill in the blank,1,Doji,Liability,Pip,Coupon,,,,
+,TF,A Hammer’s long lower shadow suggests sellers pushed down but buyers reclaimed control.,Select True or False.,True False,1,True,False,,,,,,
+,TF,Shooting Star and Inverted Hammer share a similar shape but differ by location/context (top vs bottom).,Select True or False.,True False,1,True,False,,,,,,
+,SATA,Which patterns are listed as bullish reversals in the trainer registry? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,3,4",Hammer,Shooting Star,Morning Star,Inverted Hammer,Head and Shoulders,,,
+,Flash,"Doji
+====
+Indecision in the market with equal (or nearly equal) open/close.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Flash,"Morning Star
+====
+Three-candle bullish reversal pattern at the bottom of a downtrend.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Mix,Match pattern to description.,Drag items into matching slots.,Mix and match,N/A,"Hammer
+===
+Long lower shadow; bullish reversal","Shooting Star
+===
+Long upper shadow; bearish top reversal","Engulfing
+===
+Current body covers previous body","Head and Shoulders
+===
+Three peaks; center highest",,,,
+,Application,"After a downtrend, a candle prints a long lower wick and small body near the high. Best label?",Select the correct answer.,Multiple Choice,2,Shooting Star,Hammer,Head and Shoulders,Falling Wedge,,,,
+,Picture,../../public/assets/patterns/markets/morning-star.svg,Identify the candlestick pattern shown.,Picture,1,Morning Star,Doji,Shooting Star,Falling Wedge,,,,Trainer SVG — three-candle bullish reversal
+,Picture,../../public/assets/patterns/markets/bullish-engulfing.svg,Identify the candlestick pattern shown.,Picture,2,Hammer,Bullish Engulfing,Head and Shoulders,Doji,,,,Trainer SVG — green body overlaps prior red
+,Picture,../../public/assets/patterns/markets/head-shoulders.svg,Identify the candlestick pattern shown.,Picture,3,Morning Star,Falling Wedge,Head and Shoulders,Hammer,,,,"Trainer SVG — three peaks, center highest"
+,Picture,../../public/assets/patterns/markets/falling-wedge.svg,Identify the candlestick pattern shown.,Picture,1,Falling Wedge,Bullish Engulfing,Shooting Star,Morning Star,,,,Trainer SVG — converging downward trendlines
+,Picture,https://upload.wikimedia.org/wikipedia/commons/e/ec/Candlestick_pattern_hammer.svg,Identify the candlestick pattern shown.,Picture,1,Hammer,Shooting Star,Doji,Bearish Engulfing,,,,Wikimedia CC0 — long lower shadow bullish reversal
+,Picture,https://upload.wikimedia.org/wikipedia/commons/2/23/Candlestick_pattern_bullish_engulfing.svg,Identify the candlestick pattern shown.,Picture,2,Bearish Engulfing,Bullish Engulfing,Inverted Hammer,Doji,,,,Wikimedia CC0 — bullish engulfing schematic
+,Picture,https://upload.wikimedia.org/wikipedia/commons/0/0c/Candlestick_pattern_bearish_engulfing.svg,Identify the candlestick pattern shown.,Picture,1,Bearish Engulfing,Bullish Engulfing,Morning Star,Hammer,,,,Wikimedia CC0 — bearish engulfing schematic
+,Picture,https://upload.wikimedia.org/wikipedia/commons/9/9d/Candlestick_pattern_bullish_Moring_Star.svg,Identify the candlestick pattern shown.,Picture,3,Doji,Head and Shoulders,Morning Star,Falling Wedge,,,,Wikimedia CC0 — Morning Star (Commons filename spelling Moring)
+,Picture,https://upload.wikimedia.org/wikipedia/commons/7/78/Candlestick_pattern_Doji_Star.svg,Identify the candlestick pattern shown.,Picture,2,Hammer,Doji Star,Bullish Engulfing,Falling Wedge,,,,Wikimedia CC0 — Doji Star schematic
+,Picture,https://upload.wikimedia.org/wikipedia/commons/6/6f/Candlestick_pattern_bullish_Doji_Star.svg,Identify the candlestick pattern shown.,Picture,1,Bullish Doji Star,Bearish Engulfing,Head and Shoulders,Shooting Star,,,,Wikimedia CC0 — bullish Doji Star
+,Picture,https://upload.wikimedia.org/wikipedia/commons/0/06/Candlestick_pattern_bullish_Morning_Doji_Star.svg,Identify the candlestick pattern shown.,Picture,3,Evening Star,Hammer,Morning Doji Star,Falling Wedge,,,,Wikimedia CC0 — Morning Doji Star (related to Morning Star family)
+,Picture,https://upload.wikimedia.org/wikipedia/commons/5/5b/Candlestick_pattern_bearish_Evening_Star.svg,Identify the candlestick pattern shown.,Picture,2,Morning Star,Evening Star,Doji,Bullish Engulfing,,,,Wikimedia CC0 — Evening Star (bearish counterpart teaching)
+,Picture,https://upload.wikimedia.org/wikipedia/commons/a/a7/Candlestick_pattern_Shooting_Star.svg,Identify the candlestick pattern shown.,Picture,1,Shooting Star,Hammer,Morning Star,Doji,,,,Wikimedia CC0 — Shooting Star top reversal
+,Concepts,Evening Star is best described as…,Select the correct answer.,Multiple Choice,2,A one-candle doji only,A three-candle bearish reversal near tops (counterpart teaching to Morning Star),An SMA crossover,A forex pip calculator,,,,Trainer teaches Morning Star; Commons Evening Star diagram for contrast
+,Concepts,A Doji Star typically features…,Select the correct answer.,Multiple Choice,1,A doji-like gap/star candle in a reversal sequence,Only Bollinger squeeze math,Guaranteed LIVE fills,Balance-sheet equity only,,,,Recognition family adjacent to Doji / Morning Doji Star
+,Anatomy,Open and close define the candle’s…,Select the correct answer.,Multiple Choice,1,Real body,Only volume bar,Dividend,Strike,,,,
+,Anatomy,High and low extremes are shown by…,Select the correct answer.,Multiple Choice,2,Only the body color,Wicks / shadows,The exchange fee,P/E,,,,
+,Anatomy,A long upper wick after a rally often hints at…,Select the correct answer.,Multiple Choice,3,Guaranteed continuation up,No supply,Rejection of higher prices (context-dependent),A stock split,,,,
+,Single Candle,A Marubozu (intro) has…,Select the correct answer.,Multiple Choice,1,A long body with little/no wicks — strong directional conviction teaching,No open or close,Only dojis,Forced dividends,,,,
+,Single Candle,Spinning top (intro) suggests…,Select the correct answer.,Multiple Choice,2,Maximum trend strength always,"Indecision / balanced battle (small body, longer wicks)",IPO completion,Futures delivery,,,,
+,Context,Pattern reliability improves when you also check…,Select the correct answer.,Multiple Choice,1,"Trend context, location (support/resistance), and confirmation",Only the emoji in the chat,Only the logo color,Ignoring volume/location always,,,,
+,TF,The same candle shape can mean different things at a top vs a bottom.,Select True or False.,True False,1,True,False,,,,,,
+,Multi Candle,Engulfing patterns need…,Select the correct answer.,Multiple Choice,2,Exactly five years of data,A relationship between consecutive candle bodies,Only FX pips,A margin call,,,,
+,Multi Candle,Stars (morning/evening families) are…,Select the correct answer.,Multiple Choice,1,"Multi-candle reversal sequences, not a single random wick",Bond ratings,Stablecoin pegs,IPOs,,,,
+,Continuation vs Reversal,Continuation patterns suggest…,Select the correct answer.,Multiple Choice,3,The trend must end,Ownership changes,The prior trend is more likely to resume after pause (probabilistic),Zero risk,,,,
+,Continuation vs Reversal,Reversal patterns suggest…,Select the correct answer.,Multiple Choice,1,A potential turn against the prior trend (needs confirmation),Guaranteed tops/bottoms,Automatic dividends,No need for context,,,,
+,Confirmation,Waiting for confirmation can mean…,Select the correct answer.,Multiple Choice,2,Never trading again,Seeing follow-through (e.g. close beyond a level) before acting,Deleting the chart,Only using leverage,,,,
+,Limits,Candlestick patterns alone…,Select the correct answer.,Multiple Choice,1,"Are probabilistic clues, not guarantees",Predict the future with certainty,Replace risk management,Equal filings,,,,
+,FIB,The thin lines beyond the body are called ___ or shadows.,Select the answer that best fills the blank.,Fill in the blank,1,wicks,strikes,pips,coupons,,,,
+,Flash,"Context over shape
+====
+Where a pattern prints (trend, level) matters as much as the geometry. Same shape ≠ same trade.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,SATA,Which improve candle reading? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,2,4",Trend context,Nearby support/resistance,Assuming every doji reverses the market,Confirmation / follow-through,Ignoring location,,,
+,Application,A hammer prints in the middle of a choppy range with no level. Best teaching takeaway?,Select the correct answer.,Multiple Choice,2,Guaranteed reversal — buy 10x,Weak signal without supportive context,Convert to a put automatically,Ignore all future hammers forever,,,,

@@ -11,8 +11,8 @@ $inputs = [
     "creds"=>dirname(__FILE__) . "/../../../../../keys/quizer-temporal-fx-381723.json",
 
     /* Display */
-    "pageTitle"=>"Business Quiz: Trader",
-    "pageDescription"=>"Trader concepts. In the future will have more scenario type questions and questions geared towards analyzing stocks quantitatively and macroeconomically.",
+    "pageTitle"=>"Quiz: Trading Basics",
+    "pageDescription"=>"Core trader concepts for Business - Investment Markets. Scenario and quantitative/macro analysis questions may expand over time.",
 
     /* Optionals OR set as defaults 0 and "" respectively */
     "timeLeft"=>0,

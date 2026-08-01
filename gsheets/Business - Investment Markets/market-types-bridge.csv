@@ -1,0 +1,58 @@
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Choice 6,Choice 7,Hint
+,Concepts,"When retail learners say the “traditional market” they trade daily, they usually mean…",Select the correct answer.,Multiple Choice,1,Stocks / equities,Only forex crosses,Only crypto alts,Only options Greeks,,,,
+,Concepts,"In Stock Trainer naming, traditional retail stocks map to…",Select the correct answer.,Multiple Choice,2,Crypto,Equities,Forex,Futures delivery,,,,
+,Concepts,Which classes are SAMPLE expansion beyond the equities spine?,Select the correct answer.,Multiple Choice,4,Only Equities,Only bank CDs,Only payroll,"Futures, options-context, crypto, forex",,,,
+,Concepts,Paths and graded cases stay…,Select the correct answer.,Multiple Choice,1,Equities-first,Crypto-first,Forex-first,Greeks-first,,,,
+,SATA,Match learner language to app labels correctly. Which pairs are right? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,2,4",Stocks/shares → Equities,Futures → Futures,Options LIVE chain → fully shipped product,FX/currencies → Forex,Crypto → replaces equities path,,,
+,TF,Futures/options-context/crypto/forex replace Beginner Equities Path in this app.,Select True or False.,True False,2,True,False,,,,,,
+,TF,Equities = traditional retail stocks in trainer vocabulary.,Select True or False.,True False,1,True,False,,,,,,
+,FIB,"In this trainer, Equities means traditional retail ___.",Select the answer that best fills the blank.,Fill in the blank,1,stocks,warehouses,passwords,ventilators,,,,
+,Flash,"Equities = traditional retail stocks
+====
+Listed shares / the stock market — the primary learning path. Other classes are SAMPLE expansion.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Mix,Match market type to one-line role in the trainer.,Drag items into matching slots.,Mix and match,N/A,"Equities
+===
+Primary traditional stocks path","Futures
+===
+SAMPLE contract tapes on underlyings","Options context
+===
+Underlying education (no LIVE chain)","Crypto
+===
+SAMPLE digital-asset browse/drill","Forex
+===
+SAMPLE spot currency pairs",,,
+,Ranked,Order market types from primary spine to expansion browse (trainer intent).,Drag into the correct order.,Ranked,N/A,Equities (stocks) primary path,Build chart literacy on equities,Explore SAMPLE Futures / Options context,Explore SAMPLE Crypto / Forex,,,,
+,Application,"A friend wants “stock market” practice, not FX. Send them to…",Select the correct answer.,Multiple Choice,1,Equities quizzes / Beginner path,Only Forex majors,Only crypto alt packs,Options Greeks engine (missing),,,,
+,Concepts,Options context is educational underlying charts; it is NOT…,Select the correct answer.,Multiple Choice,3,SAMPLE teaching,Event/vol context practice,A LIVE chain / Greeks product,Chart literacy adjacent content,,,,
+,Concepts,All non-equity Market class packs in the trainer should avoid claiming…,Select the correct answer.,Multiple Choice,2,SAMPLE/STYLIZED labels,LIVE/REAL_TIME theater,Educational notes,Distinct OHLC shapes,,,,
+,Asset Map,Which instrument grants residual corporate ownership?,Select the correct answer.,Multiple Choice,1,Common equity / stocks,Spot FX pair,A futures margin bond alone,A long put by itself,,,,
+,Asset Map,Which instrument is primarily a standardized future commitment on an underlying?,Select the correct answer.,Multiple Choice,2,Common stock share,Futures contract,Stablecoin wallet seed,Cash dividend,,,,
+,Asset Map,Which instrument’s payoff is nonlinear vs the underlying (rights for a premium)?,Select the correct answer.,Multiple Choice,3,Spot EUR/USD,Index future only,Options (calls/puts),A bank demand deposit,,,,
+,Compare Risk,Unlimited theoretical upside with ownership participation is most associated with…,Select the correct answer.,Multiple Choice,1,Long common stock,Short naked calls,Short FX with huge leverage only,Expired options,,,,
+,Compare Risk,Daily mark-to-market margin flows are most characteristic of…,Select the correct answer.,Multiple Choice,2,Collecting stock dividends,Futures-style margin accounts,Reading a 10-K only,Holding physical share certificates offline,,,,
+,Compare Hours,Closest to 24/7 trading among these retail narratives?,Select the correct answer.,Multiple Choice,3,U.S. cash equity regular session only,Only NYSE auctions,Crypto spot markets (typical teaching contrast),Only quarterly earnings,,,,
+,Compare Rights,Shareholder voting/dividends are features of…,Select the correct answer.,Multiple Choice,1,Equities,Spot FX,Most crypto tokens by default,Short-dated options always,,,,
+,Use Cases,Hedging a future commodity sale maps best to…,Select the correct answer.,Multiple Choice,2,Buying random meme coins,Futures (classic hedge use-case),Collecting stock splits,Ignoring basis,,,,
+,Use Cases,Expressing a view with defined premium risk maps best to…,Select the correct answer.,Multiple Choice,1,Long options (educational),Naked short stock with no plan,Unlimited FX leverage blindly,Ignoring expiry,,,,
+,Use Cases,Currency conversion / relative rate views map to…,Select the correct answer.,Multiple Choice,3,Only IPOs,Only candlestick dojis,FX markets,Only preferred stock,,,,
+,Learning Path,Stock Trainer keeps paths equities-first because…,Select the correct answer.,Multiple Choice,1,Traditional retail “stock market” literacy is the spine; other classes expand SAMPLE,Crypto replaces ownership forever,FX has no risk,Options LIVE chains ship here,,,,
+,SATA,Which are SAMPLE expansion classes beyond equities in this app? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,2,3,4",Futures,Options context,Crypto,Forex,Guaranteed LIVE brokerage,,,
+,TF,Every market type in this app offers LIVE order routing.,Select True or False.,True False,2,True,False,,,,,,
+,FIB,Traditional retail stocks map to the app label ___.,Select the answer that best fills the blank.,Fill in the blank,1,Equities,Forex,Crypto,Futures only,,,,
+,Flash,"Instrument chooser
+====
+Equity = ownership; Futures = standardized future commitment; Options = rights for premium; FX = currency pairs; Crypto = digital assets (each with distinct risks).","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Mix,Match learner goal → market type.,Drag items into matching slots.,Mix and match,N/A,"Own a slice of a company
+===
+Equities","Hedge oil price next quarter
+===
+Futures","Defined-risk bullish bet via premium
+===
+Long call (options)","EUR vs USD view
+===
+Forex","24/7 digital-asset tape practice
+===
+Crypto (SAMPLE)",,,
+,Ranked,Order cross-market literacy.,Drag into the correct order.,Ranked,N/A,Master equities ownership & risk,"Learn how other markets differ (rights, hours, leverage)",Browse SAMPLE non-equity classes,Never confuse SAMPLE charts with LIVE brokerage,,,,
+,Application,Client wants dividends and voting. Point them to…,Select the correct answer.,Multiple Choice,1,Equities,Spot FX only,Short-dated OTM lottery options only,Perpetual crypto leverage only,,,,
+,Application,Client confuses a futures quote with owning the company. Correct teaching?,Select the correct answer.,Multiple Choice,2,They are identical claims,Futures are contracts on an underlying — not the same as equity ownership,Futures always pay dividends,Futures never expire,,,,

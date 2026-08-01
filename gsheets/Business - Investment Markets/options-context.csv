@@ -1,0 +1,72 @@
+,Title,Question,Instruction,Question Type,Correct Choice,Choice 1,Choice 2,Choice 3,Choice 4,Choice 5,Choice 6,Choice 7,Hint
+,Concepts,"In Stock Trainer, “Options context” means…",Select the correct answer.,Multiple Choice,2,A LIVE options chain with order routing,SAMPLE underlying charts for options ideas (educational),A guaranteed premium printer,Automatic Greeks pricing,,,,Not LIVE chain / Greeks product
+,Concepts,Options-context packs show…,Select the correct answer.,Multiple Choice,1,Underlying price tapes (SAMPLE),Full LIVE option strikes and fills,Broker margin calls only,Bond coupons,,,,
+,Concepts,Which product is explicitly out of scope for Options context?,Select the correct answer.,Multiple Choice,3,Educational event-window charts,SAMPLE volatility-spike underlying tapes,LIVE chain + Greeks pricing engine,Chart literacy practice,,,,
+,Concepts,The Event Window SAMPLE pack focuses on…,Select the correct answer.,Multiple Choice,1,Underlying tape into an event,Printing LIVE bid/ask for every strike,Replacing equities ownership,Forex pip math only,,,,
+,Concepts,The Vol Spike SAMPLE pack emphasizes…,Select the correct answer.,Multiple Choice,2,Zero movement forever,"Wide underlying range after a vol spike, then settle",Only dividend reinvestment,Bank CD rates,,,,
+,FIB,Options context here is educational ___ charts — not a LIVE options chain.,Select the answer that best fills the blank.,Fill in the blank,1,underlying,brokerage,tax-lot,payroll,,,,
+,TF,Stock Trainer Options context includes a full LIVE Greeks/pricing engine.,Select True or False.,True False,2,True,False,,,,,,
+,TF,Options-context charts can still teach price action around events and volatility.,Select True or False.,True False,1,True,False,,,,,,
+,SATA,Which statements match Options context in this app? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,3,4",SAMPLE educational charts,LIVE strike-by-strike routing,Not a Greeks engine,Underlying-focused context,Replaces Equities path,,,
+,Flash,"Options context (SAMPLE)
+====
+Educational underlying charts for options ideas — not a LIVE options chain, order routing, or Greeks/pricing engine.","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Mix,Match labels to meanings.,Drag items into matching slots.,Mix and match,N/A,"Options context
+===
+Underlying SAMPLE charts for options ideas","LIVE options chain
+===
+Out of scope in this trainer","Equities
+===
+Traditional retail stocks path","Vol Spike pack
+===
+Wide range then settle (SAMPLE)",,,,
+,Application,A learner asks for LIVE option quotes and Greeks. Correct trainer answer?,Select the correct answer.,Multiple Choice,2,Yes — open the LIVE chain tab,No — this app is SAMPLE underlying context only,Yes — futures fills equal options,Yes — forex pairs are Greeks,,,,
+,Concepts,Traditional retail stocks remain which class?,Select the correct answer.,Multiple Choice,1,Equities,Options context,Futures only,Forex only,,,,
+,Ranked,Order a safe Options-context study flow in the trainer.,Drag into the correct order.,Ranked,N/A,Build equities chart literacy first,Open Options context SAMPLE pack,Study underlying around event/vol (educational),Remember: no LIVE chain / Greeks engine,,,,
+,Calls & Puts,A call option (educational) typically gives the right to…,Select the correct answer.,Multiple Choice,1,Buy the underlying at the strike (by expiration rules),Force someone to lend you margin forever,Own preferred stock coupons,Set FX fixes,,,,
+,Calls & Puts,A put option (educational) typically gives the right to…,Select the correct answer.,Multiple Choice,2,Buy the underlying at the strike,Sell the underlying at the strike (by expiration rules),Print shares,Delete volatility,,,,
+,Rights vs Obligations,The long option holder generally has…,Select the correct answer.,Multiple Choice,1,Rights (not obligations) to exercise under contract terms,Unlimited obligation to buy shares always,No expiry ever,A futures delivery warehouse,,,,
+,Rights vs Obligations,A short (written) option generally carries…,Select the correct answer.,Multiple Choice,3,"Only rights, never obligations",Zero risk,Obligations if assigned — risk can be large,Automatic diversification,,,,
+,Contract Specs,Strike price is…,Select the correct answer.,Multiple Choice,2,Today’s RSI,The contract’s exercise price level,The dividend yield,The bid-ask of BTC only,,,,
+,Contract Specs,Expiration is…,Select the correct answer.,Multiple Choice,1,When the option contract ends / last exercise window rules apply,When stocks stop existing,A candlestick pattern,A margin type for futures only,,,,
+,Premium,Option premium is…,Select the correct answer.,Multiple Choice,3,Always zero,The company’s revenue,The price paid/received for the option contract,A stock split ratio,,,,
+,Moneyness,ITM (in-the-money) means…,Select the correct answer.,Multiple Choice,1,Exercise would have intrinsic value vs spot (simplified),The option cannot exist,Only forex crosses,RSI definition,,,,
+,Moneyness,OTM (out-of-the-money) means…,Select the correct answer.,Multiple Choice,2,Maximum intrinsic value always,No intrinsic value at current spot (simplified),The stock is delisted always,Futures contango,,,,
+,Intrinsic vs Time,Intrinsic value (intro) is…,Select the correct answer.,Multiple Choice,1,Value if exercised now vs spot/strike relationship,Only brand marketing,Always equal to premium,Share count,,,,
+,Intrinsic vs Time,Time value (intro) is…,Select the correct answer.,Multiple Choice,3,Accounting depreciation only,Bid size only,"Premium minus intrinsic (simplified) — decays as expiry nears, all else equal",IPO proceeds,,,,
+,TF,"A long option’s maximum loss is typically limited to the premium paid (excluding fees), unlike a naked short stock.",Select True or False.,True False,1,True,False,,,,,,
+,TF,Buying a call is the same thing as owning the shares already.,Select True or False.,True False,2,True,False,,,,,,
+,Strategies Intro,A protective put (concept) is often used to…,Select the correct answer.,Multiple Choice,2,Increase unlimited short risk,Hedge downside on a long stock position,Replace financial statements,Set interest rates,,,,
+,Strategies Intro,A covered call (concept) typically involves…,Select the correct answer.,Multiple Choice,1,Owning shares and selling a call against them,Naked shorting 10x with no plan,Only trading forex sessions,Ignoring expiry,,,,
+,Underlying Link,Option values are sensitive to…,Select the correct answer.,Multiple Choice,3,Only the company logo color,Only the day of the week always,"Underlying price, time, and volatility (among other factors)",Only warehouse capacity,,,,
+,Volatility Context,"Higher expected volatility, all else equal, tends to make option premiums…",Select the correct answer.,Multiple Choice,1,Richer (options more valuable as uncertainty rises),Always worthless,Identical to dividends,Equal to book equity,,,,
+,Event Context,Traders watch underlying into events because…,Select the correct answer.,Multiple Choice,2,Events delete options,Implied moves/uncertainty can reprice options and the underlying,Filings are illegal,Candles stop printing,,,,
+,App Scope,Stock Trainer Options context intentionally excludes…,Select the correct answer.,Multiple Choice,1,"LIVE chains, order routing, and a Greeks pricing engine",Educational underlying charts,SAMPLE labels,Event-window teaching,,,,
+,FIB,The price of an option contract is called the ___.,Select the answer that best fills the blank.,Fill in the blank,1,premium,notional warehouse,pip,doji,,,,
+,Flash,"Call vs Put
+====
+Call = right to buy at strike; Put = right to sell at strike (standard educational definitions).","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Flash,"Moneyness
+====
+ITM = intrinsic value present; ATM ≈ at strike; OTM = no intrinsic (simplified vs spot).","Flip the card, then choose whether you remembered it.",Flash card,1,Yes,No,,,,,,
+,Mix,Match options fundamentals.,Drag items into matching slots.,Mix and match,N/A,"Strike
+===
+Exercise price","Premium
+===
+Option’s market price","Expiration
+===
+Contract end date/rules","Long call
+===
+Right to buy underlying","Long put
+===
+Right to sell underlying",,,
+,SATA,Which are true in options education? (Select all that apply.),"Toggle each correct choice, then confirm.",Multiple Choice,"1,3,4","Long options have rights, not obligations",Short options never have risk,Premium is what you pay/receive for the contract,Expiry matters,Options are identical to common shares,,,
+,Ranked,Order options literacy before any LIVE product (not in this app).,Drag into the correct order.,Ranked,N/A,Learn call/put & rights vs obligations,"Learn strike, expiry, premium, moneyness",Learn how underlying + vol affect premium (conceptually),Remember this app is SAMPLE underlying context only,,,,
+,Application,You want downside protection on shares you already own. Closest conceptual tool?,Select the correct answer.,Multiple Choice,2,Naked short call with no shares,Protective put,Ignore hedges forever,Only a forex cross,,,,
+,Application,Someone asks for LIVE strike quotes and delta here. Correct response?,Select the correct answer.,Multiple Choice,1,Out of scope — educational underlying context only,Open the LIVE chain tab,Futures delivery equals delta,Guaranteed,,,,
+,Exercise Style,American-style options (teaching) may allow exercise…,Select the correct answer.,Multiple Choice,1,Any time before expiration (per contract rules),Only at expiration ever,Never,Only on weekends,,,,
+,Exercise Style,European-style options (teaching) generally allow exercise…,Select the correct answer.,Multiple Choice,2,Any time,Only at expiration (typical teaching contrast),Only before the IPO,Only if RSI > 70,,,,
+,Volatility,Implied volatility (IV) is…,Select the correct answer.,Multiple Choice,1,The market’s priced-in volatility embedded in option premiums,Yesterday’s exact realized move only,Share float,Open interest in corn,,,,
+,TF,Implied volatility and historical (realized) volatility are always identical numbers.,Select True or False.,True False,2,True,False,,,,,,
+,Premium,"Approximate breakeven for a long call at expiry (simplified, ignore fees) is…",Select the correct answer.,Multiple Choice,2,Strike − premium,Strike + premium,Only the SMA,Open interest,,,,
+,Strategies Intro,A vertical spread (intro) involves…,Select the correct answer.,Multiple Choice,1,Options on the same underlying/expiry with different strikes,Only spot FX lots,Only share buybacks,Deleting expiry,,,,

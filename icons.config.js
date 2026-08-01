@@ -1,8 +1,8 @@
 {
     "icons": [
         {
-            "displayName": "Business - Trader",
-            "replaceIcon": "<i class='ri-exchange-dollar-line'></i>"
+            "displayName": "Business - Investment Markets",
+            "replaceIcon": "<i class='ri-line-chart-line'></i>"
         },
         {
             "displayName": "Business",

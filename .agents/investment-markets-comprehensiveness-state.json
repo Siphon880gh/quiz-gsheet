@@ -1,0 +1,255 @@
+{
+  "status": "Done",
+  "active_phase": "Done",
+  "category": "Business - Investment Markets",
+  "loop": "AGENTS_LOOP-Investment-Markets-Comprehensiveness.md",
+  "phase_a_order": [
+    "map-trainer-surfaces",
+    "diff-vs-quizzes",
+    "fill-app-gaps",
+    "phase-a-complete"
+  ],
+  "phase_b_order": [
+    "diff-domain-toc",
+    "fill-domain-gaps",
+    "phase-b-complete"
+  ],
+  "topics": {
+    "map-trainer-surfaces": {
+      "status": "done"
+    },
+    "diff-vs-quizzes": {
+      "status": "done",
+      "gaps_found": 3
+    },
+    "fill-app-gaps": {
+      "status": "done",
+      "fills": [
+        {
+          "id": "pack:eq-index-proxy",
+          "file": "equities-stocks.csv",
+          "added": 1
+        },
+        {
+          "id": "pack:eq-cyclical",
+          "file": "equities-stocks.csv",
+          "added": 1
+        },
+        {
+          "id": "path:chart-soft-gate",
+          "file": "news-and-decisions.csv",
+          "added": 2
+        }
+      ]
+    },
+    "phase-a-complete": {
+      "status": "done",
+      "remaining": []
+    },
+    "diff-domain-toc": {
+      "status": "done",
+      "gaps_found": 27
+    },
+    "fill-domain-gaps": {
+      "status": "done",
+      "fills": [
+        {
+          "id": "eq:halt",
+          "file": "equities-stocks.csv",
+          "added": 1
+        },
+        {
+          "id": "eq:adr",
+          "file": "equities-stocks.csv",
+          "added": 1
+        },
+        {
+          "id": "eq:market-maker",
+          "file": "equities-stocks.csv",
+          "added": 1
+        },
+        {
+          "id": "eq:short-interest",
+          "file": "equities-stocks.csv",
+          "added": 1
+        },
+        {
+          "id": "fu:open-interest",
+          "file": "futures.csv",
+          "added": 1
+        },
+        {
+          "id": "fu:tick-size",
+          "file": "futures.csv",
+          "added": 1
+        },
+        {
+          "id": "fu:calendar-spread",
+          "file": "futures.csv",
+          "added": 1
+        },
+        {
+          "id": "fu:delivery-month",
+          "file": "futures.csv",
+          "added": 1
+        },
+        {
+          "id": "fu:clearinghouse",
+          "file": "futures.csv",
+          "added": 1
+        },
+        {
+          "id": "op:american-european",
+          "file": "options-context.csv",
+          "added": 2
+        },
+        {
+          "id": "op:iv-hv",
+          "file": "options-context.csv",
+          "added": 2
+        },
+        {
+          "id": "op:breakeven",
+          "file": "options-context.csv",
+          "added": 1
+        },
+        {
+          "id": "op:vertical-spread",
+          "file": "options-context.csv",
+          "added": 1
+        },
+        {
+          "id": "cr:pow-pos",
+          "file": "crypto.csv",
+          "added": 1
+        },
+        {
+          "id": "cr:gas-fees",
+          "file": "crypto.csv",
+          "added": 1
+        },
+        {
+          "id": "cr:fork",
+          "file": "crypto.csv",
+          "added": 1
+        },
+        {
+          "id": "cr:market-cap-vs-volume",
+          "file": "crypto.csv",
+          "added": 1
+        },
+        {
+          "id": "cr:hot-cold-wallet",
+          "file": "crypto.csv",
+          "added": 1
+        },
+        {
+          "id": "fx:carry",
+          "file": "forex.csv",
+          "added": 1
+        },
+        {
+          "id": "fx:intervention",
+          "file": "forex.csv",
+          "added": 1
+        },
+        {
+          "id": "fx:nfp",
+          "file": "forex.csv",
+          "added": 1
+        },
+        {
+          "id": "fx:lot-size",
+          "file": "forex.csv",
+          "added": 1
+        },
+        {
+          "id": "fx:triangular",
+          "file": "forex.csv",
+          "added": 1
+        },
+        {
+          "id": "fx:safe-haven",
+          "file": "forex.csv",
+          "added": 1
+        },
+        {
+          "id": "fin:dilution",
+          "file": "financial-statements.csv",
+          "added": 1
+        },
+        {
+          "id": "news:stop-loss",
+          "file": "news-and-decisions.csv",
+          "added": 1
+        },
+        {
+          "id": "news:risk-reward",
+          "file": "news-and-decisions.csv",
+          "added": 1
+        }
+      ]
+    },
+    "phase-b-complete": {
+      "status": "done",
+      "remaining": []
+    }
+  },
+  "gaps_app_initial": [
+    "pack:eq-index-proxy",
+    "pack:eq-cyclical",
+    "path:chart-soft-gate"
+  ],
+  "gaps_domain_initial": [
+    "eq:halt",
+    "eq:adr",
+    "eq:market-maker",
+    "eq:short-interest",
+    "fu:open-interest",
+    "fu:tick-size",
+    "fu:calendar-spread",
+    "fu:delivery-month",
+    "fu:clearinghouse",
+    "op:american-european",
+    "op:iv-hv",
+    "op:breakeven",
+    "op:vertical-spread",
+    "cr:pow-pos",
+    "cr:gas-fees",
+    "cr:fork",
+    "cr:market-cap-vs-volume",
+    "cr:hot-cold-wallet",
+    "fx:carry",
+    "fx:intervention",
+    "fx:nfp",
+    "fx:lot-size",
+    "fx:triangular",
+    "fx:safe-haven",
+    "fin:dilution",
+    "news:stop-loss",
+    "news:risk-reward"
+  ],
+  "gaps_app_remaining": [],
+  "gaps_domain_remaining": [],
+  "question_counts": {
+    "financial-statements.csv": 37,
+    "futures.csv": 50,
+    "market-types-bridge.csv": 33,
+    "news-and-decisions.csv": 47,
+    "forex.csv": 47,
+    "candlestick-patterns.csv": 49,
+    "equities-stocks.csv": 57,
+    "options-context.csv": 47,
+    "crypto.csv": 43,
+    "technical-indicators.csv": 36
+  },
+  "total_questions": 446,
+  "wontfix": [],
+  "next_action": "STOP",
+  "last_updated_iso": "2026-08-01T12:22:10Z",
+  "consecutive_failures": 0,
+  "comprehensiveness": {
+    "phase_a": "Stock Trainer app surfaces audited; pack/path gaps filled",
+    "phase_b": "Domain TOC P0/P1 gaps filled (equities structure, futures OI/ticks/clearing, options IV/assignment/spreads, crypto consensus/custody/perps, FX carry/NFP/lots, risk controls)"
+  }
+}
