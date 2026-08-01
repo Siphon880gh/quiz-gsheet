@@ -10,7 +10,8 @@ By Weng Fei Fung. Easily create various types of quizzes from Google Sheet. A Go
 
 ## :open_file_folder: Table of Contents:
 ---
-- [Description](#page_facing_up-description) <!-- - [Screenshots](#camera-screenshots) -->
+- [Description](#page_facing_up-description)
+- [Screenshots](#camera-screenshots)
 - [Live Demo](#computer-live-demo)
 - [Installation and Quiz Administration](#minidisc-installation-and-quiz-administration)
 - [Define Custom Folder Icons for Quiz Administration](#minidisc-define-custom-folder-icons)
@@ -22,16 +23,11 @@ By Weng Fei Fung. Easily create various types of quizzes from Google Sheet. A Go
 - [Future Version](#crystal_ball-future-version)
 ---
 
-<!-- ## :camera: Screenshots:
-![image](docs/screenshot.png) -->
+## :camera: Screenshots:
+![Quiz topic list homepage](docs/screenshot.png)
 
 ## :computer: Live Demo:
 <a href="https://wengindustry.com/tools/quiz-gsheet" target="_blank">Check it out</a>
-
-<!-- 
-:camera: Preview:
----
-![image](docs/screenshot.png) -->
 
 ## :minidisc: Installation and Quiz Administration:
 
